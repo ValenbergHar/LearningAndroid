@@ -1,4 +1,5 @@
 package com.example.mylibrary;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,19 +8,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
-import java.util.ArrayList;
+
 import static android.content.ContentValues.TAG;
 
 public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.ViewHolder> {
     private ArrayList<Book> books = new ArrayList<>();
+
     private Context context;
 
     public BookRecViewAdapter(Context context) {
-
         this.context = context;
         notifyDataSetChanged();
     }
@@ -36,6 +41,7 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBlindViewHolder.Called");
         holder.txtView.setText(books.get(position).getName());
+
         Glide.with(context)
                 .asBitmap()
                 .load(books.get(position).getImageUrl())
