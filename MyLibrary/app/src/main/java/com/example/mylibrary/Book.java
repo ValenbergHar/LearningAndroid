@@ -5,6 +5,19 @@ public class Book {
     private  String name;
     private String author;
     private int pages;
+    private  String imageUrl;
+    private String shortDesc;
+
+    public boolean isExpended() {
+        return isExpended;
+    }
+
+    public void setExpended(boolean expended) {
+        isExpended = expended;
+    }
+
+    private String longDesc;
+    private boolean isExpended;
 
     public Book(int id, String name, String author) {
         this.id = id;
@@ -12,9 +25,7 @@ public class Book {
         this.author = author;
     }
 
-    private  String imageUrl;
-    private String shortDesc;
-    private String longDesc;
+
 
     public Book(int id, String name, String author, int pages, String imageUrl, String shortDesc, String longDesc) {
         this.id = id;
@@ -24,6 +35,7 @@ public class Book {
         this.imageUrl = imageUrl;
         this.shortDesc = shortDesc;
         this.longDesc = longDesc;
+        this.isExpended=false;
     }
 
     @Override
