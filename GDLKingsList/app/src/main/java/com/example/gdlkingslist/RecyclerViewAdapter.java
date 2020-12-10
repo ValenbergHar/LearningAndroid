@@ -1,6 +1,9 @@
 package com.example.gdlkingslist;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -42,6 +47,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.txt_king_name.setText(kingList.get(position).getName());
         holder.txt_king_date.setText(String.valueOf(kingList.get(position).getDateOfElection()));
         Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AddEditOne.class);
+                intent.putExtra("id", kingList.get(position).getId());
+                intent.putExtra("name", kingList.get(position).getName());
+
+                context.startActivity(intent);
+            }
+
+        });
     }
 
 
@@ -54,13 +70,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView iv_king_picture;
         TextView txt_king_name;
         TextView txt_king_date;
+        ConstraintLayout constraintLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             iv_king_picture = itemView.findViewById(R.id.iv_king_picture);
             txt_king_name = itemView.findViewById(R.id.txt_king_name);
             txt_king_date = itemView.findViewById(R.id.txt_date);
-
+            constraintLayout = itemView.findViewById(R.id.oneLineKingLayout);
         }
     }
 }
