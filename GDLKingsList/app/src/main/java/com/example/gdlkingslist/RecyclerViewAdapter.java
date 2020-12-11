@@ -47,14 +47,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.txt_king_name.setText(kingList.get(position).getName());
         holder.txt_king_date.setText(String.valueOf(kingList.get(position).getDateOfElection()));
         Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
+
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, AddEditOne.class);
-                intent.putExtra("id", kingList.get(position).getId());
-                intent.putExtra("name", kingList.get(position).getName());
-
+                intent.putExtra(AddEditOne.ID, kingList.get(position).getId());
+   //             intent.putExtra("name", kingList.get(position).getName());
                 context.startActivity(intent);
+
             }
 
         });

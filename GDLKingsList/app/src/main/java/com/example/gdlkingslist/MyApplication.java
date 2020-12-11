@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MyApplication extends Application {
     private static List<King> kingsList = new ArrayList<>();
-    private static int nextId = 10;
+    private static int nextId = 13;
 
     public static List<King> getKingsList() {
         return kingsList;
