@@ -25,13 +25,14 @@ public class Person {
         this.id = id;
     }
 
-    public boolean isActive() {
-        return isActive;
+    public int isActive() {
+        return isActive==true?1:0;
     }
 
     public void setActive(boolean active) {
         isActive = active;
     }
+
     public String getName() {
         return name;
     }
@@ -47,6 +48,8 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+
 
     @Override
     public String toString() {
