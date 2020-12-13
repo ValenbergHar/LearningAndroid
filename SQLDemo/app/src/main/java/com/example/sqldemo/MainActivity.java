@@ -13,22 +13,25 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     private Button btn_view_all, btn_add;
     private EditText et_name, et_age;
     private Switch sw_active;
     private List<Person> person_list;
+    private RecyclerViewAdapter.RecyclerViewClickListener listener;
+
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
 
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 person_list = dataBaseHelper.getEveryOne();
 
 
+
                 mAdapter = new RecyclerViewAdapter(person_list, MainActivity.this);
                 recyclerView.setAdapter(mAdapter);
 
@@ -81,5 +85,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
+
 }

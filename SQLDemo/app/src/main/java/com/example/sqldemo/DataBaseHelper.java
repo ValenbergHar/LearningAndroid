@@ -52,6 +52,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public boolean deleteOne(Person person) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        String delete = "DELETE FROM " + CUSTOMER_PERSON + " WHERE " + COLUMN_ID + " = " + person.getId();
+        Cursor cursor = sqLiteDatabase.rawQuery(delete, null);
+
+        if(cursor.moveToFirst()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     public List<Person> getEveryOne() {
 
         List<Person> returnList = new ArrayList<>();

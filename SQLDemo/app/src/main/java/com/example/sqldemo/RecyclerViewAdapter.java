@@ -15,10 +15,14 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     List<Person> personList;
     Context context;
+    private RecyclerViewClickListener listener;
 
-    public RecyclerViewAdapter(List<Person> personList, Context context) {
+
+    public RecyclerViewAdapter(List<Person> personList, Context context, RecyclerViewClickListener listener) {
         this.personList = personList;
         this.context = context;
+        this.listener=listener;
+
     }
 
     @NonNull
@@ -43,12 +47,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements RecyclerViewClickListener {
         private TextView txt_id;
         private TextView txt_name;
         private TextView txt_age;
         private TextView isActive;
         private ConstraintLayout constraintLayout;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,7 +62,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             txt_age = itemView.findViewById(R.id.txt_age);
             isActive = itemView.findViewById(R.id.txt_isActive);
             constraintLayout = itemView.findViewById(R.id.onePersonLayout);
+            itemView.setOnClickListener((View.OnClickListener) this);
+
 
         }
+
+
+        @Override
+        public void onClick(View v, int position) {
+            listener.onClick(v, getAdapterPosition());
+        }
     }
+
+    public interface RecyclerViewClickListener {
+        void onClick(View v, int position);
+    }
+
+
 }
