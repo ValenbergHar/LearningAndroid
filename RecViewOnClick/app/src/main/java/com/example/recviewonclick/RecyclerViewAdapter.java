@@ -16,6 +16,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<ExampleItem> exampleItemList;
     private Context context;
 
+    // clickRecycle
+    private OnItemClickListener mListener;
+
+    // clickRecycle 1
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+        void onDelete(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        mListener = onItemClickListener;
+    }
+
     public RecyclerViewAdapter(List<ExampleItem> exampleItemList, Context context) {
         this.exampleItemList = exampleItemList;
         this.context = context;
@@ -25,8 +38,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.example_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        ViewHolder viewHolder = new ViewHolder(view, mListener);
         return viewHolder;
+
     }
 
     @Override
@@ -37,23 +51,51 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-
     @Override
     public int getItemCount() {
         return exampleItemList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    // clickRecycle static 2
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txt1;
         private TextView txt2;
         private ImageView imageView;
+        private  ImageView imageViewDel;
 
-
-        public ViewHolder(@NonNull View itemView) {
+        // clickRecycle static 3
+        public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             txt1 = itemView.findViewById(R.id.txt1);
             txt2 = itemView.findViewById(R.id.txt2);
             imageView = itemView.findViewById(R.id.imageView);
+            imageViewDel = itemView.findViewById(R.id.image_delete);
+
+            // clickRecycle 4
+            imageViewDel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onDelete(position);
+                        }
+                    }
+
+                }
+            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+
 
         }
     }

@@ -11,6 +11,10 @@ private String txt2;
         this.txt2 = txt2;
     }
 
+    public void changeText(String text){
+        txt1=text;
+    }
+
     public int getImageResource() {
         return imageResource;
     }
