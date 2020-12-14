@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,9 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private List<King> kingsList;
 
-
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private RecyclerViewAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -49,8 +50,17 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new RecyclerViewAdapter(kingsList, this);
+        mAdapter = new RecyclerViewAdapter(kingsList, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(MainActivity.this, "hnghmghmjj", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
 
 

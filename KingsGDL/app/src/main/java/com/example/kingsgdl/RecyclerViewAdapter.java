@@ -19,18 +19,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     List<King> kingList;
     Context context;
 
-    public RecyclerViewAdapter(List<King> kingList, Context context) {
+    public RecyclerViewAdapter(List<King> kingsList, MainActivity mainActivity) {
         this.kingList = kingList;
         this.context = context;
     }
 
 
 
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        mListener = onItemClickListener;
+    }
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.king_one, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        ViewHolder viewHolder = new ViewHolder(view, mListener);
         return viewHolder;
     }
 
@@ -52,12 +63,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView txt_king_date;
         ConstraintLayout constraintLayout;
 
-        public ViewHolder(@NonNull View itemView) {
+
+        public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             iv_king_picture = itemView.findViewById(R.id.iv_king_picture);
             txt_king_name = itemView.findViewById(R.id.txt_king_name);
             txt_king_date = itemView.findViewById(R.id.txt_date);
             constraintLayout = itemView.findViewById(R.id.oneLineKingLayout);
+
+            constraintLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position);
+                        }
+                    }
+
+
+                }
+            });
+
+
+
+
         }
     }
 }
