@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private List<King> kingsList;
 
     private RecyclerView recyclerView;
-    private RecyclerViewAdapter mAdapter;
+    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -52,17 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new RecyclerViewAdapter(kingsList, MainActivity.this);
         recyclerView.setAdapter(mAdapter);
-
-        mAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Toast.makeText(MainActivity.this, "hnghmghmjj", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
 
     }
 }
