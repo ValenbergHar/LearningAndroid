@@ -18,10 +18,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private RecyclerViewClickListener listener;
 
 
-    public RecyclerViewAdapter(List<Person> personList, Context context, RecyclerViewClickListener listener) {
+    public RecyclerViewAdapter(List<Person> personList, Context context) {
         this.personList = personList;
         this.context = context;
-        this.listener=listener;
 
     }
 
