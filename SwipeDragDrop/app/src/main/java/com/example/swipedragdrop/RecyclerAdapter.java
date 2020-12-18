@@ -5,21 +5,28 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements Filterable {
     List<String> moviesList;
+    List<String> moviesListAll;
+
 
     public RecyclerAdapter(List<String> moviesList) {
         this.moviesList = moviesList;
+        moviesListAll = new ArrayList<>(moviesList);
     }
 
     //    private static final String TAG = "RecyclerAdapter";
@@ -47,6 +54,37 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public int getItemCount() {
         return moviesList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<String> filterList = new ArrayList<>();
+            if (constraint.toString().isEmpty()) {
+                filterList.addAll(moviesListAll);
+            } else {
+                for (String movie : moviesListAll) {
+                    if (movie.toLowerCase().contains(constraint.toString().toLowerCase())) {
+                        filterList.add(movie);
+                    }
+                }
+            }
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filterList;
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            moviesList.clear();
+            moviesList.addAll((Collection<? extends String>) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView textView;
