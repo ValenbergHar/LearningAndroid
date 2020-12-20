@@ -1,6 +1,6 @@
 package com.example.components.utilities;
 
-import com.example.components.model.NoteEntity;
+import com.example.components.database.NoteEntity;
 
 import java.util.ArrayList;
 import java.util.Calendar;

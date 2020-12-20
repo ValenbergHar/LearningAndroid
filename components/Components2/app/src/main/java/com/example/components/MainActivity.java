@@ -5,30 +5,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import com.example.components.model.NoteEntity;
+import com.example.components.database.NoteEntity;
 import com.example.components.ui.NotesAdapter;
 import com.example.components.utilities.SampleData;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
+
+    @OnClick(R.id.fab)
+    void fabClickHandler(){
+        Intent intent=new Intent(this, EditorActivity.class);
+        startActivity(intent);
+    }
 
     private FloatingActionButton fab;
     private List<NoteEntity> notesData = new ArrayList<>();
@@ -42,13 +47,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initRecycleView();
 
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace", Snackbar.LENGTH_SHORT).show();
-            }
-        });
 
         notesData.addAll(SampleData.getNotes());
         for (NoteEntity note : notesData) {

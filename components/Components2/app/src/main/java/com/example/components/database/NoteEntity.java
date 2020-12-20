@@ -1,24 +1,32 @@
-package com.example.components.model;
+package com.example.components.database;
 
 import java.util.Date;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "notes")
 public class NoteEntity {
+    @PrimaryKey(autoGenerate = true)
     private int id;
-    private Date day;
+    private Date date;
     private String text;
+
 
     public NoteEntity() {
 
     }
 
+    @Ignore
     public NoteEntity(Date day, String text) {
-        this.day = day;
+        this.date = day;
         this.text = text;
     }
 
     public NoteEntity(int id, Date day, String text) {
         this.id = id;
-        this.day = day;
+        this.date = day;
         this.text = text;
     }
 
@@ -30,12 +38,12 @@ public class NoteEntity {
         this.id = id;
     }
 
-    public Date getDay() {
-        return day;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDay(Date day) {
-        this.day = day;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getText() {
@@ -50,7 +58,7 @@ public class NoteEntity {
     public String toString() {
         return "NoteEntity{" +
                 "id=" + id +
-                ", day=" + day +
+                ", day=" + date +
                 ", text='" + text + '\'' +
                 '}';
     }

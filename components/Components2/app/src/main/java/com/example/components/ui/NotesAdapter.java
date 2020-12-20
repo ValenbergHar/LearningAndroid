@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.components.R;
-import com.example.components.model.NoteEntity;
+import com.example.components.database.NoteEntity;
 
 import java.util.List;
 
