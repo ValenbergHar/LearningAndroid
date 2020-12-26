@@ -12,6 +12,7 @@ import androidx.room.Query;
 
 @Dao
 public interface NoteDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertNote(NoteEntity noteEntity);
 
@@ -21,9 +22,8 @@ public interface NoteDao {
     @Delete
     void deleteNote(NoteEntity noteEntity);
 
-    @Query("SELECT * FROM notes WHERE id=:id")
+    @Query("SELECT * FROM notes WHERE id = :id")
     NoteEntity getNoteById(int id);
-
 
     @Query("SELECT * FROM notes ORDER BY date DESC")
     LiveData<List<NoteEntity>> getAll();
@@ -33,4 +33,5 @@ public interface NoteDao {
 
     @Query("SELECT COUNT(*) FROM notes")
     int getCount();
+
 }

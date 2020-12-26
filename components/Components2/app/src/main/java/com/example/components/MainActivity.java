@@ -2,6 +2,7 @@ package com.example.components;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.components.database.NoteEntity;
 import com.example.components.ui.NotesAdapter;
-import com.example.components.utilities.SampleData;
+import com.example.components.viewmodel.MainViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
 
+
     @OnClick(R.id.fab)
     void fabClickHandler(){
         Intent intent=new Intent(this, EditorActivity.class);
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private List<NoteEntity> notesData = new ArrayList<>();
     private NotesAdapter mAdapter;
+    private MainViewModel maViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +48,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+        initViewModel();
         initRecycleView();
 
 
-        notesData.addAll(SampleData.getNotes());
+        notesData.addAll(maViewModel.mNotes);
         for (NoteEntity note : notesData) {
             Log.i("Notes", note.toString());
         }
+    }
+
+    private void initViewModel() {
+        maViewModel=new ViewModelProvider(this).get(MainViewModel.class);
+
     }
 
     private void initRecycleView() {
@@ -71,10 +80,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+            case R.id.action_add_sample_data:
+                addSampleData();
+                Toast.makeText(this, "Add data", Toast.LENGTH_SHORT).show();
         }
 
         return true;
+    }
+
+    private void addSampleData() {
+        maViewModel.addSampleData();
     }
 }

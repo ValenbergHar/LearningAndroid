@@ -12,10 +12,9 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 
-@Database(entities = {NoteEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {NoteEntity.class}, version = 1)
 @TypeConverters(DateConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
-
     public static final String DATABASE_NAME = "AppDatabase.db";
     private static volatile AppDatabase instance;
     private static final Object LOCK = new Object();
@@ -26,11 +25,12 @@ public abstract class AppDatabase extends RoomDatabase {
         if (instance == null) {
             synchronized (LOCK) {
                 if (instance == null) {
-                    instance = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME).build();
+                    instance = Room.databaseBuilder(context.getApplicationContext(),
+                            AppDatabase.class, DATABASE_NAME).build();
                 }
             }
         }
+
         return instance;
     }
-
 }
