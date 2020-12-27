@@ -4,12 +4,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -18,12 +22,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     List<King> kingList;
+    List<King> kingSearchList;
     Context context;
     private OnItemClickListener mListener;
+    int lastPosition = -1;
 
     public RecyclerViewAdapter(List<King> kingList, Context context) {
         this.kingList = kingList;
         this.context = context;
+        kingSearchList=new ArrayList<>(kingList);
     }
 
     public interface OnItemClickListener {
@@ -49,6 +56,49 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.txt_king_name.setText(kingList.get(position).getName());
         holder.txt_king_date.setText(String.valueOf(kingList.get(position).getDateOfElection()));
         Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
+       setAnimation(holder.itemView, position);
+
+    }
+
+    private void setAnimation(View itemView, int position) {
+        if(position>lastPosition){
+            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+            itemView.setAnimation(animation);
+            lastPosition=position;
+        }
+    }
+
+
+
+    Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<King> filterList = new ArrayList<>();
+            if (constraint.toString().isEmpty()) {
+                filterList.addAll(kingSearchList);
+            } else {
+                for (King king : kingSearchList) {
+                    if (king.getName().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                        filterList.add(king);
+                    }
+                }
+            }
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filterList;
+            return filterResults;
+        }
+
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            kingList.clear();
+            kingList.addAll((Collection<? extends King>) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
+    public Filter getFilter() {
+        return filter;
     }
 
     @Override
