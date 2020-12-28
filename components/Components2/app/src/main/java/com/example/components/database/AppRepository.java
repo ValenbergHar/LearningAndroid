@@ -3,6 +3,8 @@ package com.example.components.database;
 import android.content.Context;
 import android.graphics.drawable.Icon;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.components.utilities.SampleData;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.concurrent.Executors;
 public class AppRepository {
     private static AppRepository ourInstance;
 
-    public List<NoteEntity> mNotes;
+    public LiveData<List<NoteEntity>> mNotes;
     private AppDatabase mDb;
     private Executor executor = Executors.newSingleThreadExecutor();
 
@@ -24,17 +26,15 @@ public class AppRepository {
     }
 
     private AppRepository(Context context) {
-        mNotes = SampleData.getNotes();
+        mNotes = getAllNotes();
         mDb = AppDatabase.getInstance(context);
     }
 
     public void addSampleData() {
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                mDb.noteDao().insertAll(SampleData.getNotes());
-            }
-        });
+        executor.execute(() -> mDb.noteDao().insertAll(SampleData.getNotes()));
+    }
+    private LiveData<List<NoteEntity>> getAllNotes(){
+        return mDb.noteDao().getAll();
     }
 }
 

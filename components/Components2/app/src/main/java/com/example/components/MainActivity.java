@@ -1,26 +1,24 @@
 package com.example.components;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.example.components.database.NoteEntity;
 import com.example.components.ui.NotesAdapter;
 import com.example.components.viewmodel.MainViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-
 
     @OnClick(R.id.fab)
     void fabClickHandler(){
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private List<NoteEntity> notesData = new ArrayList<>();
     private NotesAdapter mAdapter;
-    private MainViewModel maViewModel;
+    private MainViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +45,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
         initViewModel();
         initRecycleView();
-
-
-        notesData.addAll(maViewModel.mNotes);
-        for (NoteEntity note : notesData) {
-            Log.i("Notes", note.toString());
-        }
     }
 
     private void initViewModel() {
-        maViewModel=new ViewModelProvider(this).get(MainViewModel.class);
 
+        final Observer<List<NoteEntity>> notesObserver =
+                new Observer<List<NoteEntity>>() {
+                    @Override
+                    public void onChanged(@Nullable List<NoteEntity> noteEntities) {
+                        notesData.clear();
+                        notesData.addAll(noteEntities);
+                        if (mAdapter == null) {
+                            mAdapter = new NotesAdapter(notesData, MainActivity.this);
+                            mRecyclerView.setAdapter(mAdapter);
+                        } else {
+                            mAdapter.notifyDataSetChanged();
+                        }
+                    }
+                };
+
+        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mViewModel.mNotes.observe(this, notesObserver);
     }
+
 
     private void initRecycleView() {
         mRecyclerView.setHasFixedSize(true);
@@ -89,6 +98,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addSampleData() {
-        maViewModel.addSampleData();
+        mViewModel.addSampleData();
     }
 }
