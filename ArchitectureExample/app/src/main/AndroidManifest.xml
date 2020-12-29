@@ -9,14 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ArchitectureExample">
-        <activity android:name=".AddNoteActivity" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MainActivity" android:launchMode="singleTop">
+        <activity
+            android:name=".AddNoteActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name=".AddEditNoteActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
