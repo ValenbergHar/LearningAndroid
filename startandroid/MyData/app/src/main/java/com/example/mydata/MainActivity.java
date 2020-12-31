@@ -1,18 +1,25 @@
 package com.example.mydata;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnAdd, btnDel;
     private EditText textId, textName, textPopulation;
     private List<City> cities;
+    private List<City> deleteCity;
 
     private DBHelper dbHelper;
 
@@ -50,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textPopulation = findViewById(R.id.editTextPopulation);
 
         cities = new ArrayList<>();
+        deleteCity = new ArrayList<>();
 
         cities.add(new City(1, "Hrodna", 350000));
 
@@ -64,7 +73,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         dbHelper = new DBHelper(this);
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallBack);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
+
+    ItemTouchHelper.SimpleCallback simpleCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT ) {
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            switch (direction) {
+                case ItemTouchHelper.LEFT:
+                    int position = viewHolder.getAdapterPosition();
+                    final City city = cities.get(position);
+
+                    SQLiteDatabase db = dbHelper.getWritableDatabase();
+                    db.delete(Util.TABLE_NAME, KEY_NAME + "=?", null);
+                    db.close();
+                    Log.d(LOG_TAG, "--- Delete: " + city.getName());
+                    deleteCity.add(city);
+                    cities.remove(position);
+                    mAdapter.notifyItemRemoved(position);
+                    mAdapter.notifyDataSetChanged();
+
+//                    Snackbar.make(recyclerView, city.getName() + ", deleted", Snackbar.LENGTH_SHORT).setAction("Undo", new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            deleteCity.remove(deleteCity.lastIndexOf(city));
+//                            cities.add(position, city);
+//                            mAdapter.notifyItemInserted(position);
+//                            Log.d(LOG_TAG, "--- Delete: "+city.getName());
+//                        }
+//                    }).show();
+
+                    break;
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeLeftBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.design_default_color_primary))
+                    .addSwipeLeftActionIcon(R.drawable.ic_delete)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.design_default_color_secondary))
+                    .addSwipeRightActionIcon(R.drawable.ic_delete)
+                    .create()
+                    .decorate();
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
+        }
+    };
+
 
     @Override
     public void onClick(View v) {
@@ -88,7 +152,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(LOG_TAG, "row inserted, ID = " + rowID);
                 cities.add(new City(id, name, population));
                 Log.d(LOG_TAG, "cities " + cities.toString());
+                mAdapter.notifyDataSetChanged();
                 break;
+
+
             default:
                 break;
         }

@@ -1,6 +1,9 @@
 package com.example.p0341_simplesqlite;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -78,8 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // закрываем подключение к БД
         dbHelper.close();
     }
-
-
 
 
 }
