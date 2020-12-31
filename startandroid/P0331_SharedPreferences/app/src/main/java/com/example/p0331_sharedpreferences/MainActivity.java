@@ -2,7 +2,6 @@ package com.example.p0331_sharedpreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText etText;
     Button btnSave, btnLoad;
@@ -71,5 +70,4 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onDestroy();
         saveText();
     }
-
 }

@@ -1,6 +1,5 @@
 package com.example.p0301_activityresult;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,18 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     TextView tvText;
     Button btnColor;
     Button btnAlign;
+
     final int REQUEST_CODE_COLOR = 1;
     final int REQUEST_CODE_ALIGN = 2;
 
-    /**
-     * Called when the activity is first created.
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -55,9 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // запишем в лог значения requestCode и resultCode
-        super.onActivityResult(requestCode, resultCode, data);
         Log.d("myLogs", "requestCode = " + requestCode + ", resultCode = " + resultCode);
         // если пришло ОК
         if (resultCode == RESULT_OK) {

@@ -1,13 +1,14 @@
 package com.example.p0291_simpleactivityresult;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NameActivity extends Activity implements View.OnClickListener {
+public class NameActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText etName;
     Button btnOK;

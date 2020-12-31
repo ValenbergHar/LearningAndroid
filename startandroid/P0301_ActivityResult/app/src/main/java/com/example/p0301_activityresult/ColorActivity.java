@@ -1,14 +1,14 @@
 package com.example.p0301_activityresult;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ColorActivity extends Activity implements View.OnClickListener {
-
+public class ColorActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnRed;
     Button btnGreen;
     Button btnBlue;

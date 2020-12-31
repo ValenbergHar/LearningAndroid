@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "P0311_SimpleIntents"
+rootProject.name='P0311_SimpleIntents'
