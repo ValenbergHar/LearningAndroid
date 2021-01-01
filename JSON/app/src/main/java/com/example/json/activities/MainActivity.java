@@ -8,7 +8,10 @@ import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.LinearInterpolator;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,6 +30,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MovieAdapter.OnItemClickListener {
+    private EditText editText;
+    private Button button;
+    private String name;
 
     public static final String KEY_TITLE = "title";
     public static final String KEY_POSTER_URL = "posterUrl";
@@ -48,16 +54,31 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        editText = findViewById(R.id.editText);
+        button = findViewById(R.id.button);
+
 
         movies = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
         Log.d("my", "oncreate");
-        getMovies();
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                name = editText.getText().toString();
+                movies.clear();
+                getMovies();
+
+
+            }
+        });
     }
 
     private void getMovies() {
 
-        String url = "http://www.omdbapi.com/?apikey=1835cdd2&s=superman";
+
+
+        String url = "http://www.omdbapi.com/?apikey=1835cdd2&s="+name;
         Log.d("my", "request");
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
                 url, null, new Response.Listener<JSONObject>() {
@@ -67,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
                 try {
                     Log.d("my", "array");
 
+                    Log.d("my", "url - "+ "http://www.omdbapi.com/?apikey=1835cdd2&s="+name);
                     JSONArray jsonArray = response.getJSONArray("Search");
                     Log.d("my", "json");
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -83,13 +105,13 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
                         movie.setYear(year);
                         movie.setPosterUrl(posterUrl);
 
-
                         movies.add(movie);
+
                     }
 
                     movieAdapter = new MovieAdapter(MainActivity.this,
                             movies);
-
+                    movieAdapter.notifyDataSetChanged();
                     movieAdapter.setOnItemClickListener(MainActivity.this);
                     recyclerView.setAdapter(movieAdapter);
                 } catch (JSONException e) {
