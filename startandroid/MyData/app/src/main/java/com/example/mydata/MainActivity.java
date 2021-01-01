@@ -10,6 +10,7 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -31,8 +33,8 @@ import static com.example.mydata.Util.LOG_TAG;
 import static com.example.mydata.Util.TABLE_NAME;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnAdd, btnDel;
-    private EditText textId, textName, textPopulation;
+    private FloatingActionButton fab;
+    private String textId, textName, textPopulation;
     private List<City> cities;
     private List<City> deleteCity;
 
@@ -49,16 +51,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnAdd = findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(this);
-        btnDel = findViewById(R.id.btnDelete);
-        btnDel.setOnClickListener(this);
-        textId = findViewById(R.id.editTextId);
-        textName = findViewById(R.id.editTextName);
-        textPopulation = findViewById(R.id.editTextPopulation);
+
+
+//        textId = findViewById(R.id.editTextId);
+//        textName = findViewById(R.id.editTextName);
+//        textPopulation = findViewById(R.id.editTextPopulation);
 
         cities = new ArrayList<>();
         deleteCity = new ArrayList<>();
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NewCity.class);
+                startActivityForResult(intent, Util.REQUEST_CODE);
+            }
+        });
+
 
         cities.add(new City(1, "Hrodna", 350000));
 
@@ -77,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
-    ItemTouchHelper.SimpleCallback simpleCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT ) {
+    ItemTouchHelper.SimpleCallback simpleCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -129,24 +138,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data == null) {
+            return;
+        }
+        textId = data.getStringExtra(KEY_ID);
+        textName = data.getStringExtra(KEY_NAME);
+        textPopulation = data.getStringExtra(KEY_POPULATION);
+        cities.add(new City(Integer.valueOf(textId), textName, Integer.valueOf(textPopulation)));
+        Log.d(LOG_TAG, "cities " + cities.toString());
+        mAdapter.notifyDataSetChanged();
+    }
 
     @Override
     public void onClick(View v) {
         // создаем объект для данных
         ContentValues cv = new ContentValues();
         // получаем данные из полей ввода
-        int id = Integer.valueOf(textId.getText().toString());
-        int population = Integer.valueOf(textPopulation.getText().toString());
-        String name = textName.getText().toString();
+        int id = Integer.valueOf(textId);
+        int population = Integer.valueOf(textPopulation);
+        String name = textName;
         // подключаемся к БД
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         switch (v.getId()) {
+
             case R.id.btnAdd:
                 Toast.makeText(MainActivity.this, "gghfyc", Toast.LENGTH_SHORT).show();
                 Log.d(LOG_TAG, "--- Insert in mytable: ---");
-                cv.put(KEY_ID, id);
-                cv.put(KEY_NAME, name);
-                cv.put(KEY_POPULATION, population);
+//                cv.put(KEY_ID, id);
+//                cv.put(KEY_NAME, name);
+//                cv.put(KEY_POPULATION, population);
 
                 rowID = db.insert(TABLE_NAME, null, cv);
                 Log.d(LOG_TAG, "row inserted, ID = " + rowID);

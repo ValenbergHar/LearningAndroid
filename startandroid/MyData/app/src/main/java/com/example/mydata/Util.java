@@ -2,6 +2,7 @@ package com.example.mydata;
 
 public class Util {
     public final static int DATABASE_VERSION = 1;
+    public final static int REQUEST_CODE = 1;
     public static final String DATABASE_NAME = "citiesDB";
     public static final String TABLE_NAME = "cities";
 

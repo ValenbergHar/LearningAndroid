@@ -1,5 +1,6 @@
 package com.example.mydata;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,6 +19,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
         super(context, Util.DATABASE_NAME, null, 1);
     }
+    private DBHelper dbHelper;
+
 
 
     @Override
@@ -38,6 +41,17 @@ public class DBHelper extends SQLiteOpenHelper {
 //        String CREATE_DB = "create table " + Util.TABLE_NAME + " ( " + Util.KEY_NAME + " text);";
 //        db.execSQL(CREATE_DB);
 
+    }
+
+
+    public void addCity(City city){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Util.KEY_ID, city.getId());
+        contentValues.put(Util.KEY_NAME,city.getName());
+        contentValues.put(Util.KEY_POPULATION,city.getPopulation());
+        db.insert(Util.TABLE_NAME, null, contentValues);
+        db.close();
     }
 
     @Override
