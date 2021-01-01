@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.LinearInterpolator;
 
 import com.android.volley.Request;
@@ -50,27 +51,32 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
 
         movies = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
-
+        Log.d("my", "oncreate");
         getMovies();
     }
 
     private void getMovies() {
 
-        String url = "http://www.omdbapi.com/?apikey=3b8a83ef&s=superman";
-
+        String url = "http://www.omdbapi.com/?apikey=1835cdd2&s=superman";
+        Log.d("my", "request");
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
                 url, null, new Response.Listener<JSONObject>() {
+
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    JSONArray jsonArray = response.getJSONArray("Search");
+                    Log.d("my", "array");
 
+                    JSONArray jsonArray = response.getJSONArray("Search");
+                    Log.d("my", "json");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                         String title = jsonObject.getString("Title");
                         String year = jsonObject.getString("Year");
                         String posterUrl = jsonObject.getString("Poster");
+
+                        Log.d("my", title + year + posterUrl);
 
                         Movie movie = new Movie();
                         movie.setTitle(title);
@@ -96,9 +102,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
                 error.printStackTrace();
             }
         });
-
         requestQueue.add(request);
-
     }
 
     @Override
@@ -114,8 +118,6 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.OnIt
         intent.putExtra(KEY_PLOT, clickedMovie.getPlot());
         intent.putExtra(KEY_RUNTIME, clickedMovie.getRuntime());
 
-
         startActivity(intent);
-
     }
 }

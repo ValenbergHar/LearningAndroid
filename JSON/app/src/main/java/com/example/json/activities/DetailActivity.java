@@ -17,5 +17,7 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
 
+
+
     }
 }
