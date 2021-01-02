@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 
 public class AwesomeMessageAdapter extends ArrayAdapter<AwesomeMessage> {
 
-    public AwesomeMessageAdapter(@NonNull Context context, int resource, List<AwesomeMessage> messages) {
+    public AwesomeMessageAdapter(Context context, int resource, List<AwesomeMessage> messages) {
         super(context, resource, messages);
     }
 
@@ -47,6 +47,6 @@ public class AwesomeMessageAdapter extends ArrayAdapter<AwesomeMessage> {
         }
         nameTextView.setText(message.getText());
 
-        return super.getView(position, convertView, parent);
+        return convertView;
     }
 }

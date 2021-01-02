@@ -1,9 +1,15 @@
 package com.example.awersomechat;
 
+import android.util.Log;
+
+
+
 public class AwesomeMessage {
     private  String text;
     private  String name;
     private  String imageUrl;
+
+
 
 
     public AwesomeMessage() {
