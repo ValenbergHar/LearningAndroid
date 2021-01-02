@@ -3,6 +3,8 @@ package com.example.awersomechat;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -31,8 +33,17 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference messagesDataBaseReference;
     private ChildEventListener messagesChildEventListener;
 
-    private ListView messageListView;
-    private AwesomeMessageAdapter adapter;
+    //RecycleView
+    private RecyclerView recyclerView;
+    private AwesomeRecycleViewAdapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+
+    //ListView
+//    private ListView messageListView;
+//    private AwesomeMessageAdapter adapter;
+
+
     private ProgressBar progressBar;
     private ImageButton sendImageButton;
     private Button sendMessageButton;
@@ -43,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_rec);
 
         database = FirebaseDatabase.getInstance();
         messagesDataBaseReference = database.getReference().child("messages");
@@ -80,10 +91,22 @@ public class MainActivity extends AppCompatActivity {
         }});
 
         userName = "Default User";
-        messageListView = findViewById(R.id.messageListView);
-        messageListView.setAdapter(adapter);
 
-        adapter = new AwesomeMessageAdapter(this, R.layout.message_item, awesomeMessages);
+        //ListView
+//        messageListView = findViewById(R.id.messageListView);
+//        messageListView.setAdapter(adapter);
+//        adapter = new AwesomeMessageAdapter(this, R.layout.message_item, awesomeMessages);
+
+
+        //RecycleView
+        recyclerView = findViewById(R.id.messageRecycleView);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(MainActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        mAdapter = new AwesomeRecycleViewAdapter(awesomeMessages, MainActivity.this);
+        recyclerView.setAdapter(mAdapter);
 
         sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +131,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 AwesomeMessage message = snapshot.getValue(AwesomeMessage.class);
-                adapter.add(message);
+                //ListView
+//                adapter.add(message);
+                awesomeMessages.add(message);
+                mAdapter.notifyDataSetChanged();
                 Log.d("my" , String.valueOf(message));
 
             }

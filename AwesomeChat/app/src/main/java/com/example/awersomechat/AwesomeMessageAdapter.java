@@ -33,19 +33,22 @@ public class AwesomeMessageAdapter extends ArrayAdapter<AwesomeMessage> {
         TextView nameTextView = convertView.findViewById(R.id.nameTextView);
 
         AwesomeMessage message = getItem(position);
-
-        boolean isText = message.getImageUrl() == null;
-
-        if (isText) {
-            textTextView.setVisibility(View.VISIBLE);
-            photoImageView.setVisibility(View.GONE);
-            textTextView.setText(message.getText());
-        } else {
-            textTextView.setVisibility(View.GONE);
-            photoImageView.setVisibility(View.INVISIBLE);
-            Glide.with(photoImageView.getContext()).load(message.getImageUrl()).into(photoImageView);
-        }
         nameTextView.setText(message.getText());
+        Glide.with(photoImageView.getContext()).load(message.getImageUrl()).into(photoImageView);
+        textTextView.setText(message.getText());
+
+
+//        boolean isText = message.getImageUrl() == null;
+//        if (isText) {
+//            textTextView.setVisibility(View.VISIBLE);
+//            photoImageView.setVisibility(View.GONE);
+//            textTextView.setText(message.getText());
+//        } else {
+//            textTextView.setVisibility(View.GONE);
+//            photoImageView.setVisibility(View.INVISIBLE);
+//            Glide.with(photoImageView.getContext()).load(message.getImageUrl()).into(photoImageView);
+//        }
+ //       nameTextView.setText(message.getText());
 
         return convertView;
     }
