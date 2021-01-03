@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-
         android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,12 +25,19 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
     <EditText
+        android:id="@+id/repeatEditTextPassword"
+        android:layout_margin="8dp"
+        android:hint="Confirm Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+    <EditText
         android:id="@+id/editTextEmail"
         android:layout_margin="8dp"
         android:hint="E-mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/repeatEditTextPassword" />
 
     <Button
         android:id="@+id/buttonSignUp"
@@ -44,6 +50,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <TextView
+        android:onClick="toggleLoginMode"
+        android:id="@+id/toggleLoginSignUpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
