@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity {
+
+
     private static final String TAG = "SignInActivity";
     private FirebaseAuth auth;
     private EditText editTextName, editTextPassword, editTextEmail, repeatEditTextPassword;
@@ -36,6 +38,8 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+
 
         auth = FirebaseAuth.getInstance();
         editTextName = findViewById(R.id.editTextName);
@@ -55,7 +59,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+            startActivity(new Intent(SignInActivity.this, UserListActivity.class));
         }
     }
 
@@ -67,7 +71,6 @@ public class SignInActivity extends AppCompatActivity {
                 Toast.makeText(SignInActivity.this, "Please input your email", Toast.LENGTH_SHORT).show();
             } else {
 
-
                 auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -76,7 +79,11 @@ public class SignInActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = auth.getCurrentUser();
-                                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                                    Intent intent = new Intent(SignInActivity.this, UserListActivity.class);
+                                    intent.putExtra(ChatActivity.NAME, editTextName.getText().toString().trim());
+                                    startActivity(intent);
+
+//                                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
 
 //                                updateUI(user);
                                 } else {
@@ -108,7 +115,9 @@ public class SignInActivity extends AppCompatActivity {
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = auth.getCurrentUser();
                                 createUser(user);
-                                startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                                Intent intent = new Intent(SignInActivity.this, UserListActivity.class);
+                                intent.putExtra(ChatActivity.NAME, editTextName.getText().toString().trim());
+                                startActivity(intent);
 //                            updateUI(user);
                             } else {
 
@@ -141,7 +150,7 @@ public class SignInActivity extends AppCompatActivity {
             repeatEditTextPassword.setVisibility(View.VISIBLE);
         } else {
             loginModeActive = true;
-            buttonSignUp.setText("Sign In");
+            buttonSignUp.setText("Log In");
             toggleLoginSignUpTextView.setText("Or, log up");
             repeatEditTextPassword.setVisibility(View.GONE);
         }
