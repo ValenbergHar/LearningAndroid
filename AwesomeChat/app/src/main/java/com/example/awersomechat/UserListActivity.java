@@ -3,6 +3,7 @@ package com.example.awersomechat;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,11 +24,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserListActivity extends AppCompatActivity {
-    private String userName;
+
 
     public static final String RECIPIENT_USER_ID = "recipientUserId";
     public static final String USER_NAME = "userName";
-
+    private String userName;
 
     private FirebaseAuth auth;
     private DatabaseReference usersDatabaseReference;
@@ -99,6 +100,7 @@ public class UserListActivity extends AppCompatActivity {
     private void buildRecyclerView() {
         userRecyclerView = findViewById(R.id.userListRecycleView);
         userRecyclerView.setHasFixedSize(true);
+     //   userRecyclerView.addItemDecoration(new DividerItemDecoration(userRecyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
         userLayoutManager = new LinearLayoutManager(this);
         userAdapter = new UserAdapter(userList);

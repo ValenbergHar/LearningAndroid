@@ -35,13 +35,16 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import static com.example.awersomechat.UserListActivity.RECIPIENT_USER_ID;
-import static com.example.awersomechat.UserListActivity.USER_NAME;
+
 
 public class ChatActivity extends AppCompatActivity {
+
     public String recipientUserId;
 
     public static final int RC_IMAGE_PICKER = 124;
+    public static final String USER_NAME_CHAT_USER_LIST = "userNameChatUserList";
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference messagesDataBaseReference;
@@ -75,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent != null) {
-            userName = intent.getStringExtra(USER_NAME);
+            userName = intent.getStringExtra(USER_NAME_CHAT_USER_LIST);
             recipientUserId = intent.getStringExtra(RECIPIENT_USER_ID);
         } else {
             userName = "DefaultUser";
@@ -132,15 +135,17 @@ public class ChatActivity extends AppCompatActivity {
         sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AwesomeMessage message = new AwesomeMessage();
-                message.setText(messageEditText.getText().toString());
-                message.setName(userName);
-                message.setSender(auth.getCurrentUser().getUid());
-                message.setRecipient(recipientUserId);
-                message.setImageUrl(null);
+                Log.d("auth", String.valueOf(auth == null));
+                    AwesomeMessage message = new AwesomeMessage();
+                    message.setText(messageEditText.getText().toString());
+                    message.setName(userName);
+                    message.setSender(auth.getCurrentUser().getUid());
+                    message.setRecipient(recipientUserId);
+                    message.setImageUrl(null);
 
-                messagesDataBaseReference.push().setValue(message);
-                messageEditText.setText("");
+                    messagesDataBaseReference.push().setValue(message);
+                    messageEditText.setText("");
+
 
             }
         });
@@ -192,18 +197,14 @@ public class ChatActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 AwesomeMessage message = snapshot.getValue(AwesomeMessage.class);
 
-                Log.d("mmmm", String.valueOf(message.getSender()==null));
-                Log.d("mmmm", String.valueOf(auth.getCurrentUser().getUid()==null));
-                Log.d("mmmm", String.valueOf(message.getRecipient()==null));
-                Log.d("mmmm", String.valueOf(recipientUserId==null));
+                Log.d("mmmm","message.getSender() - " +message.getSender());
+                Log.d("mmmm", "auth.getCurrentUser().getUid() - " + auth.getCurrentUser().getUid());
+                Log.d("mmmm", "message.getRecipient() - " + message.getRecipient() );
+                Log.d("mmmm", "recipientUserId - " + recipientUserId );
 
 
-
-
-    //            if (message.getSender().equals(auth.getCurrentUser().getUid()) && message.getRecipient().equals(recipientUserId)
-//                ||
-//                        message.getRecipient().equals(auth.getCurrentUser().getUid()) && message.getSender().equals(recipientUserId)
-     //           )
+                if (message.getSender().equals(auth.getCurrentUser().getUid()) && message.getRecipient().equals(recipientUserId) ||
+                     message.getRecipient().equals(auth.getCurrentUser().getUid()) && message.getSender().equals(recipientUserId))
                 {
                     awesomeMessages.add(message);
                     mAdapter.notifyDataSetChanged();
