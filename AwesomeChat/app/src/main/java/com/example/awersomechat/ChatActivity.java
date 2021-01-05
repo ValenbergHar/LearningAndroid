@@ -13,9 +13,6 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,9 +35,14 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.awersomechat.UserListActivity.RECIPIENT_USER_ID;
+import static com.example.awersomechat.UserListActivity.USER_NAME;
+
 public class ChatActivity extends AppCompatActivity {
-    public static final String NAME = "userName";
+    public String recipientUserId;
+
     public static final int RC_IMAGE_PICKER = 124;
+    private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference messagesDataBaseReference;
     private ChildEventListener messagesChildEventListener;
@@ -56,12 +58,6 @@ public class ChatActivity extends AppCompatActivity {
     private AwesomeRecycleViewAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-
-    //ListView
-//    private ListView messageListView;
-//    private AwesomeMessageAdapter adapter;
-
-
     private ProgressBar progressBar;
     private ImageButton sendImageButton;
     private Button sendMessageButton;
@@ -74,6 +70,16 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_rec);
+
+        auth = FirebaseAuth.getInstance();
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            userName = intent.getStringExtra(USER_NAME);
+            recipientUserId = intent.getStringExtra(RECIPIENT_USER_ID);
+        } else {
+            userName = "DefaultUser";
+        }
 
         database = FirebaseDatabase.getInstance();
         messagesDataBaseReference = database.getReference().child("messages");
@@ -113,19 +119,6 @@ public class ChatActivity extends AppCompatActivity {
         messageEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(500) {
         }});
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            userName = intent.getStringExtra(NAME);
-        } else {
-            userName = "DefaultUser";
-        }
-
-        //ListView
-//        messageListView = findViewById(R.id.messageListView);
-//        messageListView.setAdapter(adapter);
-//        adapter = new AwesomeMessageAdapter(this, R.layout.message_item, awesomeMessages);
-
-
         //RecycleView
         recyclerView = findViewById(R.id.messageRecycleView);
         recyclerView.setHasFixedSize(true);
@@ -142,6 +135,8 @@ public class ChatActivity extends AppCompatActivity {
                 AwesomeMessage message = new AwesomeMessage();
                 message.setText(messageEditText.getText().toString());
                 message.setName(userName);
+                message.setSender(auth.getCurrentUser().getUid());
+                message.setRecipient(recipientUserId);
                 message.setImageUrl(null);
 
                 messagesDataBaseReference.push().setValue(message);
@@ -196,11 +191,24 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 AwesomeMessage message = snapshot.getValue(AwesomeMessage.class);
-                //ListView
-//                adapter.add(message);
-                awesomeMessages.add(message);
-                mAdapter.notifyDataSetChanged();
-                Log.d("my", String.valueOf(message));
+
+                Log.d("mmmm", String.valueOf(message.getSender()==null));
+                Log.d("mmmm", String.valueOf(auth.getCurrentUser().getUid()==null));
+                Log.d("mmmm", String.valueOf(message.getRecipient()==null));
+                Log.d("mmmm", String.valueOf(recipientUserId==null));
+
+
+
+
+    //            if (message.getSender().equals(auth.getCurrentUser().getUid()) && message.getRecipient().equals(recipientUserId)
+//                ||
+//                        message.getRecipient().equals(auth.getCurrentUser().getUid()) && message.getSender().equals(recipientUserId)
+     //           )
+                {
+                    awesomeMessages.add(message);
+                    mAdapter.notifyDataSetChanged();
+                }
+
 
             }
 
@@ -228,7 +236,6 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -238,7 +245,6 @@ public class ChatActivity extends AppCompatActivity {
             UploadTask uploadTask = imageReference.putFile(selectImageUri);
 
             uploadTask = imageReference.putFile(selectImageUri);
-
 
 
             Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {

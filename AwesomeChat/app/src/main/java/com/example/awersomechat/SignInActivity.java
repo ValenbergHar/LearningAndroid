@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static com.example.awersomechat.UserListActivity.USER_NAME;
+
 public class SignInActivity extends AppCompatActivity {
 
 
@@ -80,7 +82,7 @@ public class SignInActivity extends AppCompatActivity {
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = auth.getCurrentUser();
                                     Intent intent = new Intent(SignInActivity.this, UserListActivity.class);
-                                    intent.putExtra(ChatActivity.NAME, editTextName.getText().toString().trim());
+                                    intent.putExtra(USER_NAME, editTextName.getText().toString().trim());
                                     startActivity(intent);
 
 //                                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
@@ -116,7 +118,7 @@ public class SignInActivity extends AppCompatActivity {
                                 FirebaseUser user = auth.getCurrentUser();
                                 createUser(user);
                                 Intent intent = new Intent(SignInActivity.this, UserListActivity.class);
-                                intent.putExtra(ChatActivity.NAME, editTextName.getText().toString().trim());
+                                intent.putExtra(USER_NAME, editTextName.getText().toString().trim());
                                 startActivity(intent);
 //                            updateUI(user);
                             } else {
