@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Download Image</string>
+    <string name="button_download">Загрузить изображение</string>
+</resources>
