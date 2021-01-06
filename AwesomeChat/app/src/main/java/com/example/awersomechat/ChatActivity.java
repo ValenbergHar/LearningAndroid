@@ -203,9 +203,12 @@ public class ChatActivity extends AppCompatActivity {
                 Log.d("mmmm", "recipientUserId - " + recipientUserId );
 
 
-                if (message.getSender().equals(auth.getCurrentUser().getUid()) && message.getRecipient().equals(recipientUserId) ||
-                     message.getRecipient().equals(auth.getCurrentUser().getUid()) && message.getSender().equals(recipientUserId))
-                {
+                if (message.getSender().equals(auth.getCurrentUser().getUid()) && message.getRecipient().equals(recipientUserId)){
+                    message.setMine(true);
+                    awesomeMessages.add(message);
+                    mAdapter.notifyDataSetChanged();
+                } else  if (message.getRecipient().equals(auth.getCurrentUser().getUid()) && message.getSender().equals(recipientUserId)){
+                    message.setMine(false);
                     awesomeMessages.add(message);
                     mAdapter.notifyDataSetChanged();
                 }
