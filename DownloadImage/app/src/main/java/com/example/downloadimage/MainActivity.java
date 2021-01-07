@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private Button button;
     private EditText editText;
-    private String url = "https://upload.wikimedia.org/wikipedia/commons/9/95/Atrad_Pagonya.png";
-//    private String url ="";
+    //   private String url = "https://upload.wikimedia.org/wikipedia/commons/9/95/Atrad_Pagonya.png";
+    private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
 //        url = editText.getText().toString();
         imageView = findViewById(R.id.imageView);
 
-        Log.d("url", url);
+
     }
 
     public void onClickDownloadImage(View view) {
+        url = editText.getText().toString();
+        Log.d("url", url);
         DownloadImageTask task = new DownloadImageTask();
         Bitmap bitmap = null;
         try {
