@@ -18,15 +18,25 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DownloadJSONTask downloadJSONTask = new DownloadJSONTask();
-        downloadJSONTask.execute("http://api.openweathermap.org/data/2.5/weather?q=hrodna&APPID=3b1bf02c1283bdf30dfbfc685c6092be");
+        try {
+            String result = downloadJSONTask.execute("http://api.openweathermap.org/data/2.5/weather?q=hrodna&APPID=3b1bf02c1283bdf30dfbfc685c6092be").get();
+            Log.i("URL", result);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+//        downloadJSONTask.execute("http://api.openweathermap.org/data/2.5/weather?q=hrodna&APPID=3b1bf02c1283bdf30dfbfc685c6092be");
+
     }
 
     private static class DownloadJSONTask extends AsyncTask<String, Void, String> {
@@ -59,20 +69,21 @@ public class MainActivity extends Activity {
             return null;
         }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            try {
-                JSONObject jsonObject = new JSONObject(s);
-                JSONArray jsonArray = jsonObject.getJSONArray("weather");
-                JSONObject weather = jsonArray.getJSONObject(0);
-                String main = weather.getString("main");
-                String description = weather.getString("description");
-                Log.i("MyResult", main + " " + description);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//            Log.i("MyResult", String.valueOf(s == null));
+//
+//            try {
+//                JSONObject jsonObject = new JSONObject(s);
+//                JSONArray jsonArray = jsonObject.getJSONArray("weather");
+//                JSONObject weather = jsonArray.getJSONObject(0);
+//                String main = weather.getString("main");
+//                String description = weather.getString("description");
+//                Log.i("MyResult", main + " " + description);
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 }
