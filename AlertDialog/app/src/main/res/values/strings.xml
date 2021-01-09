@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AlertDialog</string>
+    <string name="test_title">AlertDialog</string>
+    <string name="test_message">Жыве Беларусь!</string>
+</resources>

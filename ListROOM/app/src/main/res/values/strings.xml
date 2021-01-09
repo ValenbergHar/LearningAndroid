@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ListROOM</string>
+    <string name="save_user">Save User</string>
+    <string name="email">Email</string>
+    <string name="second_name">Second Name</string>
+    <string name="first_name">First Name</string>
+    <string name="test_title">Test</string>
+    <string name="test_message">Message</string>
+    <string name="add_person">Add Person</string>
+    <string name="text">Text</string>
+</resources>
