@@ -14,6 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     List<Person> personsList;
     Context context;
+    OnItemClickListener listener;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
 
     public RecyclerViewAdapter(List<Person> personsList, Context context) {
         this.personsList = personsList;
@@ -47,6 +57,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             firstName = itemView.findViewById(R.id.first_name);
             secondName = itemView.findViewById(R.id.second_name);
             email = itemView.findViewById(R.id._email);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(position);
+                    }
+                }
+            });
         }
     }
 }
