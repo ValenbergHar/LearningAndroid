@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kingsgdl">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="com.example.doyouknoww">
 
     <application
         android:allowBackup="true"
@@ -10,12 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KingsGDL">
-        <activity
-            android:name=".KingTabIntent"
-            android:label="@string/title_activity_king_tab_intenet"
-            android:theme="@style/Theme.KingsGDL.NoActionBar"></activity>
-        <activity android:name=".KingIntent" />
+        android:theme="@style/Theme.DoYouKnoww">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
