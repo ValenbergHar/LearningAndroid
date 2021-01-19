@@ -1,0 +1,4 @@
+#Thu Dec 03 16:40:02 MSK 2020
+base.0=D\:\\Education\\Education\\Java\\Java\\src\\android\\learningAndroid\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

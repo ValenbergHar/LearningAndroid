@@ -1,0 +1,4 @@
+com/example/sqldemo/BuildConfig.java
+ com.example.sqldemo.BuildConfig
+com/example/sqldemo/MainActivity.java
+ com.example.sqldemo.MainActivity

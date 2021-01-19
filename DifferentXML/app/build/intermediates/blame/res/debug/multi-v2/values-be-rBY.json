@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Education\\Education\\Java\\Java\\src\\android\\learningAndroid\\DifferentXML\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be-rBY\\values-be-rBY.xml",
+            "map": [
+                {
+                    "source": "D:\\Education\\Education\\Java\\Java\\src\\android\\learningAndroid\\DifferentXML\\app\\src\\main\\res\\values-be-rBY\\strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "39",
+                        "endOffsets": "92"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "39",
+                        "endOffsets": "90"
+                    }
+                }
+            ]
+        }
+    ]
+}

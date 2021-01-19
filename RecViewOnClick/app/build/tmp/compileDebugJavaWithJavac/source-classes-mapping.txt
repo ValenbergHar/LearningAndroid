@@ -1,0 +1,15 @@
+com/example/recviewonclick/ExampleItem.java
+ com.example.recviewonclick.ExampleItem
+com/example/recviewonclick/BuildConfig.java
+ com.example.recviewonclick.BuildConfig
+com/example/recviewonclick/RecyclerViewAdapter.java
+ com.example.recviewonclick.RecyclerViewAdapter
+ com.example.recviewonclick.RecyclerViewAdapter$OnItemClickListener
+ com.example.recviewonclick.RecyclerViewAdapter$ViewHolder
+ com.example.recviewonclick.RecyclerViewAdapter$ViewHolder$1
+ com.example.recviewonclick.RecyclerViewAdapter$ViewHolder$2
+com/example/recviewonclick/MainActivity.java
+ com.example.recviewonclick.MainActivity
+ com.example.recviewonclick.MainActivity$1
+ com.example.recviewonclick.MainActivity$2
+ com.example.recviewonclick.MainActivity$3

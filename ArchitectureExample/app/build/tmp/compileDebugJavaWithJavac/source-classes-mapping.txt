@@ -1,0 +1,35 @@
+com/example/architectureexample/AddEditNoteActivity.java
+ com.example.architectureexample.AddEditNoteActivity
+com/example/architectureexample/AddNoteActivity.java
+ com.example.architectureexample.AddNoteActivity
+com/example/architectureexample/BuildConfig.java
+ com.example.architectureexample.BuildConfig
+com/example/architectureexample/Note.java
+ com.example.architectureexample.Note
+com/example/architectureexample/NoteRepository.java
+ com.example.architectureexample.NoteRepository
+ com.example.architectureexample.NoteRepository$1
+ com.example.architectureexample.NoteRepository$DeleteAllNotesAsyncTask
+ com.example.architectureexample.NoteRepository$DeleteNoteAsyncTask
+ com.example.architectureexample.NoteRepository$InsertNoteAsyncTask
+ com.example.architectureexample.NoteRepository$UpdateNoteAsyncTask
+com/example/architectureexample/NoteDao.java
+ com.example.architectureexample.NoteDao
+com/example/architectureexample/MainActivity.java
+ com.example.architectureexample.MainActivity
+ com.example.architectureexample.MainActivity$1
+ com.example.architectureexample.MainActivity$2
+ com.example.architectureexample.MainActivity$3
+ com.example.architectureexample.MainActivity$4
+com/example/architectureexample/NoteViewModel.java
+ com.example.architectureexample.NoteViewModel
+com/example/architectureexample/NoteAdapter.java
+ com.example.architectureexample.NoteAdapter
+ com.example.architectureexample.NoteAdapter$1
+ com.example.architectureexample.NoteAdapter$NoteHolder
+ com.example.architectureexample.NoteAdapter$NoteHolder$1
+ com.example.architectureexample.NoteAdapter$OnItemClickListener
+com/example/architectureexample/NoteDatabase.java
+ com.example.architectureexample.NoteDatabase
+ com.example.architectureexample.NoteDatabase$1
+ com.example.architectureexample.NoteDatabase$PopulateDbAsyncTask
