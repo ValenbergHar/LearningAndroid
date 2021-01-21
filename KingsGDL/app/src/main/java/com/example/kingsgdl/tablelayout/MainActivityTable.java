@@ -17,6 +17,10 @@ public class MainActivityTable extends AppCompatActivity {
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
     private TextView nameKingFragOne;
+    private int id;
+    private String name;
+    private String urlImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,26 +30,28 @@ public class MainActivityTable extends AppCompatActivity {
         appBarLayout = findViewById(R.id.appbar);
         viewPager = findViewById(R.id.viewPagerId);
         kings_name = findViewById(R.id.kings_name);
-        nameKingFragOne=findViewById(R.id.nameKingFragOne);
+        nameKingFragOne = findViewById(R.id.name_reign);
 
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        int id = Integer.valueOf(intent.getStringExtra("id"));
+        name = intent.getStringExtra("name");
+        id = Integer.valueOf(intent.getStringExtra("id"));
+        urlImage = intent.getStringExtra("image");
+
+
         kings_name.setText(name);
-
-
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
 
-        adapter.addFragment(new FragmentOne(), "Звесткі");
-        adapter.addFragment(new FragmentTwo(), "Гісторыя");
-        adapter.addFragment(new FragmentThree(), "Фоткі");
+        adapter.addFragment(new FragmentOne(id, urlImage), "Звесткі");
+        adapter.addFragment(new FragmentTwo(id), "Гісторыя");
+        adapter.addFragment(new FragmentThree(id), "Фоткі");
 
         String[] strings = getResources().getStringArray((R.array.kings));
 
-        for (int i = 0; i < strings.length; i++) {
-            if (id == i) nameKingFragOne.setText(strings[i]);
-        }
+//        for (int i = 0; i < strings.length; i++) {
+//            if (id == i) nameKingFragOne.setText(strings[i]);
+//        }
+
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

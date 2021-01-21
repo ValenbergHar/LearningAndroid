@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reign">
+
+        <item>1236 — 1263</item>
+        <item>1263 — 1264</item>
+        <item>1264 — 1266</item>
+        <item>1267 — 1270</item>
+        <item>1270 — 1282</item>
+        <item>1280 – 1282</item>
+        <item>1282 — 1294</item>
+        <item>1292 — 1294</item>
+        <item>1294 — 1316</item>
+        <item>1316 — 1341</item>
+        <item>1341 — 1345</item>
+        <item>1345 — 1377</item>
+        <item>1377 — 1381, 1382 — 1392</item>
+        <item>1381 — 1382</item>
+        <item>1392 — 1430</item>
+        <item>1430 — 1432</item>
+        <item>1432 — 1440</item>
+        <item>1440 — 1492</item>
+        <item>1492 — 1506</item>
+        <item>1506 — 1548</item>
+        <item>1544 — 1569</item>
+        <item>1573 — 1574</item>
+        <item>1576 — 1586</item>
+        <item>1587 — 1632</item>
+        <item>1632 — 1648</item>
+        <item>1648 — 1668</item>
+        <item>1669 — 1673</item>
+        <item>1673 — 1696</item>
+        <item>1697 — 1704, 1709 — 1733</item>
+        <item>1734 — 1763</item>
+        <item>1764 — 1795</item>
+    </string-array>
+
+    <string-array name="date">
+
+<item>1195 — 1263</item>
+<item>~1210 — 1264</item>
+<item>1223 — 1267</item>
+<item>1230 — 1270</item>
+<item>нев. — 1282</item>
+<item>нев. – 1285</item>
+<item>~1240 — 1290</item>
+<item>нев. — 1295</item>
+<item>нев. — 1316</item>
+        <item>1316 — 1341</item>
+        <item>1341 — 1345</item>
+        <item>1345 — 1377</item>
+        <item>1377 — 1381, 1382 — 1392</item>
+        <item>1381 — 1382</item>
+        <item>1392 — 1430</item>
+        <item>1430 — 1432</item>
+        <item>1432 — 1440</item>
+        <item>1440 — 1492</item>
+        <item>1492 — 1506</item>
+        <item>1506 — 1548</item>
+        <item>1544 — 1569</item>
+        <item>1573 — 1574</item>
+        <item>1576 — 1586</item>
+        <item>1587 — 1632</item>
+        <item>1632 — 1648</item>
+        <item>1648 — 1668</item>
+        <item>1669 — 1673</item>
+        <item>1673 — 1696</item>
+        <item>1697 — 1704, 1709 — 1733</item>
+        <item>1734 — 1763</item>
+        <item>1764 — 1795</item>
+    </string-array>
+</resources>
