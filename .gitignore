@@ -1,0 +1,10 @@
+KingsGDL/app/src/main/java/com/example/kingsgdl/tablelayout/FragmentOne.java
+KingsGDL/app/src/main/java/com/example/kingsgdl/tablelayout/FragmentStore.java
+KingsGDL/app/src/main/java/com/example/kingsgdl/tablelayout/FragmentThree.java
+KingsGDL/app/src/main/java/com/example/kingsgdl/tablelayout/FragmentTwo.java
+KingsGDL/app/src/main/java/com/example/kingsgdl/tablelayout/TabLayActivity.java
+KingsGDL/app/src/main/java/com/example/kingsgdl/tablelayout/ViewPagerAdapter.java
+KingsGDL/app/src/main/res/layout/fragment_one.xml
+KingsGDL/app/src/main/res/layout/fragment_three.xml
+KingsGDL/app/src/main/res/layout/fragment_two.xml
+KingsGDL/app/src/main/res/layout/store_fragment.xml

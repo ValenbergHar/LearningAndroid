@@ -13,6 +13,13 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentTwo extends Fragment {
     private View view;
+    private int id;
+
+
+
+    public FragmentTwo(int id) {
+        this.id = id;
+    }
 
     public FragmentTwo() {
     }
