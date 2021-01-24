@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">VkInfo</string>
+    <string name="text_et">Type an id </string>
+    <string name="search">Search </string>
+    <string name="result">surname name</string>
+
+
+    <string name="error_message">Neciku niama</string>
+
+
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <array name="pref_timer_melody_labels">
+        <item>Bell_1 </item>
+        <item>Bell_2 </item>
+        <item>Bell_3 </item>
+    </array>
+
+    <array name="pref_timer_melody_values">
+        <item>bell_1 </item>
+        <item>bell_2 </item>
+        <item>bell_3 </item>
+    </array>
+
+</resources>

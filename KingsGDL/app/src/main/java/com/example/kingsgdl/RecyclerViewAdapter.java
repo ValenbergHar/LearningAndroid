@@ -21,16 +21,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    List<King> kingList;
-    List<King> kingSearchList;
-    Context context;
+    private List<King> kingList;
+    private List<King> kingSearchList;
+    private Context context;
     private OnItemClickListener mListener;
-    int lastPosition = -1;
+    private int lastPosition = -1;
 
     public RecyclerViewAdapter(List<King> kingList, Context context) {
         this.kingList = kingList;
         this.context = context;
-        kingSearchList=new ArrayList<>(kingList);
+        kingSearchList = new ArrayList<>(kingList);
     }
 
     public interface OnItemClickListener {
@@ -40,7 +40,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         mListener = onItemClickListener;
     }
-
 
 
     @NonNull
@@ -56,18 +55,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.txt_king_name.setText(kingList.get(position).getName());
         holder.txt_king_date.setText(String.valueOf(kingList.get(position).getDateOfElection()));
         Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
-       setAnimation(holder.itemView, position);
+        setAnimation(holder.itemView, position);
 
     }
 
     private void setAnimation(View itemView, int position) {
-        if(position>lastPosition){
+        if (position > lastPosition) {
             Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
             itemView.setAnimation(animation);
-            lastPosition=position;
+            lastPosition = position;
         }
     }
-
 
 
     Filter filter = new Filter() {

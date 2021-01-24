@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    xmlns:xmlns:app="http://schemas.android.com/apk/res-auto"
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_applications_white_24dp"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_question_answer_white_24dp"
+        android:orderInCategory="110"
+        android:title="About"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_purchase"
+        android:icon="@drawable/ic_monetization_on_white_24dp"
+        android:orderInCategory="55"
+        android:title="Purchase"
+        app:showAsAction="always" />
+
+</menu>

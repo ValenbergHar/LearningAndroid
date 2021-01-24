@@ -1,0 +1,11 @@
+<resources>
+
+    <dimen name = "horizontal_padding">16dp</dimen>
+    <dimen name = "vertical_padding">16dp</dimen>
+
+    android:paddingStart="16dp"
+    android:paddingLeft="16dp"
+    android:paddingEnd="16dp"
+
+
+</resources>
