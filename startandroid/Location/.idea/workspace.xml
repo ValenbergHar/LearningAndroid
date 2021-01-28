@@ -19,6 +19,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ShopApp" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -32,5 +33,11 @@
       <updated>1611727142949</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="725" y="222" key="FileChooserDialogImpl" timestamp="1611821700586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="222" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1611821700586" />
   </component>
 </project>
