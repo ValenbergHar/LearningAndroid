@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KingsGDL">
-        <activity android:name=".KingIntent" />
-        <activity android:name=".tablelayout.MainActivityTable" />
-        <activity android:name=".MainActivity">
+<!--        <activity android:name="." />-->
+        <activity android:name=".kings.tablelayout.MainActivityTable" />
+        <activity android:name=".kings.MainActivityKings" />
+        <activity android:name="drawer.MainActivityDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -34,6 +34,8 @@
         <item>1734 — 1763</item>
         <item>1764 — 1795</item>
     </string-array>
+
+
     <string-array name="date">
 
 <item>1195 — 1263</item>
@@ -57,7 +59,7 @@
 <item>1461 — 1506</item>
 <item>1467 — 1548</item>
 <item>1520 — 1569(1572)</item>
-<item>1551 — 1589 Валуа</item>
+<item>1551 — 1589</item>
 <item>1533 — 1586</item>
 <item>1566 — 1632</item>
 <item>1595 — 1648</item>

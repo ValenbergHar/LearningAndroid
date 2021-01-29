@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".kings.MainActivityKings">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -16,8 +16,12 @@
 
         <TextView
             android:id="@+id/kings_name"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/skaryna"
             android:padding="10dp" />
 
 

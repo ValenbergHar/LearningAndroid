@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="history">
+    <string-array name="story">
 
-
+        <item>1195 — 1263</item>
+        <item>~1210 — 1264</item>
+        <item>1223 — 1267</item>
+        <item>1230 — 1270</item>
+        <item>нев. — 1282</item>
+        <item>нев. – 1285</item>
+        <item>~1240 — 1290</item>
+        <item>нев. — 1295</item>
+        <item>нев. — 1316</item>
+        <item>~1275 — 1341</item>
+        <item>~1308 — 1366</item>
+        <item>~1295 — 1377</item>
+        <item>~1352/1362 — 1434</item>
+        <item>1297 — 1382</item>
+        <item>~1350 — 1430</item>
+        <item>1369 — 1452</item>
+        <item>1365 — 1440</item>
+        <item>1427 — 1492</item>
+        <item>1461 — 1506</item>
+        <item>1467 — 1548</item>
+        <item>1520 — 1569(1572)</item>
+        <item>1551 — 1589</item>
+        <item>1533 — 1586</item>
+        <item>1566 — 1632</item>
+        <item>1595 — 1648</item>
+        <item>1609 — 1672</item>
+        <item>1640 — 1673</item>
+        <item>1629 — 1696</item>
+        <item>1670 — 1733</item>
+        <item>1696 — 1763</item>
+        <item>1732 — 1795</item>
     </string-array>
 </resources>

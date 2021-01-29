@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KingsGDL</string>
+    <string name="search">Search</string>
+    <string name="title_activity_king_tab_intenet">KingTabIntenet</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+</resources>
