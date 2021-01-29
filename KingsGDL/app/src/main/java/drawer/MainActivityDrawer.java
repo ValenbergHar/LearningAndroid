@@ -1,13 +1,16 @@
 package drawer;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -15,6 +18,8 @@ import com.example.kingsgdl.R;
 import com.example.kingsgdl.kings.MainActivityKings;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+
+import static android.drm.DrmStore.Playback.START;
 
 public class MainActivityDrawer extends AppCompatActivity {
 
@@ -49,6 +54,13 @@ public class MainActivityDrawer extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new MainFragment());
         fragmentTransaction.commit();
+        drawer.openDrawer(GravityCompat.START);
+    }
+
+    @SuppressLint("WrongConstant")
+    public void openDrawer() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer);
+        drawer.openDrawer(Gravity.START);
     }
 
     private void initItems() {

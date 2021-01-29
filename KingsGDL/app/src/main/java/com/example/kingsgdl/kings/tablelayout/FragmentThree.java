@@ -40,16 +40,16 @@ public class FragmentThree extends Fragment {
 
 
 
-        String[] date = getResources().getStringArray((R.array.date));
-
-        for (int i = 0; i < reign.length; i++) {
-            if (id == i) {
-                textBirthDeath.setText(date[i]);
-                dateReign.setText(reign[i]);
-                break;
-            }
-        }
-
-        return view;
+//        String[] date = getResources().getStringArray((R.array.date));
+//
+//        for (int i = 0; i < reign.length; i++) {
+//            if (id == i) {
+//                textBirthDeath.setText(date[i]);
+//                dateReign.setText(reign[i]);
+//                break;
+//            }
+//        }
+//
+     return view;
     }
 }
