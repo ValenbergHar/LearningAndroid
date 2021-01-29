@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.kingsgdl.R;
 
@@ -14,8 +15,7 @@ import androidx.fragment.app.Fragment;
 public class FragmentTwo extends Fragment {
     private View view;
     private int id;
-    private String textStory;
-
+    private TextView txtKingStory;
 
 
     public FragmentTwo(int id) {
@@ -29,6 +29,16 @@ public class FragmentTwo extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_two, container, false);
+        txtKingStory=view.findViewById(R.id.txtKingStory);
+        String[] arrKingStory = getResources().getStringArray((R.array.story));
+
+        for (int i = 0; i < arrKingStory.length; i++) {
+            if (id == i) {
+                txtKingStory.setText(arrKingStory[i]);
+                  break;
+            }
+        }
+
         return view;
     }
 }
