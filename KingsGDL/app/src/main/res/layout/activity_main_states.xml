@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolBarStates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPolackKniastva"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/polackaeKniastva"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarStates"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnVKL"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:text="вялікае княства літоўскае"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPolackKniastva"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnRP"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:text="рэч поспалітая абодвух народаў"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVKL"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnRusOcc"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="расейская акупацыя"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRP"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+
+    <Button
+        android:id="@+id/btnBNR"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:text="беларуская народная рэспубліка"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRusOcc"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnZahBiel"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="160dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="10dp"
+        android:text="заходняя беларусь"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@+id/btnBNR"
+        app:layout_constraintTop_toBottomOf="@+id/btnBNR"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnBSSRFirst"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="160dp"
+        android:layout_height="68dp"
+        android:text="БССР"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnBNR"
+        app:layout_constraintTop_toTopOf="@+id/btnZahBiel"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnNacOcc"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="нацысцкая акупацыя"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnZahBiel"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnBSSRSecond"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="БССР"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNacOcc"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnRB"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="рэспубліка беларусь"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBSSRSecond"
+        app:rippleColor="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="2dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

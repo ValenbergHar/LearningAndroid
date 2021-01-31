@@ -1,7 +1,6 @@
 package drawer;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.kingsgdl.R;
-import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,8 +22,6 @@ public class MainFragment extends Fragment {
     private ImageView imageMainMap;
     private DrawerLayout drawer;
 
-    private String pahonia = "https://upload.wikimedia.org/wikipedia/commons/2/2c/Pahonia_-_Пагоня%2C_Grand_Duchy_of_Lithuania_COA_%281575%29_cut.png";
-    private String mainMap = "https://ic.pics.livejournal.com/max_pragensis/21033009/110521/110521_900.jpg";
 
     @Nullable
     @Override
@@ -38,8 +34,8 @@ public class MainFragment extends Fragment {
         //  Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
         //Glide.with(getActivity()).load(pahonia).into(imageViewPah);
 
-      Glide.with(getActivity()).load(mainMap).centerCrop().into(imageMainMap);
-        Glide.with(getActivity()).load(pahonia).into(imageViewPah);
+        Glide.with(getActivity()).load(R.drawable.main_map).centerCrop().into(imageMainMap);
+        Glide.with(getActivity()).load(R.drawable.main_pahonia).into(imageViewPah);
 
         imageViewPah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +47,6 @@ public class MainFragment extends Fragment {
 
         return view;
     }
-
 
 
 }

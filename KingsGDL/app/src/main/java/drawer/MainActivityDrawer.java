@@ -16,10 +16,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.kingsgdl.R;
 import com.example.kingsgdl.kings.MainActivityKings;
+import com.example.kingsgdl.listofstates.StatesMainActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
-
-import static android.drm.DrmStore.Playback.START;
 
 public class MainActivityDrawer extends AppCompatActivity {
 
@@ -42,7 +41,7 @@ public class MainActivityDrawer extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.kings:
                         Toast.makeText(MainActivityDrawer.this, "Kings selected", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivityDrawer.this, MainActivityKings.class);
+                        Intent intent = new Intent(MainActivityDrawer.this, StatesMainActivity.class);
                         startActivity(intent);
                         break;
                     default:
@@ -54,7 +53,6 @@ public class MainActivityDrawer extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new MainFragment());
         fragmentTransaction.commit();
-        drawer.openDrawer(GravityCompat.START);
     }
 
     @SuppressLint("WrongConstant")
