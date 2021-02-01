@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainFragment extends Fragment {
@@ -28,7 +30,10 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         init(view);
-        initDutNavView();
+        initButNavView();
+
+    // Utils.clearSharedPreferences(getActivity());
+
         initRecViews();
         return view;
     }
@@ -47,12 +52,52 @@ public class MainFragment extends Fragment {
         suggestedItemsRecView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
 
         List<GroceryItem> allItems = Utils.getAllItems(getActivity());
-        if(null!= allItems){
+        if (null != allItems) {
+            Comparator<GroceryItem> newItemsComparator = new Comparator<GroceryItem>() {
+                @Override
+                public int compare(GroceryItem o1, GroceryItem o2) {
+                    return o1.getId() - o2.getId();
+                }
+            };
+
+            Comparator<GroceryItem> reverseComparator = Collections.reverseOrder(newItemsComparator);
+            Collections.sort(allItems, newItemsComparator);
             newItemsAdapter.setItems(allItems);
         }
+
+
+        List<GroceryItem> popularItems = Utils.getAllItems(getActivity());
+        if (null != popularItems) {
+            Comparator<GroceryItem> popularItemsComparator = new Comparator<GroceryItem>() {
+                @Override
+                public int compare(GroceryItem o1, GroceryItem o2) {
+                    return (o2.getPopularityPoint() - o1.getPopularityPoint());
+                }
+            };
+            Collections.sort(popularItems, popularItemsComparator);
+            popularItemAdapter.setItems(popularItems);
+        }
+
+
+
+        List<GroceryItem> suggestedItems = Utils.getAllItems(getActivity());
+        if (null != popularItems) {
+            Comparator<GroceryItem> suggestedItemsComparator = new Comparator<GroceryItem>() {
+                @Override
+                public int compare(GroceryItem o1, GroceryItem o2) {
+                    return o1.getUserPoint() - o2.getUserPoint();
+                }
+            };
+            Collections.sort(suggestedItems, Collections.reverseOrder(suggestedItemsComparator));
+           suggestedItemsAdapter.setItems(suggestedItems);
+        }
+
+
+
     }
 
-    private void initDutNavView() {
+
+    private void initButNavView() {
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
             @Override
