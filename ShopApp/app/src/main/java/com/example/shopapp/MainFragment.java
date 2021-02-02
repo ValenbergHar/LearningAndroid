@@ -31,11 +31,14 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         init(view);
         initButNavView();
-
     // Utils.clearSharedPreferences(getActivity());
+          return view;
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
         initRecViews();
-        return view;
     }
 
     private void initRecViews() {

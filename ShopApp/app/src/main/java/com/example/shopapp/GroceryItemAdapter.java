@@ -1,6 +1,7 @@
 package com.example.shopapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.shopapp.GroceryItemActivity.GROCERY_ITEM_KEY;
 
 public class GroceryItemAdapter extends RecyclerView.Adapter<GroceryItemAdapter.ViewHolder> {
     private List<GroceryItem> items = new ArrayList<>();
@@ -39,7 +42,9 @@ public class GroceryItemAdapter extends RecyclerView.Adapter<GroceryItemAdapter.
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent =new Intent(context, GroceryItemActivity.class);
+                intent.putExtra(GROCERY_ITEM_KEY, items.get(position));
+                context.startActivity(intent);
             }
         });
     }
