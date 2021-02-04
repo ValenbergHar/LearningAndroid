@@ -31,6 +31,9 @@ public class MainFragment extends Fragment {
         imageMainMap = view.findViewById(R.id.imageMainMap);
 
 
+        //  Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
+        //Glide.with(getActivity()).load(pahonia).into(imageViewPah);
+
         Glide.with(getActivity()).load(R.drawable.main_map).centerCrop().into(imageMainMap);
         Glide.with(getActivity()).load(R.drawable.main_pahonia).into(imageViewPah);
 

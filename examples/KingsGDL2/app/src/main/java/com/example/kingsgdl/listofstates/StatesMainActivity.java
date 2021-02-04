@@ -2,27 +2,21 @@ package com.example.kingsgdl.listofstates;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.FileUtils;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.kingsgdl.R;
 import com.example.kingsgdl.kings.MainActivityKings;
-import com.example.kingsgdl.kings.tablelayout.Utils;
 import com.google.android.material.appbar.MaterialToolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.Serializable;
-
 import drawer.MainActivityDrawer;
 
 public class StatesMainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnPolackKniastva, btnVKL, btnRP, btnRusOcc, btnBNR, btnZahBiel, btnBSSRFirst, btnNacOcc, btnBSSRSecond, btnRB;
     private MaterialToolbar toolBarStates;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +24,7 @@ public class StatesMainActivity extends AppCompatActivity implements View.OnClic
 
         toolBarStates = findViewById(R.id.toolBarStates);
         setSupportActionBar(toolBarStates);
-        initBtn();
 
-    }
-
-    private void initBtn() {
         btnPolackKniastva = findViewById(R.id.btnPolackKniastva);
         btnPolackKniastva.setOnClickListener(this);
         btnVKL = findViewById(R.id.btnVKL);
@@ -55,60 +45,51 @@ public class StatesMainActivity extends AppCompatActivity implements View.OnClic
         btnBSSRSecond.setOnClickListener(this);
         btnRB = findViewById(R.id.btnRB);
         btnRB.setOnClickListener(this);
+
+
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId()){
             case R.id.btnPolackKniastva:
-                Intent intentPolackKniastva = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentPolackKniastva.putExtra("intent", (Serializable) Utils.getKingsPK());
-                startActivity(intentPolackKniastva);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnVKL:
-                Intent intentVKL = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentVKL.putExtra("intent", (Serializable) Utils.getKingsVkl());
-                startActivity(intentVKL);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
                 break;
             case R.id.btnRP:
-                Intent intentRP = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentRP.putExtra("intent", (Serializable) Utils.getKingsRP());
-                startActivity(intentRP);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnRusOcc:
-                Intent intentRusOcc = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentRusOcc.putExtra("intent", (Serializable) Utils.getKingsRusOcc());
-                startActivity(intentRusOcc);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnBNR:
-                 Intent intentbtnBNR = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentbtnBNR.putExtra("intent", (Serializable) Utils.getKingsBNR());
-                startActivity(intentbtnBNR);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnZahBiel:
-                Intent intentbtnZahBiel = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentbtnZahBiel.putExtra("intent", (Serializable) Utils.getKingsZahBiel());
-                startActivity(intentbtnZahBiel);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnBSSRFirst:
-                Intent intentZahBiel = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentZahBiel.putExtra("intent", (Serializable) Utils.getKingsBSSRFirst());
-                startActivity(intentZahBiel);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnNacOcc:
-                Intent intentNacOcc = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentNacOcc.putExtra("intent", (Serializable) Utils.getKingsNacOcc ());
-                startActivity(intentNacOcc);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnBSSRSecond:
-                Intent intentBSSRSecond = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentBSSRSecond.putExtra("intent", (Serializable) Utils.getKingsBSSRSecond());
-                startActivity(intentBSSRSecond);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             case R.id.btnRB:
-                Intent intentRB = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentRB.putExtra("intent", (Serializable) Utils.getKingsRB());
-                startActivity(intentRB);
+                startActivity(new Intent(StatesMainActivity.this, MainActivityKings.class));
+
                 break;
             default:
                 break;

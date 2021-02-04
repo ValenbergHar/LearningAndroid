@@ -21,6 +21,7 @@ public class MainActivityTable extends AppCompatActivity {
     private String name;
     private String urlImage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +32,12 @@ public class MainActivityTable extends AppCompatActivity {
         kings_name = findViewById(R.id.kings_name);
         nameKingFragOne = findViewById(R.id.name_reign);
 
+
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
         id = Integer.valueOf(intent.getStringExtra("id"));
         urlImage = intent.getStringExtra("image");
+
 
         kings_name.setText(name);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
@@ -44,6 +47,11 @@ public class MainActivityTable extends AppCompatActivity {
         adapter.addFragment(new FragmentThree(id), "Фоткі");
 
         String[] strings = getResources().getStringArray((R.array.kings));
+
+//        for (int i = 0; i < strings.length; i++) {
+//            if (id == i) nameKingFragOne.setText(strings[i]);
+//        }
+
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

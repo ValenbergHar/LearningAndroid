@@ -39,8 +39,6 @@ public class FragmentOne extends Fragment {
         textBirthDeath = view.findViewById(R.id.textBirthDeath);
         Glide.with(getActivity()).load(urlImage).into(imageViewFragOne);
 
-
-
         String[] reign = getResources().getStringArray((R.array.reign));
         String[] date = getResources().getStringArray((R.array.date));
 
