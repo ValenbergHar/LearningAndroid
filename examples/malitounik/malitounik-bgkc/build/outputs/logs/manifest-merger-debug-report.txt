@@ -1,0 +1,878 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+MERGED from [com.google.android.material:material:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c7eb9cd3508ac3959447c14fd76c9fb9/material-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/oleg/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/0362ff4d8672321347a402c32368f192/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ddf6a25e6e3e5e2af441269b48288beb/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ceb81553a8d4d1147c847656f2ca2121/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ec593f8d91037f6ef1bbcd6a177afa1c/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/00bc847ce5b9e3ce7b40d465bffbf9e9/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4f8b5527496d67480951cc322460db7f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/d2cae29ea156ecc28d8f5099dc624ed2/transition-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4932f7e67b26f042b51fa62f1aa4816d/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/dbbcc99072b5616db9e0106b8ed65934/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/d1ca7cd3905794bed09cb92934ccd6c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4276267baf989d651cf25177c247ad49/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/8849109129fcb2f39779166fb64480b1/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/5ad830c9e1047f79e3f0f7e9e42ab8ab/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/a3c457ded457b98b207b4f227d629399/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3d4a3c67e39fa8d6d0c0f126c28b81d8/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/82b148795609bbbaf8e825fc2ff2a6bf/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/fb2fbe77879a57ea0c5dfd6fe59ba874/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4fe44ae24daa7cfa2dd483a5d3b65a2f/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3a992d8307f21a8f15eb649383ba6a6a/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/f582580d3eb247a74d915a27810a4674/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c75155371656c04dff3a027cdeb13e8a/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/53b4a4cf87c0ff501a8c414cec884555/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ffa46f3d6480310395b7b525cf59ccde/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/64ed055c454b36433d45a77285ee24d6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/63647da4654da12a6f2785cfbbad8123/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/733fc1d306cee2c05d3e1fb0b7527020/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/fdd65d8b6066fd289a68b42931dc03a2/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:2:1-30:12
+MERGED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:2:1-303:12
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+	package
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:5:5-42
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:4:5-51
+	xmlns:dist
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:3:5-61
+	android:versionCode
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:1-336:12
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:8:5-66
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:8:22-63
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:9:22-78
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:10:22-78
+uses-permission#android.permission.QUICKBOOT_POWERON
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:11:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:12:22-64
+dist:module
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:14:5-40
+	dist:instant
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:14:18-37
+application
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:16:5-335:19
+MERGED from [com.google.android.material:material:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c7eb9cd3508ac3959447c14fd76c9fb9/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c7eb9cd3508ac3959447c14fd76c9fb9/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/oleg/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/oleg/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:6:3-10:17
+MERGED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:6:3-10:17
+MERGED from [androidx.core:core:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:21:5-28:19
+MERGED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:21:5-28:19
+MERGED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:21:5-301:19
+MERGED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:21:5-301:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:22:9-41
+	android:hardwareAccelerated
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:23:9-43
+	android:fullBackupContent
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:19:9-59
+	android:debuggable
+		ADDED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:21:18-43
+	tools:ignore
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:26:9-48
+	android:roundIcon
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:24:9-54
+	android:restoreAnyVersion
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:23:9-41
+	android:installLocation
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:21:9-47
+	android:icon
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:18:9-35
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:25:9-40
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:17:9-35
+activity#by.carkva_gazeta.malitounik.SplashActivity
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:27:9-134:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:29:13-45
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:30:13-47
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:28:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:31:13-36:29
+action#android.intent.action.MAIN
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:32:17-69
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:32:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:34:17-77
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:34:27-74
+category#android.intent.category.DEFAULT
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:35:17-76
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:35:27-73
+meta-data#android.app.shortcuts
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:38:13-40:53
+	android:resource
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:40:17-50
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:39:17-53
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:mimeType:application/pdf+data:scheme:content+data:scheme:file
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:71:13-80:29
+action#android.intent.action.VIEW
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:72:17-69
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:72:25-66
+category#android.intent.category.BROWSABLE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:74:17-78
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:74:27-75
+data
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:77:17-50
+	android:host
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:109:23-39
+	android:scheme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:77:23-47
+	android:pathPattern
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:110:23-57
+	android:mimeType
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:79:23-57
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:mimeType:application/epub+zip+data:scheme:content+data:scheme:file
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:81:13-90:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:mimeType:application/zip+data:pathPattern:.*\\.fb2.zip+data:scheme:content+data:scheme:file
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:101:13-112:29
+activity#by.carkva_gazeta.malitounik.MainActivity
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:136:9-139:59
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:138:13-45
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:139:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:137:13-41
+activity#by.carkva_gazeta.malitounik.onas
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:140:9-147:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:142:13-44
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:143:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:141:13-33
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:144:13-146:76
+	android:value
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:146:17-73
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:145:17-63
+activity#by.carkva_gazeta.malitounik.caliandar_mun
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:149:9-152:59
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:151:13-46
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:152:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:150:13-42
+activity#by.carkva_gazeta.malitounik.pasxa
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:154:9-161:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:156:13-57
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:157:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:155:13-34
+activity#by.carkva_gazeta.malitounik.sabytie
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:162:9-170:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:164:13-44
+	android:windowSoftInputMode
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:165:13-52
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:166:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:163:13-36
+activity#by.carkva_gazeta.malitounik.Help
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:171:9-178:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:173:13-41
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:174:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:172:13-33
+activity#by.carkva_gazeta.malitounik.SettingsActivity
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:179:9-186:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:181:13-47
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:182:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:180:13-45
+activity#by.carkva_gazeta.malitounik.naviny
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:187:9-194:20
+	android:configChanges
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:189:13-74
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:190:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:188:13-35
+activity#by.carkva_gazeta.malitounik.navinyView
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:195:9-202:20
+	android:configChanges
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:197:13-74
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:198:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:196:13-39
+activity#by.carkva_gazeta.malitounik.search_sviatyia
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:203:9-211:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:205:13-51
+	android:windowSoftInputMode
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:207:13-65
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:206:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:204:13-44
+activity#by.carkva_gazeta.malitounik.Malitvy_paslia_prychascia
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:212:9-219:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:214:13-52
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:215:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:213:13-54
+activity#by.carkva_gazeta.malitounik.Ton_niadzelny
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:220:9-227:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:222:13-42
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:223:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:221:13-42
+activity#by.carkva_gazeta.malitounik.Ton_na_kozny_dzen
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:228:9-235:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:230:13-43
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:231:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:229:13-46
+activity#by.carkva_gazeta.malitounik.Widget_config
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:236:9-244:20
+	android:excludeFromRecents
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:238:13-46
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:240:13-53
+	android:taskAffinity
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:239:13-36
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:237:13-42
+intent-filter#action:name:android.appwidget.action.APPWIDGET_CONFIGURE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:241:13-243:29
+action#android.appwidget.action.APPWIDGET_CONFIGURE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:242:17-87
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:242:25-84
+activity#by.carkva_gazeta.malitounik.help_text
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:245:9-248:59
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:247:13-36
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:248:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:246:13-38
+activity#by.carkva_gazeta.malitounik.novy_zapaviet2
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:249:9-255:20
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:251:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:250:13-43
+activity#by.carkva_gazeta.malitounik.stary_zapaviet2
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:256:9-262:20
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:258:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:257:13-44
+activity#by.carkva_gazeta.malitounik.novy_zapaviet_sinaidal2
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:265:9-271:20
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:267:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:266:13-52
+activity#by.carkva_gazeta.malitounik.stary_zapaviet_sinaidal2
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:272:9-278:20
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:274:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:273:13-53
+activity#by.carkva_gazeta.malitounik.nadsanContent
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:280:9-287:20
+	android:label
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:282:13-50
+	android:theme
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:283:13-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:281:13-42
+meta-data#com.google.android.backup.api_key
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:289:9-291:82
+	android:value
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:291:13-79
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:290:13-61
+provider#androidx.core.content.FileProvider
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:292:9-302:20
+	android:grantUriPermissions
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:296:13-47
+	android:authorities
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:294:13-75
+	android:exported
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:295:13-37
+	tools:replace
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:297:13-48
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:293:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:298:13-301:52
+	android:resource
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:300:17-50
+	tools:replace
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:301:17-49
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:299:17-67
+receiver#by.carkva_gazeta.malitounik.ReceiverBroad
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:304:9-51
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:304:19-48
+receiver#by.carkva_gazeta.malitounik.ReceiverBoot
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:305:9-313:20
+	android:exported
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:307:13-37
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:306:13-41
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON+action:name:com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:308:13-312:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:309:17-79
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:309:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:310:17-82
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:310:25-79
+action#com.htc.intent.action.QUICKBOOT_POWERON
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:311:17-82
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:311:25-79
+receiver#by.carkva_gazeta.malitounik.Widget
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:314:9-321:20
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:314:19-41
+intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:315:13-317:29
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:316:17-84
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:316:25-81
+meta-data#android.appwidget.provider
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:318:13-320:59
+	android:resource
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:320:17-56
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:319:17-58
+receiver#by.carkva_gazeta.malitounik.Widget_mun
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:322:9-329:20
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:322:19-45
+receiver#by.carkva_gazeta.malitounik.ReceiverUpdate
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:330:9-334:20
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:330:19-49
+intent-filter#action:name:android.intent.action.UPDATE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:331:13-333:29
+action#android.intent.action.UPDATE
+ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:332:17-71
+	android:name
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml:332:25-68
+uses-sdk
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c7eb9cd3508ac3959447c14fd76c9fb9/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c7eb9cd3508ac3959447c14fd76c9fb9/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/oleg/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/oleg/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:4:3-70
+MERGED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:4:3-70
+MERGED from [androidx.fragment:fragment:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/0362ff4d8672321347a402c32368f192/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/0362ff4d8672321347a402c32368f192/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ddf6a25e6e3e5e2af441269b48288beb/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ddf6a25e6e3e5e2af441269b48288beb/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ceb81553a8d4d1147c847656f2ca2121/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ceb81553a8d4d1147c847656f2ca2121/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ec593f8d91037f6ef1bbcd6a177afa1c/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ec593f8d91037f6ef1bbcd6a177afa1c/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/00bc847ce5b9e3ce7b40d465bffbf9e9/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/00bc847ce5b9e3ce7b40d465bffbf9e9/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4f8b5527496d67480951cc322460db7f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4f8b5527496d67480951cc322460db7f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/d2cae29ea156ecc28d8f5099dc624ed2/transition-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/d2cae29ea156ecc28d8f5099dc624ed2/transition-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4932f7e67b26f042b51fa62f1aa4816d/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4932f7e67b26f042b51fa62f1aa4816d/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/dbbcc99072b5616db9e0106b8ed65934/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/dbbcc99072b5616db9e0106b8ed65934/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/d1ca7cd3905794bed09cb92934ccd6c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/d1ca7cd3905794bed09cb92934ccd6c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4276267baf989d651cf25177c247ad49/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4276267baf989d651cf25177c247ad49/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/8849109129fcb2f39779166fb64480b1/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/8849109129fcb2f39779166fb64480b1/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/5ad830c9e1047f79e3f0f7e9e42ab8ab/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/5ad830c9e1047f79e3f0f7e9e42ab8ab/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/a3c457ded457b98b207b4f227d629399/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/a3c457ded457b98b207b4f227d629399/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3d4a3c67e39fa8d6d0c0f126c28b81d8/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3d4a3c67e39fa8d6d0c0f126c28b81d8/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/82b148795609bbbaf8e825fc2ff2a6bf/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/82b148795609bbbaf8e825fc2ff2a6bf/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/fb2fbe77879a57ea0c5dfd6fe59ba874/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/fb2fbe77879a57ea0c5dfd6fe59ba874/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4fe44ae24daa7cfa2dd483a5d3b65a2f/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/4fe44ae24daa7cfa2dd483a5d3b65a2f/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3a992d8307f21a8f15eb649383ba6a6a/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3a992d8307f21a8f15eb649383ba6a6a/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/f582580d3eb247a74d915a27810a4674/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/f582580d3eb247a74d915a27810a4674/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c75155371656c04dff3a027cdeb13e8a/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/c75155371656c04dff3a027cdeb13e8a/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/53b4a4cf87c0ff501a8c414cec884555/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/53b4a4cf87c0ff501a8c414cec884555/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ffa46f3d6480310395b7b525cf59ccde/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/ffa46f3d6480310395b7b525cf59ccde/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/64ed055c454b36433d45a77285ee24d6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/64ed055c454b36433d45a77285ee24d6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/63647da4654da12a6f2785cfbbad8123/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/63647da4654da12a6f2785cfbbad8123/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/733fc1d306cee2c05d3e1fb0b7527020/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/733fc1d306cee2c05d3e1fb0b7527020/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/fdd65d8b6066fd289a68b42931dc03a2/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/oleg/.gradle/caches/transforms-2/files-2.1/fdd65d8b6066fd289a68b42931dc03a2/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:9:5-47
+MERGED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:9:5-47
+MERGED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:9:5-47
+MERGED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:9:5-47
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		ADDED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		MERGED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		MERGED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+		INJECTED from /home/oleg/AndroidStudioProjects/Malitounik_java_old/malitounik-bgkc/src/main/AndroidManifest.xml
+activity#com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity
+ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:5-271
+	android:process
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:152-203
+	android:enabled
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:103-126
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:240-269
+	android:launchMode
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:204-239
+	android:exported
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:127-151
+	android:name
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:8:15-102
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:5-278
+	android:process
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:175-226
+	android:enabled
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:96-119
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:145-174
+	android:exported
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:120-144
+	android:theme
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:227-276
+	android:name
+		ADDED from [com.google.android.play:core:1.6.4] /home/oleg/.gradle/caches/transforms-2/files-2.1/89161a58d875330b4baca1ce07badaf8/core-1.6.4/AndroidManifest.xml:9:15-95
+activity#by.carkva_gazeta.biblijateka.bibliotekaView
+ADDED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:22:9-27:20
+	android:label
+		ADDED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:24:13-46
+	android:splitName
+		ADDED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:25:13-44
+	android:theme
+		ADDED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:26:13-56
+	android:name
+		ADDED from [:biblijateka] /home/oleg/AndroidStudioProjects/Malitounik_java_old/biblijateka/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:23:13-71
+activity#by.carkva_gazeta.resources.chytanne
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:24:9-32:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:26:13-45
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:27:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:25:13-63
+activity#by.carkva_gazeta.resources.opisanie
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:33:9-41:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:35:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:36:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:37:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:34:13-63
+activity#by.carkva_gazeta.resources.stary_zapaviet3
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:42:9-51:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:44:13-67
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:47:13-60
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:45:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:46:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:43:13-70
+activity#by.carkva_gazeta.resources.novy_zapaviet3
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:52:9-61:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:54:13-50
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:57:13-60
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:55:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:56:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:53:13-69
+activity#by.carkva_gazeta.resources.stary_zapaviet_sinaidal3
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:62:9-71:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:64:13-47
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:67:13-60
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:65:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:66:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:63:13-79
+activity#by.carkva_gazeta.resources.novy_zapaviet_sinaidal3
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:72:9-81:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:74:13-48
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:77:13-60
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:75:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:76:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:73:13-78
+activity#by.carkva_gazeta.resources.MaranAta
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:82:9-90:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:84:13-45
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:85:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:86:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:83:13-63
+activity#by.carkva_gazeta.resources.My_natatki_add
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:91:9-100:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:93:13-48
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:96:13-68
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:94:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:95:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:92:13-69
+activity#by.carkva_gazeta.resources.My_natatki_view
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:101:9-108:20
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:103:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:104:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:102:13-70
+activity#by.carkva_gazeta.resources.bogashlugbovya
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:109:9-118:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:111:13-47
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:114:13-67
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:112:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:113:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:110:13-69
+activity#by.carkva_gazeta.resources.Malitvy_prynagodnyia
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:119:9-128:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:121:13-49
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:124:13-67
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:122:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:123:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:120:13-75
+activity#by.carkva_gazeta.resources.prynagodnyia
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:129:9-137:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:131:13-49
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:132:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:133:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:130:13-67
+activity#by.carkva_gazeta.resources.search_biblia
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:138:9-147:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:140:13-43
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:143:13-68
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:141:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:142:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:139:13-68
+activity#by.carkva_gazeta.resources.paslia_prychascia
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:148:9-156:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:150:13-52
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:151:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:152:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:149:13-72
+activity#by.carkva_gazeta.resources.Ton
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:157:9-165:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:159:13-42
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:160:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:161:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:158:13-58
+activity#by.carkva_gazeta.resources.vybranoe_view
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:166:9-175:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:168:13-49
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:171:13-67
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:169:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:170:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:167:13-68
+activity#by.carkva_gazeta.resources.parafii_bgkc_dekanat
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:176:9-184:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:178:13-44
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:179:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:180:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:177:13-75
+activity#by.carkva_gazeta.resources.parafii_bgkc
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:185:9-193:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:187:13-44
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:188:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:189:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:186:13-67
+activity#by.carkva_gazeta.resources.bible_zakladki
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:194:9-201:20
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:196:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:197:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:195:13-69
+activity#by.carkva_gazeta.resources.bible_natatki
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:202:9-209:20
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:204:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:205:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:203:13-68
+activity#by.carkva_gazeta.resources.psalterNadsana
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:210:9-218:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:212:13-50
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:213:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:214:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:211:13-69
+activity#by.carkva_gazeta.resources.nadsanContentActivity
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:219:9-227:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:221:13-50
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:222:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:223:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:220:13-76
+activity#by.carkva_gazeta.resources.nadsan_malitvy_i_pesni
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:228:9-236:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:230:13-50
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:231:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:232:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:229:13-77
+activity#by.carkva_gazeta.resources.search_pesny
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:237:9-246:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:239:13-43
+	android:windowSoftInputMode
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:242:13-65
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:240:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:241:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:238:13-67
+activity#by.carkva_gazeta.resources.search_pesny_view_result
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:247:9-255:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:249:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:250:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:251:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:248:13-79
+activity#by.carkva_gazeta.resources.pesny_bel
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:256:9-264:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:258:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:259:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:260:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:257:13-64
+activity#by.carkva_gazeta.resources.pesny_kal
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:265:9-273:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:267:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:268:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:269:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:266:13-64
+activity#by.carkva_gazeta.resources.pesny_bag
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:274:9-282:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:276:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:277:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:278:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:275:13-64
+activity#by.carkva_gazeta.resources.pesny_prasl
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:283:9-291:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:285:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:286:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:287:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:284:13-66
+activity#by.carkva_gazeta.resources.pesny_taize
+ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:292:9-300:20
+	android:label
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:294:13-43
+	android:splitName
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:295:13-42
+	android:theme
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:296:13-56
+	android:name
+		ADDED from [:resources] /home/oleg/AndroidStudioProjects/Malitounik_java_old/resources/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/AndroidManifest.xml:293:13-66

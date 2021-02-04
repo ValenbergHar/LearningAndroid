@@ -1,0 +1,124 @@
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:112
+-keep class by.carkva_gazeta.resources.Malitvy_prynagodnyia { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:79
+-keep class by.carkva_gazeta.resources.MaranAta { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:87
+-keep class by.carkva_gazeta.resources.My_natatki_add { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:96
+-keep class by.carkva_gazeta.resources.My_natatki_view { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:146
+-keep class by.carkva_gazeta.resources.Ton { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:186
+-keep class by.carkva_gazeta.resources.bible_natatki { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:179
+-keep class by.carkva_gazeta.resources.bible_zakladki { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:103
+-keep class by.carkva_gazeta.resources.bogashlugbovya { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:27
+-keep class by.carkva_gazeta.resources.chytanne { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:201
+-keep class by.carkva_gazeta.resources.nadsanContentActivity { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:209
+-keep class by.carkva_gazeta.resources.nadsan_malitvy_i_pesni { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:52
+-keep class by.carkva_gazeta.resources.novy_zapaviet3 { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:70
+-keep class by.carkva_gazeta.resources.novy_zapaviet_sinaidal3 { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:35
+-keep class by.carkva_gazeta.resources.opisanie { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:171
+-keep class by.carkva_gazeta.resources.parafii_bgkc { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:163
+-keep class by.carkva_gazeta.resources.parafii_bgkc_dekanat { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:138
+-keep class by.carkva_gazeta.resources.paslia_prychascia { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:250
+-keep class by.carkva_gazeta.resources.pesny_bag { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:234
+-keep class by.carkva_gazeta.resources.pesny_bel { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:242
+-keep class by.carkva_gazeta.resources.pesny_kal { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:258
+-keep class by.carkva_gazeta.resources.pesny_prasl { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:266
+-keep class by.carkva_gazeta.resources.pesny_taize { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:121
+-keep class by.carkva_gazeta.resources.prynagodnyia { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:193
+-keep class by.carkva_gazeta.resources.psalterNadsana { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:129
+-keep class by.carkva_gazeta.resources.search_biblia { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:217
+-keep class by.carkva_gazeta.resources.search_pesny { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:226
+-keep class by.carkva_gazeta.resources.search_pesny_view_result { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:43
+-keep class by.carkva_gazeta.resources.stary_zapaviet3 { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:61
+-keep class by.carkva_gazeta.resources.stary_zapaviet_sinaidal3 { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/build/intermediates/merged_manifests/debug/AndroidManifest.xml:154
+-keep class by.carkva_gazeta.resources.vybranoe_view { <init>(); }
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_view.xml:13
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_add.xml:14
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:17
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bgkc_list.xml:13
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_under.xml:19
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_maran_ata.xml:75
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_chytanne.xml:17
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_parafii_bgkc.xml:13
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_bible.xml:17
+-keep class androidx.appcompat.widget.Toolbar { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:2
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_under.xml:2
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_maran_ata.xml:2
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_chytanne.xml:2
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_bible.xml:2
+-keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_bible.xml:62
+-keep class androidx.viewpager.widget.PagerTabStrip { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_bible.xml:56
+-keep class androidx.viewpager.widget.ViewPager { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_add.xml:48
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:113
+-keep class by.carkva_gazeta.malitounik.EditText_Roboto_Condensed { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_view.xml:33
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:39
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_under.xml:40
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_chytanne.xml:38
+-keep class by.carkva_gazeta.malitounik.InteractiveScrollView { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/nadsan_pravila5.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/nadsan_pravila4.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/nadsan_pravila3.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/nadsan_pravila2.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/nadsan_pravila1.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_view.xml:20
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_add.xml:22
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:25
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bgkc_list.xml:20
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_under.xml:27
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_maran_ata.xml:83
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_chytanne.xml:25
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_parafii_bgkc.xml:20
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_bible.xml:25
+-keep class by.carkva_gazeta.malitounik.TextView_Roboto_Condensed { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:73
+-keep class by.carkva_gazeta.malitounik.WebViewCustom { <init>(...); }
+
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_view.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/my_malitva_add.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bogasluzbovya.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/bgkc_list.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_under.xml:10
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_maran_ata.xml:66
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/akafist_chytanne.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_parafii_bgkc.xml:8
+# Referenced at /home/oleg/AndroidStudioProjects/Malitounik/resources/src/main/res/layout/activity_bible.xml:8
+-keep class com.google.android.material.appbar.AppBarLayout { <init>(...); }
+

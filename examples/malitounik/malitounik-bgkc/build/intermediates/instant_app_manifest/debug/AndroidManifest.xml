@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="by.carkva_gazeta.malitounik"
+    android:targetSandboxVersion="2"
+    android:versionCode="43555"
+    android:versionName="3.6.2" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.QUICKBOOT_POWERON" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name="by.carkva_gazeta.malitounik.Malitounik"
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:installLocation="internalOnly"
+        android:label="@string/app_name"
+        android:restoreAnyVersion="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="by.carkva_gazeta.malitounik.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+            <!--
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounikApp.bogashlugbovya" />
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:host="by.carkva_gazeta.malitounikApp" android:scheme="file" />
+                <data android:pathPattern=".*\\.fb2\\.zip"/>
+                <data android:pathPattern=".*\\.fb2"/>
+                <data android:pathPattern=".*\\.epub"/>
+                <data android:pathPattern=".*\\.zip"/>
+                <data android:pathPattern=".*\\.txt"/>
+                <data android:pathPattern=".*\\.html"/>
+                <data android:pathPattern=".*\\.xhtml"/>
+                <data android:pathPattern=".*\\.htm"/>
+                <data android:pathPattern=".*\\.chm"/>
+                <data android:pathPattern=".*\\.pdb"/>
+                <data android:pathPattern=".*\\.doc"/>
+                <data android:pathPattern=".*\\.prc"/>
+                <data android:pathPattern=".*\\.pml"/>
+                <data android:pathPattern=".*\\.mobi"/>
+                <data android:pathPattern=".*\\.azw"/>
+                <data android:pathPattern=".*\\.tcr"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/pdf" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/epub+zip" />
+            </intent-filter>
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/fb2" />
+            </intent-filter>
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.fb2.zip" />
+                <data android:mimeType="application/zip" />
+            </intent-filter>
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="m.carkva-gazeta.by" />
+                <data android:scheme="bgkc" />
+                <data android:pathPrefix="/caliandar" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="m.carkva-gazeta.by" />
+                <data android:scheme="bgkc" />
+                <data android:pathPrefix="/biblija" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="by.carkva_gazeta.malitounik.onas"
+            android:label="@string/PRA_NAS"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.caliandar_mun"
+            android:label="@string/kaliandar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="by.carkva_gazeta.malitounik.pasxa"
+            android:label="@string/pascha_kaliandar_bel"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.sabytie"
+            android:label="@string/sabytie"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.Help"
+            android:label="@string/help"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.SettingsActivity"
+            android:label="@string/tools_item"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.naviny"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.navinyView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.search_sviatyia"
+            android:label="@string/search_svityia"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.Malitvy_paslia_prychascia"
+            android:label="@string/pasliaPrychscia"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.Ton_niadzelny"
+            android:label="@string/ton_n"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.Ton_na_kozny_dzen"
+            android:label="@string/ton_sh"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.Widget_config"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Transparent" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.help_text"
+            android:label="Даведка"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="by.carkva_gazeta.malitounik.novy_zapaviet2"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.stary_zapaviet2"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+
+        <!-- android:icon="@drawable/book_icon" -->
+        <activity
+            android:name="by.carkva_gazeta.malitounik.novy_zapaviet_sinaidal2"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.stary_zapaviet_sinaidal2"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.malitounik.nadsanContent"
+            android:label="@string/title_psalter"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAInlVmnTmpjY-SZQXQdB2RUIqzm6pXcrryjHH1FQ" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="by.carkva_gazeta.malitounik.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <receiver android:name="by.carkva_gazeta.malitounik.ReceiverBroad" />
+        <receiver
+            android:name="by.carkva_gazeta.malitounik.ReceiverBoot"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="by.carkva_gazeta.malitounik.Widget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_metadata" />
+        </receiver>
+        <receiver android:name="by.carkva_gazeta.malitounik.Widget_mun" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_mun_metadata" />
+        </receiver>
+        <receiver android:name="by.carkva_gazeta.malitounik.ReceiverUpdate" >
+            <intent-filter>
+                <action android:name="android.intent.action.UPDATE" />
+            </intent-filter>
+        </receiver>
+        <!-- The activity will be merged into the manifest of the hosting app. -->
+        <activity
+            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+            android:enabled="false"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:process=":playcore_missing_splits_activity"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:enabled="false"
+            android:exported="false"
+            android:process=":playcore_dialog_wrapper_activity"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.PlayCore.Transparent" />
+        <activity
+            android:name="by.carkva_gazeta.biblijateka.bibliotekaView"
+            android:label="Бібліятэка Царквы"
+            android:splitName="biblijateka"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.chytanne"
+            android:label="@string/CZYTANNE"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.opisanie"
+            android:label="@string/zmiest"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.stary_zapaviet3"
+            android:label="@string/title_activity_stary_zapaviet2"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.novy_zapaviet3"
+            android:label="@string/novy_zapaviet"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.stary_zapaviet_sinaidal3"
+            android:label="@string/stsinaidal"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.novy_zapaviet_sinaidal3"
+            android:label="@string/novsinaidal"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.MaranAta"
+            android:label="@string/maranata"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.My_natatki_add"
+            android:label="@string/MALITVA_ADD"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.My_natatki_view"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.bogashlugbovya"
+            android:label="@string/LITURGIKON"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.Malitvy_prynagodnyia"
+            android:label="@string/prynagodnyia"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.prynagodnyia"
+            android:label="@string/prynagodnyia"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.resources.Malitvy_prynagodnyia" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.search_biblia"
+            android:label="@string/search"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.paslia_prychascia"
+            android:label="@string/pasliaPrychscia"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.Malitvy_paslia_prychascia" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.Ton"
+            android:label="@string/ton_n"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.vybranoe_view"
+            android:label="@string/MenuVybranoe"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.parafii_bgkc_dekanat"
+            android:label="@string/parafii"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.parafii_bgkc"
+            android:label="@string/parafii"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.resources.parafii_bgkc_dekanat" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.bible_zakladki"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.bible_natatki"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.psalterNadsana"
+            android:label="@string/title_psalter"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.nadsanContentActivity"
+            android:label="@string/title_psalter"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.nadsanContent" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.nadsan_malitvy_i_pesni"
+            android:label="@string/title_psalter"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.search_pesny"
+            android:label="@string/search"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustPan" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.search_pesny_view_result"
+            android:label="@string/search"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.resources.search_pesny" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.pesny_bel"
+            android:label="@string/pesny2"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.pesny_kal"
+            android:label="@string/pesny4"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.pesny_bag"
+            android:label="@string/pesny3"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.pesny_prasl"
+            android:label="@string/pesny1"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+        <activity
+            android:name="by.carkva_gazeta.resources.pesny_taize"
+            android:label="@string/pesny4"
+            android:splitName="resources"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="by.carkva_gazeta.malitounik.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
