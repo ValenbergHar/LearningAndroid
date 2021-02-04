@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main">MainActivity</string>
+    <string name="second">SecondActivity</string>
+    <string name="send">Send</string>
+    <string name="app_name">Parcelable</string>
+</resources>
