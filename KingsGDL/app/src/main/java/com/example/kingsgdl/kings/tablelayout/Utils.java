@@ -1,12 +1,38 @@
 package com.example.kingsgdl.kings.tablelayout;
 
+import android.content.Context;
+
 import com.example.kingsgdl.kings.King;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Utils {
+
+
+    public static String readRawTextFile(Context ctx, int resId)
+    {
+        InputStream inputStream = ctx.getResources().openRawResource(resId);
+        BufferedReader buffreader = new BufferedReader(new InputStreamReader(inputStream));
+        String line;
+        StringBuilder text = new StringBuilder();
+
+        try {
+            while (( line = buffreader.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+            }
+        } catch (IOException e) {
+            return null;
+        }
+        return text.toString();
+    }
+
     public static List<King> getKingsPK() {
         List<King> kings = new ArrayList<>();
         King p0 = new King(0, "Міндоўг", 1236, "https://upload.wikimedia.org/wikipedia/commons/2/24/Mendog_1578.png");
@@ -52,16 +78,7 @@ public class Utils {
     public static List<King> getKingsRP() {
         List<King> kings = new ArrayList<>();
         King p0 = new King(0, "Генрых Валуа", 1573, "https://upload.wikimedia.org/wikipedia/commons/f/f1/Henri_III_Versailles.jpg");
-        King p1 = new King(1, "Стэфан Баторый", 1576, "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Stefan_Batory_King.jpg/209px-Stefan_Batory_King.jpg");
-        King p2 = new King(2, "Жыгімонт III Ваза", 1587, "https://upload.wikimedia.org/wikipedia/commons/b/b4/Sigismund_at_horse.jpg");
-        King p3 = new King(3, "Уладзіслаў IV Ваза", 1632, "https://uploads.knightlab.com/storymapjs/47785f2faa76c6741c6c0eb2dc400ebc/vaza/_images/Vladislavs-IV-Vasa.jpg");
-        King p4 = new King(4, "Ян II Казімір Ваза", 1648, "https://upload.wikimedia.org/wikipedia/commons/5/59/Bacciarelli_-_Jan_Kazimierz.jpeg");
-        King p5 = new King(5, "Міхал Карыбут-Вішнявецкі", 1669, "https://upload.wikimedia.org/wikipedia/commons/e/e5/Daniel_Schultz_d._J._005.jpg");
-        King p6 = new King(6, "Ян III Сабескі", 1673, "https://upload.wikimedia.org/wikipedia/commons/c/cd/John_III_Sobieski_of_Poland.PNG");
-        King p7 = new King(7, "Аўгуст Моцны", 1697, "https://upload.wikimedia.org/wikipedia/commons/d/d6/Aŭgust_Mocny._Аўгуст_Моцны_%28L._Silvestre%2C_1718%29.jpg");
-        King p8 = new King(8, "Аўгуст III", 1734, "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/King_Augustus_III_of_Poland.jpg/800px-King_Augustus_III_of_Poland.jpg");
-        King p9 = new King(9, "Станіслаў II Аўгуст Панятоўскі", 1764, "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Stanisław_August_Poniatowski_coronation_robes.jpg/800px-Stanisław_August_Poniatowski_coronation_robes.jpg");
-        kings.addAll(Arrays.asList(new King[]{p0, p1, p2, p3, p4, p5, p6, p7, p8, p9}));
+        kings.addAll(Arrays.asList(new King[]{p0}));
         return kings;
     }
 
