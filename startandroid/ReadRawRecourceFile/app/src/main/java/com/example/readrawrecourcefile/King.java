@@ -3,7 +3,7 @@ package com.example.readrawrecourcefile;
 import java.util.List;
 
 public class King {
-    private int id;
+    private String id;
     private String kingName;
     private String kingDateLife;
     private String kingDateReign;
@@ -12,7 +12,7 @@ public class King {
     private List<String> kingPhotos;
 
 
-    public King(int id, String kingName, String kingDateLife, String kingDateReign, String kingShortHist, String kingLongHist, List<String> kingPhotos) {
+    public King(String id, String kingName, String kingDateLife, String kingDateReign, String kingShortHist, String kingLongHist, List<String> kingPhotos) {
         this.id = id;
         this.kingName = kingName;
         this.kingDateLife = kingDateLife;
@@ -25,21 +25,21 @@ public class King {
     @Override
     public String toString() {
         return "King{" +
-                "id=" + id +
-                ", kingName='" + kingName + '\'' +
-                ", kingDateLife='" + kingDateLife + '\'' +
-                ", kingDateReign='" + kingDateReign + '\'' +
-                ", kingShortHist='" + kingShortHist + '\'' +
-                ", kingLongHist='" + kingLongHist + '\'' +
-                ", kingPhotos=" + kingPhotos +
+                "id=" + id + '\n' +
+                ", kingName='" + kingName + '\'' +'\n' +
+                ", kingDateLife='" + kingDateLife + '\'' +'\n' +
+                ", kingDateReign='" + kingDateReign + '\'' +'\n' +
+                ", kingShortHist='" + kingShortHist + '\'' +'\n' +
+                ", kingLongHist='" + kingLongHist + '\'' +'\n' +
+                ", kingPhotos=" + kingPhotos +'\n' +
                 '}';
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
