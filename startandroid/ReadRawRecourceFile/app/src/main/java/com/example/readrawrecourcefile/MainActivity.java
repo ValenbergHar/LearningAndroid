@@ -31,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         String allKings = readRawTextFile(this, R.raw.kings);
-        String allKings1 = readRawTextFile(this, R.raw.kings);
         kingsStringList = kingsList(allKings);
 
         for (String s : kingsStringList) {
-            Log.i("qqq", String.valueOf(kingId(s)));
+            Log.i("qqq", kingId(s));
+            Log.i("qqq", kingName(s));
+            Log.i("qqq", kingDateLife(s));
+            Log.i("qqq", kingDateReign(s));
+            Log.i("qqq", kingShortHist(s));
+            Log.i("qqq", kingLongHist(s));
+            Log.i("qqq", kingPhotos(s));
+
+
 //            Pattern pattern1 = Pattern.compile("<id>[0-9]+</id>");
 //            Matcher matcher1 = pattern1.matcher(s);
 //            while (matcher1.find()) {
@@ -47,28 +54,107 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private int kingId(String kingUnit) {
-        int id = 0;
+    private String kingId(String kingUnit) {
+        String id = null;
         Pattern pattern1 = Pattern.compile("<id>[0-9]+</id>");
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            id= Integer.parseInt(String.valueOf(matcher1));
+            id = matcher1.group();
         }
         return id;
     }
 
+    private String kingDateLife(String kingUnit) {
+        String kingDateLife = null;
+        String start = "<kingDateLife>";
+        String finish = "</kingDateLife>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingDateLife = matcher1.group(1);
+        }
+        return kingDateLife;
+    }
 
-//    private int kingId(String kingUnit) {
-//        int id = 0;
-//        String start = "<id>";
-//        String finish = "</id>";
-//        Pattern pattern = Pattern.compile(start + "[0-9]+" + finish);
-//        Matcher matcher = pattern.matcher(kingUnit);
-//        while (matcher.find()) {
-//           id = Integer.parseInt(String.valueOf(matcher));
-//        }
-//        return id;
-//    }
+    private String kingDateReign(String kingUnit) {
+        String kingDateReign = null;
+        String start = "<kingDateReign>";
+        String finish = "</kingDateReign>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingDateReign = matcher1.group(1);
+        }
+        return kingDateReign;
+    }
+
+    private String kingShortHist(String kingUnit) {
+        String kingShortHist = null;
+        String start = "<kingShortHist>";
+        String finish = "</kingShortHist>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingShortHist = matcher1.group(1);
+        }
+        return kingShortHist;
+    }
+
+    private String kingLongHist(String kingUnit) {
+        String kingLongHist = null;
+        String start = "<kingLongHist>";
+        String finish = "</kingLongHist>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingLongHist = matcher1.group(1);
+        }
+        return kingLongHist;
+    }
+
+
+    private String kingPhotos(String kingUnit) {
+        String kingPhotos = null;
+        String start = "<kingPhotos>";
+        String finish = "</kingPhotos>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingPhotos = matcher1.group(1);
+        }
+        return kingPhotos;
+    }
+
+    private List<String> kingPhotoUnitList(String kingPhotos) {
+        List<String> kingPhotoUnitList = new ArrayList<>();
+
+        String start = "<kingPhotoUnit>";
+        String finish = "</kingPhotoUnit>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+        Matcher matcher1 = pattern1.matcher(kingPhotos);
+        while (matcher1.find()) {
+            kingPhotoUnitList.add(matcher1.group(1));
+        }
+        return kingPhotoUnitList;
+    }
+
+
+
+
+
+
+
+    private String kingName(String kingUnit) {
+        String kingName = null;
+        String start = "<kingName>";
+        String finish = "</kingName>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingName = matcher1.group(1);
+        }
+        return kingName;
+    }
 
 
     private List<String> kingsList(String allKings) {
@@ -78,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         Pattern pattern = Pattern.compile(start + "\\s*(.*?)\\s*" + finish, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(allKings);
         while (matcher.find()) {
-            kings.add(String.valueOf(matcher));
+            kings.add(matcher.group(1));
         }
         return kings;
     }

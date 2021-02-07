@@ -108,14 +108,17 @@ public class MainActivity extends AppCompatActivity {
             Pattern pattern = Pattern.compile(start + "(.*?)" + finish);
             Matcher matcher = pattern.matcher(content);
             while (matcher.find()) {
+                Log.i("qqq", matcher.group(1));
                 splitContent = matcher.group(1);
             }
 
             Pattern patternImage = Pattern.compile("src=\"(.*?)\"");
             Pattern patternName = Pattern.compile("<figcaption>Instagram: (.*?)</figcaption>");
+
             Matcher matcherImage = patternImage.matcher(splitContent);
             Matcher matcherName = patternName.matcher(splitContent);
             while (matcherImage.find()) {
+                Log.i("qqq", matcherImage.group(2));
                 urls.add(matcherImage.group(1));
             }
             while (matcherName.find()) {
