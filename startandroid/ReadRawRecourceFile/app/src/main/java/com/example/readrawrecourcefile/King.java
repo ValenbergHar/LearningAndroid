@@ -10,9 +10,10 @@ public class King {
     private String kingShortHist;
     private String kingLongHist;
     private List<String> kingPhotos;
+    private List<String> kingPhotosDesc;
 
 
-    public King(String id, String kingName, String kingDateLife, String kingDateReign, String kingShortHist, String kingLongHist, List<String> kingPhotos) {
+    public King(String id, String kingName, String kingDateLife, String kingDateReign, String kingShortHist, String kingLongHist, List<String> kingPhotos, List<String> kingPhotosDesc) {
         this.id = id;
         this.kingName = kingName;
         this.kingDateLife = kingDateLife;
@@ -20,19 +21,30 @@ public class King {
         this.kingShortHist = kingShortHist;
         this.kingLongHist = kingLongHist;
         this.kingPhotos = kingPhotos;
+        this.kingPhotosDesc = kingPhotosDesc;
     }
+
 
     @Override
     public String toString() {
         return "King{" +
-                "id=" + id + '\n' +
-                ", kingName='" + kingName + '\'' +'\n' +
-                ", kingDateLife='" + kingDateLife + '\'' +'\n' +
-                ", kingDateReign='" + kingDateReign + '\'' +'\n' +
-                ", kingShortHist='" + kingShortHist + '\'' +'\n' +
-                ", kingLongHist='" + kingLongHist + '\'' +'\n' +
-                ", kingPhotos=" + kingPhotos +'\n' +
+                "id='" + id + '\'' +
+                ", kingName='" + kingName + '\'' +
+                ", kingDateLife='" + kingDateLife + '\'' +
+                ", kingDateReign='" + kingDateReign + '\'' +
+                ", kingShortHist='" + kingShortHist + '\'' +
+                ", kingLongHist='" + kingLongHist + '\'' +
+                ", kingPhotos=" + kingPhotos +
+                ", kingPhotosDesc=" + kingPhotosDesc +
                 '}';
+    }
+
+    public List<String> getKingPhotosDesc() {
+        return kingPhotosDesc;
+    }
+
+    public void setKingPhotosDesc(List<String> kingPhotosDesc) {
+        this.kingPhotosDesc = kingPhotosDesc;
     }
 
     public String getId() {

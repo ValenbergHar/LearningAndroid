@@ -24,7 +24,8 @@ public class Util {
             String kingShortHist = kingShortHist(s);
             String kingLongHist = kingLongHist(s);
             List<String> kingPhotoUnitList = kingPhotoUnitList(s);
-            kingsList.add(new King(id, kingName, kingDateLife, kingDateReign, kingShortHist, kingLongHist, kingPhotoUnitList));
+            List<String> kingPhotoUnitListDesc = kingPhotoUnitListDesc(s);
+            kingsList.add(new King(id, kingName, kingDateLife, kingDateReign, kingShortHist, kingLongHist, kingPhotoUnitList, kingPhotoUnitListDesc));
         }
 
         return kingsList;
@@ -110,6 +111,50 @@ public class Util {
         }
         return kingPhotoUnitList;
     }
+
+    private static List<String> kingPhotoUnitListDesc(String s) {
+        String kingPhotos = null;
+        String start = "<kingPhotos>";
+        String finish = "</kingPhotos>";
+        Pattern pattern = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+        Matcher matcher = pattern.matcher(s);
+        while (matcher.find()) {
+            kingPhotos = matcher.group(1);
+        }
+        List<String> kingPhotoUnitListDesc = new ArrayList<>();
+        String start1 = "<kingPhotoUnitDesc>";
+        String finish1 = "</kingPhotoUnitDesc>";
+        Pattern pattern1 = Pattern.compile(start1 + "(.*?)" + finish1, Pattern.DOTALL);
+        Matcher matcher1 = pattern1.matcher(kingPhotos);
+        while (matcher1.find()) {
+            kingPhotoUnitListDesc.add(matcher1.group(1).trim());
+        }
+        return kingPhotoUnitListDesc;
+    }
+
+
+//    private static List<String> kingPhotoUnitList(String s) {
+//        String kingPhotos = null;
+//        String start = "<kingPhotos>";
+//        String finish = "</kingPhotos>";
+//        Pattern pattern = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+//        Matcher matcher = pattern.matcher(s);
+//        while (matcher.find()) {
+//            kingPhotos = matcher.group(1);
+//        }
+//        List<String> kingPhotoUnitList = new ArrayList<>();
+//        String start1 = "<kingPhotoUnit>";
+//        String finish1 = "</kingPhotoUnit>";
+//        Pattern pattern1 = Pattern.compile(start1 + "(.*?)" + finish1, Pattern.DOTALL);
+//        Matcher matcher1 = pattern1.matcher(kingPhotos);
+//        while (matcher1.find()) {
+//            kingPhotoUnitList.add(matcher1.group(1).trim());
+//        }
+//        return kingPhotoUnitList;
+//    }
+
+
+
 
 
     private static String kingName(String kingUnit) {

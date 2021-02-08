@@ -1,6 +1,8 @@
 package com.example.readrawrecourcefile;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,14 +18,29 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView txtRawResource;
+    private RecyclerView photoRecView;
+    private PhotoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtRawResource = findViewById(R.id.txtRawResource);
-        txtRawResource.setText(String.valueOf(Util.kingsList(this, R.raw.kings).get(0)));
+
+        List<King> kingList = Util.kingsList(this, R.raw.kings);
+        King king  =kingList.get(0);
+
+
+
+
+
+        adapter= new PhotoAdapter(this, king.getKingPhotos(), king.getKingPhotosDesc());
+        photoRecView = findViewById(R.id.photoRecView);
+        photoRecView.setAdapter(adapter);
+        photoRecView.setLayoutManager(new GridLayoutManager(this,2));
+
+
+
+//        txtRawResource.setText(String.valueOf(Util.kingsList(this, R.raw.kings).get(0)));
 
 
 //        kingsList = new ArrayList<>();
