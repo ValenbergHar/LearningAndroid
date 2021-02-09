@@ -1,6 +1,7 @@
 package com.example.readrawrecourcefile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
+
     private Context context;
     private List<String> photos = new ArrayList<>();
     private List<String> desc = new ArrayList<>();
@@ -42,6 +44,13 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> 
                 .asBitmap()
                 .load(photos.get(position))
                 .into(holder.imgBook);
+
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PhotoView.start(view.getContext(), photos.get(position));
+            }
+        });
     }
 
     @Override
