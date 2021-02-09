@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -28,10 +29,9 @@ import java.io.File;
 
 public class PhotoView extends AppCompatActivity {
     private static final String PHOTO_ID_KEY = "photo";
- private SubsamplingScaleImageView imageView;
-//    private  ImageView imageView;
+    private SubsamplingScaleImageView imageView;
+    //    private  ImageView imageView;
     private Bitmap photo;
-
 
 
     public static void start(Context context, String s) {
@@ -43,12 +43,18 @@ public class PhotoView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_photo_view);
+        getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_photo_view);
+
+
         imageView = findViewById(R.id.imageView);
         Intent intent = getIntent();
-        String photoUrl=intent.getStringExtra(PHOTO_ID_KEY);
-
+        String photoUrl = intent.getStringExtra(PHOTO_ID_KEY);
 
 
 //
@@ -85,13 +91,6 @@ public class PhotoView extends AppCompatActivity {
                         imageView.setMaxScale(10f);
                     }
                 });
-
-
-
-
-
-
-
 
 
     }
