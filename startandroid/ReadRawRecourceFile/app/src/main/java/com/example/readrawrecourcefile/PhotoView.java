@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -23,9 +24,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
+import java.io.File;
+
 public class PhotoView extends AppCompatActivity {
     private static final String PHOTO_ID_KEY = "photo";
-    private SubsamplingScaleImageView imageView;
+ private SubsamplingScaleImageView imageView;
+//    private  ImageView imageView;
     private Bitmap photo;
 
 
@@ -42,40 +46,53 @@ public class PhotoView extends AppCompatActivity {
         setContentView(R.layout.activity_photo_view);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         imageView = findViewById(R.id.imageView);
-
-        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(this);
-
-        ImageLoader.getInstance().loadImage(getIntent().getStringExtra(PHOTO_ID_KEY), new SimpleImageLoadingListener() {
-            @Override
-            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                if (!isFinishing()) {
-                    photo = loadedImage;
-                    imageView.setImage(ImageSource.cachedBitmap(loadedImage));
-                }
-            }
-        });
+        Intent intent = getIntent();
+        String photoUrl=intent.getStringExtra(PHOTO_ID_KEY);
 
 
-//        Glide.with(this).load(photoStringURL).into(new CustomTarget<Bitmap>() {
-//            @Override
-//            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
-//                imageView.setMinimumDpi(80);
-//                imageView.setImage(ImageSource.bitmap(resource));
-//            }
+
 //
+//        ImageLoader.getInstance().loadImage(getIntent().getStringExtra(PHOTO_ID_KEY), new SimpleImageLoadingListener() {
 //            @Override
-//            public void onLoadCleared(@Nullable Drawable placeholder) {
-//
-//            }
-//
-//            @Override
-//            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-//                hillImageView.setMinimumDpi(80);
-//                SubsamplingScaleImageView hillImageView = (SubsamplingScaleImageView) view.findViewById(R.id.hill_image);
-//                hillImageView.setMinimumDpi(80);
-//                hillImageView.setImage(ImageSource.bitmap(resource));
+//            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+//                if (!isFinishing()) {
+//                    photo = loadedImage;
+//                    imageView.setImage(ImageSource.cachedBitmap(loadedImage));
+//                }
 //            }
 //        });
+
+
+        //working
+//        Glide.with(this)
+//                .asBitmap()
+//                .load(photoUrl)
+//                .into(imageView);
+
+
+        Glide.with(this)
+                .download(photoUrl)
+                .into(new SimpleTarget<File>() {
+                    @Override
+                    public void onLoadFailed(@Nullable Drawable errorDrawable) {
+                        super.onLoadFailed(errorDrawable);
+                        Log.d("load failed", "nothing");
+                    }
+
+                    @Override
+                    public void onResourceReady(File resource, Transition<? super File> transition) {
+                        imageView.setImage(ImageSource.uri(resource.getAbsolutePath()));
+                        imageView.setMaxScale(10f);
+                    }
+                });
+
+
+
+
+
+
+
+
 
     }
 
