@@ -52,9 +52,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txt_king_name.setText(kingList.get(position).getName());
-        holder.txt_king_date.setText(String.valueOf(kingList.get(position).getDateOfElection()));
-        Glide.with(context).load(kingList.get(position).getImageUrl()).into(holder.iv_king_picture);
+        holder.txt_king_name.setText(kingList.get(position).getKingName());
+        holder.txt_king_date.setText(String.valueOf(kingList.get(position).getKingDateReign()));
+        Glide.with(context).load(kingList.get(position).getKingPhotos().get(0)).into(holder.iv_king_picture);
         setAnimation(holder.itemView, position);
     }
 
@@ -75,7 +75,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 filterList.addAll(kingSearchList);
             } else {
                 for (King king : kingSearchList) {
-                    if (king.getName().toLowerCase().contains(constraint.toString().toLowerCase())) {
+                    if (king.getKingName().toLowerCase().contains(constraint.toString().toLowerCase())) {
                         filterList.add(king);
                     }
                 }

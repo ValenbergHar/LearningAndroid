@@ -10,23 +10,22 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.kingsgdl.R;
+import com.example.kingsgdl.kings.King;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class FragmentOne extends Fragment {
+    private View view;
     private TextView dateReign;
     private ImageView imageViewFragOne;
-    private View view;
-    private int id;
-    private String urlImage;
     private TextView textBirthDeath;
+    private King king;
 
 
-    public FragmentOne(int id, String urlImage) {
-        this.id = id;
-        this.urlImage = urlImage;
+    public FragmentOne(King king) {
+        this.king = king;
     }
 
 
@@ -35,22 +34,14 @@ public class FragmentOne extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_one, container, false);
         dateReign = view.findViewById(R.id.reign);
-        imageViewFragOne = view.findViewById(R.id.imageViewFragOne);
+        dateReign.setText(king.getKingDateReign());
+
         textBirthDeath = view.findViewById(R.id.textBirthDeath);
-        Glide.with(getActivity()).load(urlImage).into(imageViewFragOne);
+        textBirthDeath.setText(king.getKingDateLife());
 
+        imageViewFragOne = view.findViewById(R.id.imageViewFragOne);
+        Glide.with(getActivity()).load(king.getKingPhotos().get(0)).into(imageViewFragOne);
 
-
-        String[] reign = getResources().getStringArray((R.array.reign));
-        String[] date = getResources().getStringArray((R.array.date));
-
-        for (int i = 0; i < reign.length; i++) {
-            if (id == i) {
-                textBirthDeath.setText(date[i]);
-                dateReign.setText(reign[i]);
-                break;
-            }
-        }
         return view;
     }
 }

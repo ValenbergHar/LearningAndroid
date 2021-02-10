@@ -13,24 +13,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class FragmentThree extends Fragment {
     private View view;
-    private int id;
+    private RecyclerView photoRecView;
+    private PhotoAdapter adapter;
+    private King king;
 
-    private List<String> kingsPhotoList;
-    private List<String> kingsPhotoNameList;
-
-
-    private RecyclerView recyclerView;
-    private FragmentThreeAdapter mFTAdapter;
-    private RecyclerView.LayoutManager layoutManager;
-
-    public FragmentThree(int id) {
-        this.id = id;
+    public FragmentThree(King king) {
+        this.king = king;
     }
 
     @Nullable
@@ -38,18 +33,12 @@ public class FragmentThree extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_three, container, false);
 
+        adapter= new PhotoAdapter(this, king.getKingPhotos(), king.getKingPhotosDesc());
+        photoRecView = view.findViewById(R.id.photoRecView);
+        photoRecView.setAdapter(adapter);
+        photoRecView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
 
-//        String[] date = getResources().getStringArray((R.array.date));
-//
-//        for (int i = 0; i < reign.length; i++) {
-//            if (id == i) {
-//                textBirthDeath.setText(date[i]);
-//                dateReign.setText(reign[i]);
-//                break;
-//            }
-//        }
-//
      return view;
     }
 }

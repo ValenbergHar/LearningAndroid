@@ -2,120 +2,106 @@ package com.example.kingsgdl.kings;
 
 import java.io.Serializable;
 import java.util.Comparator;
+import java.util.List;
 
 public class King implements Serializable {
-    private int id;
-    private String name;
-    private int dateOfElection;
-    private String imageUrl;
-    private String infoShort;
-    private String info;
-    private String[] photos;
+    private String id;
+    private String kingName;
+    private String kingDateLife;
+    private String kingDateReign;
+    private String kingShortHist;
+    private String kingLongHist;
+    private List<String> kingPhotos;
+    private List<String> kingPhotosDesc;
 
-    public King(int id, String name, int dateOfElection, String imageUrl, String infoShort, String info, String[] photos) {
+
+    public King(String id, String kingName, String kingDateLife, String kingDateReign, String kingShortHist, String kingLongHist, List<String> kingPhotos, List<String> kingPhotosDesc) {
         this.id = id;
-        this.name = name;
-        this.dateOfElection = dateOfElection;
-        this.imageUrl = imageUrl;
-        this.infoShort = infoShort;
-        this.info = info;
-        this.photos = photos;
+        this.kingName = kingName;
+        this.kingDateLife = kingDateLife;
+        this.kingDateReign = kingDateReign;
+        this.kingShortHist = kingShortHist;
+        this.kingLongHist = kingLongHist;
+        this.kingPhotos = kingPhotos;
+        this.kingPhotosDesc = kingPhotosDesc;
     }
 
-
-
-    public King(int id, String name, int dateOfElection, String imageUrl) {
-        this.id = id;
-        this.name = name;
-        this.dateOfElection = dateOfElection;
-        this.imageUrl = imageUrl;
-    }
-
-    public static Comparator<King> kingNameAZComparator = new Comparator<King>() {
-        @Override
-        public int compare(King k1, King k2) {
-            return k1.getName().compareTo(k2.getName());
-        }
-    };
-
-    public static Comparator<King> kingNameZAComparator = new Comparator<King>() {
-        @Override
-        public int compare(King k1, King k2) {
-            return k2.getName().compareTo(k1.getName());
-        }
-    };
-
-    public static Comparator<King> kingDateAscComparator = new Comparator<King>() {
-        @Override
-        public int compare(King k1, King k2) {
-            return k2.getDateOfElection()-k1.getDateOfElection();
-        }
-    };
-
-    public static Comparator<King> kingDateDescComparator = new Comparator<King>() {
-        @Override
-        public int compare(King k1, King k2) {
-            return k1.getDateOfElection()-k2.getDateOfElection();
-        }
-    };
-
-
-    public String getInfoShort() {
-        return infoShort;
-    }
-
-    public void setInfoShort(String infoShort) {
-        this.infoShort = infoShort;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public String[] getPhotos() {
-        return photos;
-    }
-
-    public void setPhotos(String[] photos) {
-        this.photos = photos;
-    }
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getDateOfElection() {
-        return dateOfElection;
-    }
-    public void setDateOfElection(int dateOfElection) {
-        this.dateOfElection = dateOfElection;
-    }
-    public String getImageUrl() {
-        return imageUrl;
-    }
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 
     @Override
     public String toString() {
         return "King{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfElection=" + dateOfElection +
-                ", imageUrl='" + imageUrl + '\'' +
+                "id='" + id + '\'' +
+                ", kingName='" + kingName + '\'' +
+                ", kingDateLife='" + kingDateLife + '\'' +
+                ", kingDateReign='" + kingDateReign + '\'' +
+                ", kingShortHist='" + kingShortHist + '\'' +
+                ", kingLongHist='" + kingLongHist + '\'' +
+                ", kingPhotos=" + kingPhotos +
+                ", kingPhotosDesc=" + kingPhotosDesc +
                 '}';
+    }
+
+    public List<String> getKingPhotosDesc() {
+        return kingPhotosDesc;
+    }
+
+    public void setKingPhotosDesc(List<String> kingPhotosDesc) {
+        this.kingPhotosDesc = kingPhotosDesc;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getKingName() {
+        return kingName;
+    }
+
+    public void setKingName(String kingName) {
+        this.kingName = kingName;
+    }
+
+    public String getKingDateLife() {
+        return kingDateLife;
+    }
+
+    public void setKingDateLife(String kingDateLife) {
+        this.kingDateLife = kingDateLife;
+    }
+
+    public String getKingDateReign() {
+        return kingDateReign;
+    }
+
+    public void setKingDateReign(String kingDateReign) {
+        this.kingDateReign = kingDateReign;
+    }
+
+    public String getKingShortHist() {
+        return kingShortHist;
+    }
+
+    public void setKingShortHist(String kingShortHist) {
+        this.kingShortHist = kingShortHist;
+    }
+
+    public String getKingLongHist() {
+        return kingLongHist;
+    }
+
+    public void setKingLongHist(String kingLongHist) {
+        this.kingLongHist = kingLongHist;
+    }
+
+    public List<String> getKingPhotos() {
+        return kingPhotos;
+    }
+
+    public void setKingPhotos(List<String> kingPhotos) {
+        this.kingPhotos = kingPhotos;
     }
 }

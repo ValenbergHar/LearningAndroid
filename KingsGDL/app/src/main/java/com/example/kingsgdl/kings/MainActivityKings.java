@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.example.kingsgdl.R;
 import com.example.kingsgdl.kings.tablelayout.MainActivityTable;
+import com.example.kingsgdl.kings.tablelayout.Utils;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -51,11 +53,12 @@ public class MainActivityKings extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent(MainActivityKings.this, MainActivityTable.class);
+                intent.putExtra("intent",  kingsList.get(position));
 
-                intent.putExtra("id", String.valueOf(kingsList.get(position).getId()));
-                intent.putExtra("name", kingsList.get(position).getName());
-                intent.putExtra("date", String.valueOf(kingsList.get(position).getDateOfElection()));
-                intent.putExtra("image", kingsList.get(position).getImageUrl());
+//                intent.putExtra("id", kingsList.get(position).getId());
+//                intent.putExtra("name", kingsList.get(position).getKingName());
+//                intent.putExtra("date", String.valueOf(kingsList.get(position).getKingDateReign()));
+//                intent.putExtra("image", kingsList.get(position).getKingPhotos().get(0));
 
                 startActivity(intent);
                 Toast.makeText(MainActivityKings.this, String.valueOf(position), Toast.LENGTH_SHORT).show();

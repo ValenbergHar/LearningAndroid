@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.kingsgdl.R;
+import com.example.kingsgdl.kings.King;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,12 +15,12 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentTwo extends Fragment {
     private View view;
-    private int id;
-    private TextView txtKingStory;
+    private TextView txtkingLongHist;
+    private King king;
 
 
-    public FragmentTwo(int id) {
-        this.id = id;
+    public FragmentTwo(King king) {
+        this.king = king;
     }
 
     public FragmentTwo() {
@@ -29,15 +30,8 @@ public class FragmentTwo extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_two, container, false);
-        txtKingStory=view.findViewById(R.id.txtKingStory);
-        String[] arrKingStory = getResources().getStringArray((R.array.story));
-
-        for (int i = 0; i < arrKingStory.length; i++) {
-            if (id == i) {
-                txtKingStory.setText(arrKingStory[i]);
-                  break;
-            }
-        }
+        txtkingLongHist=view.findViewById(R.id.txtkingLongHist);
+        txtkingLongHist.setText(king.getKingLongHist());
 
         return view;
     }

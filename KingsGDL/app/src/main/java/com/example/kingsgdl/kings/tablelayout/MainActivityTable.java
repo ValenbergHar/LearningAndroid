@@ -1,10 +1,12 @@
 package com.example.kingsgdl.kings.tablelayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.kingsgdl.R;
+import com.example.kingsgdl.kings.King;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
@@ -20,6 +22,18 @@ public class MainActivityTable extends AppCompatActivity {
     private int id;
     private String name;
     private String urlImage;
+    private King king;
+
+    private static Context context;
+
+    public static void setContext(Context cntxt) {
+        context = cntxt;
+    }
+
+
+    public static Context getAppContext() {
+        return context;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +44,21 @@ public class MainActivityTable extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPagerId);
         kings_name = findViewById(R.id.kings_name);
         nameKingFragOne = findViewById(R.id.name_reign);
+        MainActivityTable.context = getApplicationContext();
+
 
         Intent intent = getIntent();
-        name = intent.getStringExtra("name");
-        id = Integer.valueOf(intent.getStringExtra("id"));
-        urlImage = intent.getStringExtra("image");
+        king = (King) intent.getSerializableExtra("intent");
+//        name = intent.getStringExtra("name");
+//        id = Integer.valueOf(intent.getStringExtra("id"));
+//        urlImage = intent.getStringExtra("image");
 
         kings_name.setText(name);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
 
-        adapter.addFragment(new FragmentOne(id, urlImage), "Звесткі");
-        adapter.addFragment(new FragmentTwo(id), "Гісторыя");
-        adapter.addFragment(new FragmentThree(id), "Фоткі");
-
-        String[] strings = getResources().getStringArray((R.array.kings));
+        adapter.addFragment(new FragmentOne(king), "Звесткі");
+        adapter.addFragment(new FragmentTwo(king), "Гісторыя");
+        adapter.addFragment(new FragmentThree(king), "Фоткі");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
