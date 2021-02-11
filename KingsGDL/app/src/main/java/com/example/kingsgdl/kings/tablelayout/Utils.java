@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.bumptech.glide.util.Util;
 import com.example.kingsgdl.R;
+import com.example.kingsgdl.StaticContextFactory;
 import com.example.kingsgdl.kings.King;
-import com.nostra13.universalimageloader.utils.L;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public  class Utils  {
     public static List<King> getKingsPK() {
 
 
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 //        King p0 = new King(0, "Міндоўг", 1236, "https://upload.wikimedia.org/wikipedia/commons/2/24/Mendog_1578.png");
 //        King p1 = new King(1, "Транята", 1263, "https://upload.wikimedia.org/wikipedia/commons/2/2e/Treniota.jpg");
 //        King p2 = new King(2, "Войшалк", 1264, "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vojshalk.png/230px-Vojshalk.png");
@@ -36,7 +36,7 @@ public  class Utils  {
 
 
     public static List<King> getKingsVkl() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 //        King p0 = new King(0, "Міндоўг", 1236, "https://upload.wikimedia.org/wikipedia/commons/2/24/Mendog_1578.png");
 //        King p1 = new King(1, "Транята", 1263, "https://upload.wikimedia.org/wikipedia/commons/2/2e/Treniota.jpg");
 //        King p2 = new King(2, "Войшалк", 1264, "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vojshalk.png/230px-Vojshalk.png");
@@ -63,50 +63,50 @@ public  class Utils  {
     }
 
     public static List<King> getKingsRP() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
     public static List<King> getKingsRusOcc() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
     public static List<King> getKingsBNR() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
 
     public static List<King> getKingsZahBiel() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
     public static List<King> getKingsBSSRFirst() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
     public static List<King> getKingsNacOcc() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
     public static List<King> getKingsBSSRSecond() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }
 
     public static List<King> getKingsRB() {
-        List<King> kings = LoadKing.kingsList(MainActivityTable.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
 
         return kings;
     }

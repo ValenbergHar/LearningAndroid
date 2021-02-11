@@ -24,16 +24,6 @@ public class MainActivityTable extends AppCompatActivity {
     private String urlImage;
     private King king;
 
-    private static Context context;
-
-    public static void setContext(Context cntxt) {
-        context = cntxt;
-    }
-
-
-    public static Context getAppContext() {
-        return context;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +34,12 @@ public class MainActivityTable extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPagerId);
         kings_name = findViewById(R.id.kings_name);
         nameKingFragOne = findViewById(R.id.name_reign);
-        MainActivityTable.context = getApplicationContext();
+
 
 
         Intent intent = getIntent();
         king = (King) intent.getSerializableExtra("intent");
-//        name = intent.getStringExtra("name");
-//        id = Integer.valueOf(intent.getStringExtra("id"));
-//        urlImage = intent.getStringExtra("image");
+
 
         kings_name.setText(name);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);

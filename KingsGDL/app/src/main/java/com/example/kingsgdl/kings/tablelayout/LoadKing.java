@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class LoadKing {
     public static List<King> kingsList(Context ctx, int resId) {
         List<King> kingsList = new ArrayList<>();
-        String allKings = readRaw(MainActivityTable.getAppContext(), resId);
+        String allKings = readRaw(ctx, resId);
         List<String> kingsStringList = kingsList(allKings);
         for (String s : kingsStringList) {
             String id = kingId(s);
@@ -161,8 +161,8 @@ public class LoadKing {
     }
 
     public static String readRaw(Context ctx, int resId) {
-//        InputStream inputStream = ctx.getResources().openRawResource(resId);
-        InputStream inputStream = MainActivityTable.getAppContext().getResources().openRawResource(resId);
+        InputStream inputStream = ctx.getResources().openRawResource(resId);
+//        InputStream inputStream = MainActivityTable.getAppContext().getResources().openRawResource(resId);
         BufferedReader buffreader = new BufferedReader(new InputStreamReader(inputStream));
         String line;
         StringBuilder text = new StringBuilder();

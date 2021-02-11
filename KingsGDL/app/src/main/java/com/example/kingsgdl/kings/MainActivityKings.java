@@ -55,10 +55,6 @@ public class MainActivityKings extends AppCompatActivity {
                 Intent intent = new Intent(MainActivityKings.this, MainActivityTable.class);
                 intent.putExtra("intent",  kingsList.get(position));
 
-//                intent.putExtra("id", kingsList.get(position).getId());
-//                intent.putExtra("name", kingsList.get(position).getKingName());
-//                intent.putExtra("date", String.valueOf(kingsList.get(position).getKingDateReign()));
-//                intent.putExtra("image", kingsList.get(position).getKingPhotos().get(0));
 
                 startActivity(intent);
                 Toast.makeText(MainActivityKings.this, String.valueOf(position), Toast.LENGTH_SHORT).show();

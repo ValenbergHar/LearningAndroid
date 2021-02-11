@@ -21,13 +21,12 @@ public class FragmentOne extends Fragment {
     private TextView dateReign;
     private ImageView imageViewFragOne;
     private TextView textBirthDeath;
+    private TextView  txtKingShortHist;
     private King king;
-
 
     public FragmentOne(King king) {
         this.king = king;
     }
-
 
     @Nullable
     @Override
@@ -38,6 +37,9 @@ public class FragmentOne extends Fragment {
 
         textBirthDeath = view.findViewById(R.id.textBirthDeath);
         textBirthDeath.setText(king.getKingDateLife());
+
+        txtKingShortHist = view.findViewById(R.id.txtKingShortHist);
+        txtKingShortHist.setText(king.getKingShortHist());
 
         imageViewFragOne = view.findViewById(R.id.imageViewFragOne);
         Glide.with(getActivity()).load(king.getKingPhotos().get(0)).into(imageViewFragOne);
