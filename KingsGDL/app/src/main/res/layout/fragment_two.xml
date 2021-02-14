@@ -21,11 +21,12 @@
 
             <TextView
                 android:id="@+id/txtkingLongHist"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Fragment 2"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textSize="15dp"
+                />
 
 
         </com.google.android.material.card.MaterialCardView>

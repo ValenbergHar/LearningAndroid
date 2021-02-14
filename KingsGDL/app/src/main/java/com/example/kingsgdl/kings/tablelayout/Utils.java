@@ -63,19 +63,18 @@ public  class Utils  {
     }
 
     public static List<King> getKingsRP() {
-        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsrp);
 
         return kings;
     }
 
-    public static List<King> getKingsRusOcc() {
-        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
-
+    public static List<King> getKingsRusAc() {
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsrusac);
         return kings;
     }
 
     public static List<King> getKingsBNR() {
-        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsrusac);
 
         return kings;
     }

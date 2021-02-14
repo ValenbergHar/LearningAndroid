@@ -24,6 +24,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:text="Час праўлення: "
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +33,9 @@
     <TextView
         android:id="@+id/reign"
         android:layout_width="wrap_content"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
+
         android:text="TextView"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -44,6 +47,7 @@
 
     <TextView
         android:id="@+id/textView2"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -56,6 +60,7 @@
 
     <TextView
         android:id="@+id/textBirthDeath"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -82,6 +87,7 @@
             android:id="@+id/txtKingShortHist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
 
              />
     </ScrollView>

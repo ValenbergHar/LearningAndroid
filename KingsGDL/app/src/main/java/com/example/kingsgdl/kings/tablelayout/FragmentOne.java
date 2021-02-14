@@ -1,6 +1,7 @@
 package com.example.kingsgdl.kings.tablelayout;
 
 import android.os.Bundle;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.kingsgdl.kings.King;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 
 public class FragmentOne extends Fragment {
@@ -38,8 +40,13 @@ public class FragmentOne extends Fragment {
         textBirthDeath = view.findViewById(R.id.textBirthDeath);
         textBirthDeath.setText(king.getKingDateLife());
 
+
+        String htmlString =king.getKingShortHist();
+        Spanned spanned = HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_COMPACT);
         txtKingShortHist = view.findViewById(R.id.txtKingShortHist);
-        txtKingShortHist.setText(king.getKingShortHist());
+        txtKingShortHist.setText(spanned);
+
+//        txtKingShortHist.setText(king.getKingShortHist());
 
         imageViewFragOne = view.findViewById(R.id.imageViewFragOne);
         Glide.with(getActivity()).load(king.getKingPhotos().get(0)).into(imageViewFragOne);

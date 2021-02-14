@@ -2,8 +2,6 @@ package com.example.kingsgdl.listofstates;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.FileUtils;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,12 +10,9 @@ import com.example.kingsgdl.kings.MainActivityKings;
 import com.example.kingsgdl.kings.tablelayout.Utils;
 import com.google.android.material.appbar.MaterialToolbar;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
-
-import drawer.MainActivityDrawer;
 
 public class StatesMainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnPolackKniastva, btnVKL, btnRP, btnRusOcc, btnBNR, btnZahBiel, btnBSSRFirst, btnNacOcc, btnBSSRSecond, btnRB;
@@ -77,7 +72,7 @@ public class StatesMainActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.btnRusOcc:
                 Intent intentRusOcc = new Intent(StatesMainActivity.this, MainActivityKings.class);
-                intentRusOcc.putExtra("intent", (Serializable) Utils.getKingsRusOcc());
+                intentRusOcc.putExtra("intent", (Serializable) Utils.getKingsRusAc());
                 startActivity(intentRusOcc);
                 break;
             case R.id.btnBNR:

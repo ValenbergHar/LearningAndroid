@@ -1,6 +1,7 @@
 package com.example.kingsgdl.kings;
 
 import android.content.Context;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -52,9 +54,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txt_king_name.setText(kingList.get(position).getKingName());
-        holder.txt_king_date.setText(String.valueOf(kingList.get(position).getKingDateReign()));
-        Glide.with(context).load(kingList.get(position).getKingPhotos().get(0)).into(holder.iv_king_picture);
+        String getKingName = kingList.get(position).getKingName();
+
+        Spanned spanned = HtmlCompat.fromHtml(getKingName, HtmlCompat.FROM_HTML_MODE_COMPACT);
+        holder.txt_king_name.setText(spanned);
+//            holder.txt_king_name.setText(kingList.get(position).getKingName());
+
+        holder.txt_king_date.setText(String.valueOf(kingList.get(position).
+
+                getKingDateReign()));
+        Glide.with(context).
+                load(kingList.get(position).
+                        getKingPhotos().
+                        get(0)).
+                into(holder.iv_king_picture);
         setAnimation(holder.itemView, position);
     }
 

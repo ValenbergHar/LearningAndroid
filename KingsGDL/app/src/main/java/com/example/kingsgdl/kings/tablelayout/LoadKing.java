@@ -77,7 +77,7 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            kingShortHist = matcher1.group(1).replaceAll("\n","").trim();
+            kingShortHist = matcher1.group(1).replaceAll("\n","").trim().replaceAll("\\s+", " ");
         }
         return kingShortHist;
     }
@@ -89,7 +89,7 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            kingLongHist = matcher1.group(1).replaceAll("\n","").trim();
+            kingLongHist = matcher1.group(1).replaceAll("\n","").trim().replaceAll("\\s+", " ");
         }
         return kingLongHist;
     }
@@ -109,7 +109,7 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start1 + "(.*?)" + finish1, Pattern.DOTALL);
         Matcher matcher1 = pattern1.matcher(kingPhotos);
         while (matcher1.find()) {
-            kingPhotoUnitList.add(matcher1.group(1).trim());
+            kingPhotoUnitList.add(matcher1.group(1).trim().replaceAll("\\s+", " "));
         }
         return kingPhotoUnitList;
     }
