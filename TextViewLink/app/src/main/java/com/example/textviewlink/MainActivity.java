@@ -4,6 +4,7 @@ package com.example.textviewlink;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
+import androidx.dynamicanimation.animation.SpringAnimation;
 
 import android.content.Context;
 import android.content.Intent;
@@ -114,57 +115,61 @@ public class MainActivity extends AppCompatActivity {
         return string;
     }
 
-    private static char linkPlusText(String c) {
+    private static List<String> linkPlusText(String c) {
         String start = "<a href=\"";
         String finish = "</a>";
         String middle = "\">";
         String linkPlusText = null;
-        int startI = 0;
-        int endI = 0;
+        List<String> nameArray = new ArrayList<>();
+        List<String> linkArray = new ArrayList<>();
+        List<Integer> startPointArray = new ArrayList<>();
+        List<Integer> endPointArray = new ArrayList<>();
 
-
-        startI = c.indexOf(middle) ;
-        endI = c.indexOf(finish) ;
-        char ch1 = c.charAt(startI);
-        char ch2 = c.charAt(endI);
-        String[] lpt;
-        String link = null;
-        String name = null;
-
-        //        String text = "I love you so much";
-//        String wordToFind = "love";
-//        Pattern word = Pattern.compile(wordToFind);
-//        Matcher match = word.matcher(text);
-//
-//        while (match.find()) {
-//            System.out.println("Found love at index "+ match.start() +" - "+ (match.end()-1));
-//        }
-
-        List<Integer> integers = new ArrayList<>();
-        Pattern pattern = Pattern.compile(middle, Pattern.DOTALL);
-        Matcher matcher = pattern.matcher(c);
-        while (matcher.find()){
-         // integers.add(matcher.end());
+        Pattern patternStartPoint = Pattern.compile(middle, Pattern.DOTALL);
+        Matcher matcherStartPoint = patternStartPoint.matcher(c);
+        while (matcherStartPoint.find()) {
+            startPointArray.add(matcherStartPoint.end());
         }
 
-        Pattern pattern1 = Pattern.compile(finish, Pattern.DOTALL);
-        Matcher matcher1 = pattern1.matcher(c);
-        while (matcher1.find()){
-            integers.add(matcher1.start()-1);
+        Pattern patternEndPoint = Pattern.compile(finish, Pattern.DOTALL);
+        Matcher matcherEndPoint = patternEndPoint.matcher(c);
+        while (matcherEndPoint.find()) {
+            endPointArray.add(matcherEndPoint.start() - 1);
         }
 
+        Pattern patternName = Pattern.compile(middle + "\\s*(.*?)\\s*" + finish, Pattern.DOTALL);
+        Matcher matcherName = patternName.matcher(c);
+        while (matcherName.find()) {
+            nameArray.add(matcherName.group(1));
+        }
 
+        Pattern patternLink = Pattern.compile(start + "\\s*(.*?)\\s*" + middle, Pattern.DOTALL);
+        Matcher matcherLink = patternLink.matcher(c);
+        while (matcherLink.find()) {
+            linkArray.add(matcherLink.group(1));
+        }
 
-       char ch = c.charAt(105);
-
-        Pattern pattern2 = Pattern.compile(start + "\\s*(.*?)\\s*" + finish, Pattern.DOTALL);
-        Matcher matcher2 = pattern2.matcher(c);
-//        while (matcher2.find()) {
-//            linkPlusText = matcher1.group(0);
-//        }
-//        lpt = linkPlusText.split(middle);
-        return ch;
+        return linkArray;
     }
 
 
+    private static List<Links> listLinks(String c) {
+        List<Links> listLinks = new ArrayList<>();
+        while () {
+            String name = patternName(c);
+            String link;
+            int start;
+            int end;
+
+            listLinks.add(new Links(name, link, start, end));
+        }
+        return listLinks;
+    }
+
+    private static String patternName(String c) {
+        String start = "<a href=\"";
+        String finish = "</a>";
+        String middle = "\">";
+
+    }
 }
