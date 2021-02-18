@@ -142,7 +142,7 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            kingName = matcher1.group(1).trim();
+            kingName = matcher1.group(1).replaceAll("\n","").trim();
         }
         return kingName;
     }

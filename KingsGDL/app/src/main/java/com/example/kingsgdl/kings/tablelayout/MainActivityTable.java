@@ -46,7 +46,7 @@ public class MainActivityTable extends AppCompatActivity {
 
         adapter.addFragment(new FragmentOne(king), "Звесткі");
         adapter.addFragment(new FragmentTwo(king), "Гісторыя");
-        adapter.addFragment(new FragmentThree(king), "Фоткі");
+        adapter.addFragment(new FragmentThree(king), "Відарысы");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
