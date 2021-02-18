@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.example.kingsgdl"
         minSdkVersion 19
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -37,7 +37,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-
+    implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
 
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
