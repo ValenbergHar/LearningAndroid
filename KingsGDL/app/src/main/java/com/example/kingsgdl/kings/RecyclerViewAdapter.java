@@ -1,6 +1,7 @@
 package com.example.kingsgdl.kings;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.Collection;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,14 +57,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String getKingName = kingList.get(position).getKingName();
+//        if (kingList.get(position).getKingName().contains("<u>"))
+//            holder.parent.setBackgroundColor(R.drawable.gradient2);
+//        else
+//            holder.parent.setBackgroundColor(R.drawable.gradient1);
 
         Spanned spanned = HtmlCompat.fromHtml(getKingName, HtmlCompat.FROM_HTML_MODE_COMPACT);
         holder.txt_king_name.setText(spanned);
 //            holder.txt_king_name.setText(kingList.get(position).getKingName());
 
-        holder.txt_king_date.setText(String.valueOf(kingList.get(position).
-
-                getKingDateReign()));
+        holder.txt_king_date.setText(String.valueOf(kingList.get(position).getKingDateReign()));
         Glide.with(context).
                 load(kingList.get(position).
                         getKingPhotos().
@@ -121,16 +125,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView txt_king_name;
         TextView txt_king_date;
         ConstraintLayout constraintLayout;
+        CardView parent;
 
 
         public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
+            parent = itemView.findViewById(R.id.parent);
             iv_king_picture = itemView.findViewById(R.id.iv_king_picture);
             txt_king_name = itemView.findViewById(R.id.txt_king_name);
             txt_king_date = itemView.findViewById(R.id.txt_date);
-            constraintLayout = itemView.findViewById(R.id.oneLineKingLayout);
+//            constraintLayout = itemView.findViewById(R.id.oneLineKingLayout);
 
-            constraintLayout.setOnClickListener(new View.OnClickListener() {
+            parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (listener != null) {

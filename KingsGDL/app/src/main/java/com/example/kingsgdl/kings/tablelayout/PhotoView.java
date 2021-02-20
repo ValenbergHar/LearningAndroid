@@ -9,15 +9,13 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.Request;
+
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.SizeReadyCallback;
-import com.bumptech.glide.request.target.Target;
+
 import com.bumptech.glide.request.transition.Transition;
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.example.kingsgdl.R;
-import com.squareup.picasso.Picasso;
 
 import java.io.File;
 
@@ -28,7 +26,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PhotoView extends AppCompatActivity {
     private static final String PHOTO_ID_KEY = "photo";
     private SubsamplingScaleImageView subsamplingScaleImageView;
-
 
 
     public static void start(Context context, String s) {
@@ -49,7 +46,6 @@ public class PhotoView extends AppCompatActivity {
         String photoUrl = intent.getStringExtra(PHOTO_ID_KEY);
 
 
-
 //        Picasso.with(this).load(photoUrl).into(new SimpleTarget<File>() {
 //                                                   @Override
 //                                                   public void onResourceReady(@NonNull File resource, @Nullable Transition<? super File> transition) {
@@ -60,8 +56,6 @@ public class PhotoView extends AppCompatActivity {
 //                                               });
 
 
-
-
         Glide.with(this)
                 .download(photoUrl)
                 .into(new SimpleTarget<File>() {
@@ -70,6 +64,7 @@ public class PhotoView extends AppCompatActivity {
                         super.onLoadFailed(errorDrawable);
                         Log.d("load failed", "nothing");
                     }
+
                     @Override
                     public void onResourceReady(File resource, Transition<? super File> transition) {
                         subsamplingScaleImageView.setImage(ImageSource.uri(resource.getAbsolutePath()));
