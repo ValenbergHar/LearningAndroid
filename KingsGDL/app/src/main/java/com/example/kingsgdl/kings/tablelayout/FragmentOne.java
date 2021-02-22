@@ -23,7 +23,7 @@ public class FragmentOne extends Fragment {
     private TextView dateReign;
     private ImageView imageViewFragOne;
     private TextView textBirthDeath;
-    private TextView  txtKingShortHist;
+    private TextView txtKingShortHist;
     private King king;
 
     public FragmentOne(King king) {
@@ -41,7 +41,7 @@ public class FragmentOne extends Fragment {
         textBirthDeath.setText(king.getKingDateLife());
 
 
-        String htmlString =king.getKingShortHist();
+        String htmlString = king.getKingShortHist();
         Spanned spanned = HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_COMPACT);
         txtKingShortHist = view.findViewById(R.id.txtKingShortHist);
         txtKingShortHist.setText(spanned);

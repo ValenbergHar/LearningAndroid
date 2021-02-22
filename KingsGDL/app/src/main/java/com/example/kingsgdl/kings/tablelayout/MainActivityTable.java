@@ -3,6 +3,7 @@ package com.example.kingsgdl.kings.tablelayout;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spanned;
 import android.widget.TextView;
 
 import com.example.kingsgdl.R;
@@ -11,6 +12,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 import androidx.viewpager.widget.ViewPager;
 
 public class MainActivityTable extends AppCompatActivity {
@@ -40,8 +42,9 @@ public class MainActivityTable extends AppCompatActivity {
         Intent intent = getIntent();
         king = (King) intent.getSerializableExtra("intent");
 
-
-        kings_name.setText(name);
+        String htmlString = king.getKingName();
+        Spanned spanned = HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_COMPACT);
+        kings_name.setText(spanned);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
 
         adapter.addFragment(new FragmentOne(king), "Звесткі");
