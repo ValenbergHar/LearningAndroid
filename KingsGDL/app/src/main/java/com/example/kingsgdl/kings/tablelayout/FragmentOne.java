@@ -1,7 +1,9 @@
 package com.example.kingsgdl.kings.tablelayout;
 
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,11 +42,15 @@ public class FragmentOne extends Fragment {
         textBirthDeath = view.findViewById(R.id.textBirthDeath);
         textBirthDeath.setText(king.getKingDateLife());
 
+//        txtkingLongHist.setLinksClickable(true);
+//        SpannableString ss = new SpannableString(HtmlCompat.fromHtml(htmlString,HtmlCompat.FROM_HTML_MODE_COMPACT));
 
         String htmlString = king.getKingShortHist();
-        Spanned spanned = HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_COMPACT);
         txtKingShortHist = view.findViewById(R.id.txtKingShortHist);
-        txtKingShortHist.setText(spanned);
+        txtKingShortHist.setLinksClickable(true);
+        SpannableString spannableString = new SpannableString(HtmlCompat.fromHtml(htmlString,HtmlCompat.FROM_HTML_MODE_COMPACT));
+        txtKingShortHist.setText(spannableString);
+        txtKingShortHist.setMovementMethod(LinkMovementMethod.getInstance());
 
 //        txtKingShortHist.setText(king.getKingShortHist());
 
