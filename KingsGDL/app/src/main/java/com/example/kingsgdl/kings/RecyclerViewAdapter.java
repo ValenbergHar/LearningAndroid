@@ -1,7 +1,9 @@
 package com.example.kingsgdl.kings;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,11 +58,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        King king = kingList.get(position);
         String getKingName = kingList.get(position).getKingName();
-//        if (kingList.get(position).getKingName().contains("<u>"))
-//            holder.parent.setBackgroundColor(R.drawable.gradient2);
-//        else
-//            holder.parent.setBackgroundColor(R.drawable.gradient1);
+
+        Drawable colorId;
+        int priority = Integer.valueOf(king.getId());
+        switch (priority) {
+            case 1:
+                colorId = holder.itemView.getResources().getDrawable(R.drawable.gradient1);
+                break;
+            case 2:
+                colorId = holder.itemView.getResources().getDrawable(R.drawable.gradient2);
+                break;
+            default:
+                colorId = holder.itemView.getResources().getDrawable(R.drawable.gradient3);
+                break;
+        }
+        holder.constraintLayout.setBackgroundDrawable(colorId);
+
 
         Spanned spanned = HtmlCompat.fromHtml(getKingName, HtmlCompat.FROM_HTML_MODE_COMPACT);
         holder.txt_king_name.setText(spanned);
@@ -134,7 +149,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             iv_king_picture = itemView.findViewById(R.id.iv_king_picture);
             txt_king_name = itemView.findViewById(R.id.txt_king_name);
             txt_king_date = itemView.findViewById(R.id.txt_date);
-//            constraintLayout = itemView.findViewById(R.id.oneLineKingLayout);
+            constraintLayout = itemView.findViewById(R.id.constraintLayoutCard);
 
             parent.setOnClickListener(new View.OnClickListener() {
                 @Override
