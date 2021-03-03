@@ -8,28 +8,22 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.card.MaterialCardView
+
+        <TextView
+            android:layout_margin="4dp"
+            android:id="@+id/txtkingLongHist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:padding="10dp"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="5dp" >
+            android:text="Fragment 2"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/txtkingLongHist"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Fragment 2"
-                android:textSize="15dp"
-                />
-
-
-        </com.google.android.material.card.MaterialCardView>
     </ScrollView>
 
 
