@@ -61,6 +61,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         King king = kingList.get(position);
         String getKingName = kingList.get(position).getKingName();
 
+
         Drawable colorId;
         int priority = Integer.valueOf(king.getId());
         switch (priority) {
@@ -79,9 +80,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         Spanned spanned = HtmlCompat.fromHtml(getKingName, HtmlCompat.FROM_HTML_MODE_COMPACT);
         holder.txt_king_name.setText(spanned);
+
+
 //            holder.txt_king_name.setText(kingList.get(position).getKingName());
 
         holder.txt_king_date.setText(String.valueOf(kingList.get(position).getKingDateReign()));
+//        holder.txt_occupation.setText(kingList.get(position).get);
         Glide.with(context).
                 load(kingList.get(position).
                         getKingPhotos().
@@ -139,6 +143,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView iv_king_picture;
         TextView txt_king_name;
         TextView txt_king_date;
+        TextView txt_occupation;
         ConstraintLayout constraintLayout;
         CardView parent;
 
@@ -149,6 +154,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             iv_king_picture = itemView.findViewById(R.id.iv_king_picture);
             txt_king_name = itemView.findViewById(R.id.txt_king_name);
             txt_king_date = itemView.findViewById(R.id.txt_date);
+            txt_occupation = itemView.findViewById(R.id.txt_occupation);
             constraintLayout = itemView.findViewById(R.id.constraintLayoutCard);
 
             parent.setOnClickListener(new View.OnClickListener() {
