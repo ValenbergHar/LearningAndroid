@@ -2,9 +2,7 @@ package com.example.kingsgdl.kings.tablelayout;
 
 import android.os.Bundle;
 import android.text.SpannableString;
-import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.kingsgdl.R;
-import com.example.kingsgdl.kings.King;
+import com.example.kingsgdl.kings.KingFull;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,10 +24,11 @@ public class FragmentOne extends Fragment {
     private ImageView imageViewFragOne;
     private TextView textBirthDeath;
     private TextView txtKingShortHist;
-    private King king;
+    private KingFull kingFull;
+    private TextView nameReign;
 
-    public FragmentOne(King king) {
-        this.king = king;
+    public FragmentOne(KingFull king) {
+        this.kingFull = king;
     }
 
     @Nullable
@@ -37,25 +36,34 @@ public class FragmentOne extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_one, container, false);
         dateReign = view.findViewById(R.id.reign);
-        dateReign.setText(king.getKingDateReign());
+        nameReign= view.findViewById(R.id.name_reign);
+
+        if (kingFull.getKingDateReign() == null) {
+            dateReign.setVisibility(View.INVISIBLE);
+            nameReign.setVisibility(View.INVISIBLE);
+        } else {
+            dateReign.setText(kingFull.getKingDateReign());
+        }
 
         textBirthDeath = view.findViewById(R.id.textBirthDeath);
-        textBirthDeath.setText(king.getKingDateLife());
+
+
+        textBirthDeath.setText(kingFull.getKingDateLife());
 
 //        txtkingLongHist.setLinksClickable(true);
 //        SpannableString ss = new SpannableString(HtmlCompat.fromHtml(htmlString,HtmlCompat.FROM_HTML_MODE_COMPACT));
 
-        String htmlString = king.getKingShortHist();
+        String htmlString = kingFull.getKingShortHist();
         txtKingShortHist = view.findViewById(R.id.txtKingShortHist);
         txtKingShortHist.setLinksClickable(true);
-        SpannableString spannableString = new SpannableString(HtmlCompat.fromHtml(htmlString,HtmlCompat.FROM_HTML_MODE_COMPACT));
+        SpannableString spannableString = new SpannableString(HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_COMPACT));
         txtKingShortHist.setText(spannableString);
         txtKingShortHist.setMovementMethod(LinkMovementMethod.getInstance());
 
 //        txtKingShortHist.setText(king.getKingShortHist());
 
         imageViewFragOne = view.findViewById(R.id.imageViewFragOne);
-        Glide.with(getActivity()).load(king.getKingPhotos().get(0)).into(imageViewFragOne);
+        Glide.with(getActivity()).load(kingFull.getKingPhotos().get(0)).into(imageViewFragOne);
 
         return view;
     }

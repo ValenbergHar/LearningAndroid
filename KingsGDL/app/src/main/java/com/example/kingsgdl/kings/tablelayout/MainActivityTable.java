@@ -1,15 +1,18 @@
 package com.example.kingsgdl.kings.tablelayout;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Spanned;
 import android.widget.TextView;
 
 import com.example.kingsgdl.R;
+import com.example.kingsgdl.StaticContextFactory;
 import com.example.kingsgdl.kings.King;
+import com.example.kingsgdl.kings.KingFull;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
+
+import java.lang.reflect.Field;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
@@ -24,6 +27,8 @@ public class MainActivityTable extends AppCompatActivity {
     private int id;
     private String name;
     private String urlImage;
+
+    private KingFull kingFull;
     private King king;
 
 
@@ -42,16 +47,35 @@ public class MainActivityTable extends AppCompatActivity {
         Intent intent = getIntent();
         king = (King) intent.getSerializableExtra("intent");
 
-        String htmlString = king.getKingName();
+        String name = king.getLink();
+        int resID = getResId(name, R.raw.class);
+
+        kingFull=LoadKing.kingsListWithAdd(StaticContextFactory.getAppContext(), resID);
+
+        String htmlString = kingFull.getKingName();
         Spanned spanned = HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_COMPACT);
         kings_name.setText(spanned);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
 
-        adapter.addFragment(new FragmentOne(king), "Звесткі");
-        adapter.addFragment(new FragmentTwo(king), "Гісторыя");
-        adapter.addFragment(new FragmentThree(king), "Відарысы");
+
+
+
+        adapter.addFragment(new FragmentOne(kingFull), "Звесткі");
+        adapter.addFragment(new FragmentTwo(kingFull), "Гісторыя");
+        adapter.addFragment(new FragmentThree(kingFull), "Відарысы");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    public static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }

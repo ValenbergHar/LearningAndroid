@@ -1,8 +1,6 @@
 package com.example.kingsgdl.kings;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.Spanned;
 import android.view.LayoutInflater;
@@ -84,12 +82,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 //            holder.txt_king_name.setText(kingList.get(position).getKingName());
 
-        holder.txt_king_date.setText(String.valueOf(kingList.get(position).getKingDateReign()));
-//        holder.txt_occupation.setText(kingList.get(position).get);
+        holder.txt_king_date.setText(String.valueOf(kingList.get(position).getKingDateLife()));
+       holder.txt_occupation.setText(kingList.get(position).getKingOccupation());
         Glide.with(context).
                 load(kingList.get(position).
-                        getKingPhotos().
-                        get(0)).
+                        getKingPhoto()).
                 into(holder.iv_king_picture);
         setAnimation(holder.itemView, position);
     }

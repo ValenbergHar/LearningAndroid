@@ -21,8 +21,8 @@
         android:id="@+id/name_reign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
         android:text="Час праўлення: "
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -47,16 +47,16 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="Гады жыцця: "
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_reign" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFragOne" />
 
     <TextView
         android:id="@+id/textBirthDeath"
@@ -75,13 +75,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" >
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <TextView
             android:id="@+id/txtKingShortHist"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
 
-             />
+            />
     </ScrollView>
 
 

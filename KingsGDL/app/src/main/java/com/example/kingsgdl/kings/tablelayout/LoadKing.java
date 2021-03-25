@@ -3,6 +3,7 @@ package com.example.kingsgdl.kings.tablelayout;
 import android.content.Context;
 
 import com.example.kingsgdl.kings.King;
+import com.example.kingsgdl.kings.KingFull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,11 +15,52 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoadKing {
+
     public static List<King> kingsList(Context ctx, int resId) {
         List<King> kingsList = new ArrayList<>();
         String allKings = readRaw(ctx, resId);
-        List<String> kingsStringList = kingsList(allKings);
+        List<String> kingsStringList = kingsListWithAdd(allKings);
         for (String s : kingsStringList) {
+            String id = kingId(s);
+            String kingName = kingName(s);
+            String kingDateLife = kingDateLife(s);
+            String kingOccupation= kingOccupation(s);
+            String link = kingLink(s);
+            String kingPhotoUnit = kingPhotoUnit(s);
+            kingsList.add(new King(id, kingName, kingDateLife, kingOccupation, link , kingPhotoUnit));
+        }
+        return kingsList;
+    }
+
+    private static String kingLink(String kingUnit) {
+        String kingLink = null;
+        String start = "<kingLink>";
+        String finish = "</kingLink>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingLink = matcher1.group(1).trim();
+        }
+        return kingLink;
+    }
+
+    private static String kingOccupation(String kingUnit) {
+        String kingOccupation = null;
+        String start = "<kingOccupation>";
+        String finish = "</kingOccupation>";
+        Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
+        Matcher matcher1 = pattern1.matcher(kingUnit);
+        while (matcher1.find()) {
+            kingOccupation = matcher1.group(1).trim();
+        }
+        return kingOccupation;
+    }
+
+
+        public static KingFull kingsListWithAdd(Context ctx, int resId) {
+
+        String KingFull = readRaw(ctx, resId);
+        String s = kingUnit(KingFull);
             String id = kingId(s);
             String kingName = kingName(s);
             String kingDateLife = kingDateLife(s);
@@ -27,11 +69,30 @@ public class LoadKing {
             String kingLongHist = kingLongHist(s);
             List<String> kingPhotoUnitList = kingPhotoUnitList(s);
             List<String> kingPhotoUnitListDesc = kingPhotoUnitListDesc(s);
-            kingsList.add(new King(id, kingName, kingDateLife, kingDateReign, kingShortHist, kingLongHist, kingPhotoUnitList, kingPhotoUnitListDesc));
-        }
+            KingFull kingFull = new KingFull(id, kingName, kingDateLife, kingDateReign, kingShortHist, kingLongHist, kingPhotoUnitList, kingPhotoUnitListDesc);
 
-        return kingsList;
+        return kingFull;
     }
+
+
+//    public static List<KingFull> kingsListWithAdd(Context ctx, int resId) {
+//        List<KingFull> kingsList = new ArrayList<>();
+//        String allKings = readRaw(ctx, resId);
+//        List<String> kingsStringList = kingsListWithAdd(allKings);
+//        for (String s : kingsStringList) {
+//            String id = kingId(s);
+//            String kingName = kingName(s);
+//            String kingDateLife = kingDateLife(s);
+//            String kingDateReign = kingDateReign(s);
+//            String kingShortHist = kingShortHist(s);
+//            String kingLongHist = kingLongHist(s);
+//            List<String> kingPhotoUnitList = kingPhotoUnitList(s);
+//            List<String> kingPhotoUnitListDesc = kingPhotoUnitListDesc(s);
+//            kingsList.add(new KingFull(id, kingName, kingDateLife, kingDateReign, kingShortHist, kingLongHist, kingPhotoUnitList, kingPhotoUnitListDesc));
+//        }
+//
+//        return kingsList;
+//    }
 
 
     private static String kingId(String kingUnit) {
@@ -77,7 +138,7 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            kingShortHist = matcher1.group(1).replaceAll("\n","").trim().replaceAll("\\s+", " ");
+            kingShortHist = matcher1.group(1).replaceAll("\n", "").trim().replaceAll("\\s+", " ");
         }
         return kingShortHist;
     }
@@ -89,10 +150,13 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            kingLongHist = matcher1.group(1).replaceAll("\n","").trim().replaceAll("\\s+", " ");
+            kingLongHist = matcher1.group(1).replaceAll("\n", "").trim().replaceAll("\\s+", " ");
         }
         return kingLongHist;
     }
+
+
+
 
     private static List<String> kingPhotoUnitList(String s) {
         String kingPhotos = null;
@@ -103,6 +167,12 @@ public class LoadKing {
         while (matcher.find()) {
             kingPhotos = matcher.group(1);
         }
+
+
+
+
+
+
         List<String> kingPhotoUnitList = new ArrayList<>();
         String start1 = "<kingPhotoUnit>";
         String finish1 = "</kingPhotoUnit>";
@@ -112,6 +182,18 @@ public class LoadKing {
             kingPhotoUnitList.add(matcher1.group(1).trim().replaceAll("\\s+", " "));
         }
         return kingPhotoUnitList;
+    }
+
+    private static String kingPhotoUnit(String s) {
+        String kingPhoto = null;
+        String start = "<kingPhotoUnit>";
+        String finish = "</kingPhotoUnit>";
+        Pattern pattern = Pattern.compile(start + "(.*?)" + finish, Pattern.DOTALL);
+        Matcher matcher = pattern.matcher(s);
+        while (matcher.find()) {
+            kingPhoto = matcher.group(1);
+        }
+        return kingPhoto;
     }
 
     private static List<String> kingPhotoUnitListDesc(String s) {
@@ -142,13 +224,14 @@ public class LoadKing {
         Pattern pattern1 = Pattern.compile(start + "(.*?)" + finish);
         Matcher matcher1 = pattern1.matcher(kingUnit);
         while (matcher1.find()) {
-            kingName = matcher1.group(1).replaceAll("\n","").trim();
+            kingName = matcher1.group(1).replaceAll("\n", "").trim();
         }
         return kingName;
     }
 
 
-    private static List<String> kingsList(String allKings) {
+    //для спісу князёў
+    private static List<String> kingsListWithAdd(String allKings) {
         List<String> kings = new ArrayList<>();
         String start = "<king>";
         String finish = "</king>";
@@ -158,6 +241,21 @@ public class LoadKing {
             kings.add(matcher.group(1));
         }
         return kings;
+    }
+
+
+
+    //для 1 князя
+    private static String kingUnit(String allKings) {
+        String kingUnit = null;
+        String start = "<king>";
+        String finish = "</king>";
+        Pattern pattern = Pattern.compile(start + "\\s*(.*?)\\s*" + finish, Pattern.DOTALL);
+        Matcher matcher = pattern.matcher(allKings);
+        while (matcher.find()) {
+            kingUnit = matcher.group(1);
+        }
+        return kingUnit;
     }
 
     public static String readRaw(Context ctx, int resId) {

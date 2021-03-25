@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
@@ -14,11 +15,8 @@ import android.widget.Toast;
 
 import com.example.kingsgdl.R;
 import com.example.kingsgdl.kings.tablelayout.MainActivityTable;
-import com.example.kingsgdl.kings.tablelayout.Utils;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainActivityKings extends AppCompatActivity {
@@ -53,7 +51,7 @@ public class MainActivityKings extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent(MainActivityKings.this, MainActivityTable.class);
-                intent.putExtra("intent",  kingsList.get(position));
+                intent.putExtra("intent", kingsList.get(position));
 
 
                 startActivity(intent);

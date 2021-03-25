@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Дзяржаўныя ўтварэнні і Асобы "
+        android:id="@+id/kings"
+        android:icon="@drawable/ic_kings"/>
+
+
+    <item
+        android:title="Царкоўная Ўнія"
+        android:id="@+id/ategories"
+        android:icon="@drawable/cross"/>
+
+</menu>

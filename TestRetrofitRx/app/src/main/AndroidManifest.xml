@@ -12,7 +12,7 @@
         android:theme="@style/Theme.TestRetrofitRx"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".screens.employee.EmployeeListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

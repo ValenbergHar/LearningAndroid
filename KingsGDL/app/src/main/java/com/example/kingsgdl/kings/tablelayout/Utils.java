@@ -1,27 +1,33 @@
 package com.example.kingsgdl.kings.tablelayout;
 
-import android.content.Context;
-
-import com.bumptech.glide.util.Util;
 import com.example.kingsgdl.R;
 import com.example.kingsgdl.StaticContextFactory;
 import com.example.kingsgdl.kings.King;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.lang.reflect.Field;
 import java.util.List;
 
 public  class Utils  {
 
+    public static int getResId(String resName, Class<?> c) {
 
-    public static List<King> getKingsPK() {
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
 
 
-        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsvkl);
+
+    public static List<King> getKingsPK()  {
+
+        String name = "kingsrp";
+        int resID = getResId(name, R.raw.class);
+
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw._kingsrp);
 //        King p0 = new King(0, "Міндоўг", 1236, "https://upload.wikimedia.org/wikipedia/commons/2/24/Mendog_1578.png");
 //        King p1 = new King(1, "Транята", 1263, "https://upload.wikimedia.org/wikipedia/commons/2/2e/Treniota.jpg");
 //        King p2 = new King(2, "Войшалк", 1264, "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Vojshalk.png/230px-Vojshalk.png");
@@ -63,7 +69,7 @@ public  class Utils  {
     }
 
     public static List<King> getKingsRP() {
-        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw.kingsrp);
+        List<King> kings = LoadKing.kingsList(StaticContextFactory.getAppContext(), R.raw._kingsrp);
 
         return kings;
     }

@@ -6,25 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kingsgdl.R;
-import com.example.kingsgdl.kings.King;
-import com.example.kingsgdl.kings.RecyclerViewAdapter;
+import com.example.kingsgdl.kings.KingFull;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
 
 public class FragmentThree extends Fragment {
     private View view;
     private RecyclerView photoRecView;
     private PhotoAdapter adapter;
-    private King king;
+    private KingFull king;
 
-    public FragmentThree(King king) {
+    public FragmentThree(KingFull king) {
         this.king = king;
     }
 

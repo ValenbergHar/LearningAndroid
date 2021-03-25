@@ -2,7 +2,6 @@ package com.example.kingsgdl.kings.tablelayout;
 
 import android.os.Bundle;
 import android.text.SpannableString;
-import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.kingsgdl.R;
-import com.example.kingsgdl.kings.King;
+import com.example.kingsgdl.kings.KingFull;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,10 +19,10 @@ import androidx.fragment.app.Fragment;
 public class FragmentTwo extends Fragment {
     private View view;
     private TextView txtkingLongHist;
-    private King king;
+    private KingFull king;
 
 
-    public FragmentTwo(King king) {
+    public FragmentTwo(KingFull king) {
         this.king = king;
     }
 
