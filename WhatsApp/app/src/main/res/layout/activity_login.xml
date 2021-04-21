@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+<TextView
+    android:id="@+id/login_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:text="@string/numar_pat"
+    android:textSize="20sp"
+    android:layout_centerHorizontal="true"
+    android:textAlignment="center"
+    android:layout_marginTop="20dp"
+    android:maxLines="1"
+    />
+
+  <TextView
+      android:id="@+id/tv1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/whatsapp_sms"
+      android:layout_below="@+id/login_title"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="25dp"
+      android:padding="20dp"
+      android:textAlignment="center"
+      android:textStyle="italic"
+      android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/login_phone_input"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="@string/edit_number"
+        />
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:layout_below="@+id/login_phone_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+
+
+    <EditText
+        android:id="@+id/login_verification_input"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="@string/cade_message"
+        android:visibility="invisible"
+        />
+
+
+    <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:layout_below="@+id/login_phone_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        />
+
+
+
+</RelativeLayout>

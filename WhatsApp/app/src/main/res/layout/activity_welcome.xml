@@ -33,15 +33,15 @@
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_above="@id/continu"
+        android:layout_above="@id/agreeBtn"
         />
 
     <Button
-        android:id="@+id/continu"
+        android:id="@+id/agreeBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/policy"
+        android:text="@string/accept"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_margin="15dp"

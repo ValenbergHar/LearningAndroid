@@ -11,4 +11,23 @@
     <string name="vitae">Вітанькі</string>
     <string name="continu">працягнуць</string>
     <string name="policy">прыняць палітыку</string>
+    <string name="accept">прыняць і працягнуць</string>
+    <string name="numar_pat">Увядзіце нумар патэльні</string>
+    <string name="edit_number">нумар патэльні</string>
+    <string name="next">Далей</string>
+    <string name="cade_message">Увядзіце код паведамлення</string>
+    <string name="confirm">Падцвердзіць</string>
+    <string name="whatsapp_sms">WhatsApp адправіць SMS-паведамленне</string>
+    <string name="policy_text">значыцца, правілы</string>
+    <string name="back">назад</string>
+    <string name="text_policy">Усё канфедынцыяльна, не хвалюйцеся</string>
+    <string name="toast_number">шаноўны, нумару няма</string>
+    <string name="exception">Памылка</string>
+    <string name="sent_code">Код адпраўлены</string>
+    <string name="toast_where_is_code">Дзе код?</string>
+    <string name="toast_checking_number">Праверка нумару</string>
+    <string name="toast_please_wait">Калі ласачка, пачакайце</string>
+    <string name="toast_code_cheking">Праверка коду</string>
+    <string name="toast_ok">Усё чоценька!</string>
+    <string name="toast_mistake">Памылка праверкі нумары</string>
 </resources>
