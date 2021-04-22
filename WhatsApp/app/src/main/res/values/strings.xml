@@ -29,5 +29,5 @@
     <string name="toast_please_wait">Калі ласачка, пачакайце</string>
     <string name="toast_code_cheking">Праверка коду</string>
     <string name="toast_ok">Усё чоценька!</string>
-    <string name="toast_mistake">Памылка праверкі нумары</string>
+    <string name="toast_mistake">Памылка праверкі нумара</string>
 </resources>

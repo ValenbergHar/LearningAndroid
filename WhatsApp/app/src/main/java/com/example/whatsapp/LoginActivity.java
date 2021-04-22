@@ -63,74 +63,81 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(phoneNumber)) {
                     Toast.makeText(LoginActivity.this, toast_number, Toast.LENGTH_SHORT).show();
                 } else {
-                    loadingBar.setTitle(getString(R.string.toast_checking_number));
-                    loadingBar.setMessage(getString(R.string.toast_please_wait));
-                    loadingBar.setCanceledOnTouchOutside(false);
-                    loadingBar.show();
-
-
-                    PhoneAuthOptions options =
-                            PhoneAuthOptions.newBuilder(mAuth)
-                                    .setPhoneNumber(phoneNumber)       // Phone number to verify
-                                    .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                                    .setActivity(LoginActivity.this)                 // Activity (for callback binding)
-                                    .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                                    .build();
-                    PhoneAuthProvider.verifyPhoneNumber(options);
+                    startPhoneNumberVerification(phoneNumber);
                 }
-
-                confirm_btn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String confirmCode = login_verification_input.getText().toString();
-                        if (TextUtils.isEmpty(confirmCode)) {
-                            Toast.makeText(LoginActivity.this, toast_where_is_code, Toast.LENGTH_SHORT).show();
-                        } else {
-
-                            loadingBar.setTitle(getString(R.string.toast_code_cheking));
-                            loadingBar.setMessage(getString(R.string.toast_please_wait));
-                            loadingBar.setCanceledOnTouchOutside(false);
-                            loadingBar.show();
-
-                            PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, confirmCode);
-                            signInWithPhoneAuthCredential(credential);
-                        }
-                    }
-                });
-
-                mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                    @Override
-                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                    }
-
-                    @Override
-                    public void onVerificationFailed(@NonNull FirebaseException e) {
-                        loadingBar.dismiss();
-                        Toast.makeText(LoginActivity.this, exception, Toast.LENGTH_SHORT).show();
-                        next_btn.setVisibility(View.VISIBLE);
-                        confirm_btn.setVisibility(View.INVISIBLE);
-                        login_phone_input.setVisibility(View.VISIBLE);
-                        login_verification_input.setVisibility(View.INVISIBLE);
-                    }
-
-                    @Override
-                    public void onCodeSent(@NonNull String verificationId,
-                                           @NonNull PhoneAuthProvider.ForceResendingToken token) {
-                        mVerificationId = verificationId;
-                        mResendToken = token;
-                        loadingBar.dismiss();
-                        Toast.makeText(LoginActivity.this, sent_code, Toast.LENGTH_SHORT).show();
-                        next_btn.setVisibility(View.INVISIBLE);
-                        confirm_btn.setVisibility(View.VISIBLE);
-                        login_phone_input.setVisibility(View.INVISIBLE);
-                        login_verification_input.setVisibility(View.VISIBLE);
-
-                    }
-                };
-
             }
         });
 
+        confirm_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String confirmCode = login_verification_input.getText().toString();
+                if (TextUtils.isEmpty(confirmCode)) {
+                    Toast.makeText(LoginActivity.this, toast_where_is_code, Toast.LENGTH_SHORT).show();
+                } else {
+                    verifyPhoneNumberWithCode(mVerificationId, confirmCode);
+                }
+            }
+        });
+
+        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                signInWithPhoneAuthCredential(phoneAuthCredential);
+            }
+
+            @Override
+            public void onVerificationFailed(@NonNull FirebaseException e) {
+                loadingBar.dismiss();
+                Toast.makeText(LoginActivity.this, exception, Toast.LENGTH_SHORT).show();
+                next_btn.setVisibility(View.VISIBLE);
+                confirm_btn.setVisibility(View.INVISIBLE);
+                login_phone_input.setVisibility(View.VISIBLE);
+                login_verification_input.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onCodeSent(@NonNull String verificationId,
+                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                mVerificationId = verificationId;
+                mResendToken = token;
+                loadingBar.dismiss();
+                Toast.makeText(LoginActivity.this, sent_code, Toast.LENGTH_SHORT).show();
+                next_btn.setVisibility(View.INVISIBLE);
+                confirm_btn.setVisibility(View.VISIBLE);
+                login_phone_input.setVisibility(View.INVISIBLE);
+                login_verification_input.setVisibility(View.VISIBLE);
+
+            }
+        };
+    }
+
+
+    private void startPhoneNumberVerification(String phoneNumber) {
+        loadingBar.setTitle(getString(R.string.toast_checking_number));
+        loadingBar.setMessage(getString(R.string.toast_please_wait));
+        loadingBar.setCanceledOnTouchOutside(false);
+        loadingBar.show();
+
+
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(phoneNumber)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(LoginActivity.this)                 // Activity (for callback binding)
+                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+
+    private void verifyPhoneNumberWithCode(String mVerificationId, String confirmCode) {
+        loadingBar.setTitle(getString(R.string.toast_code_cheking));
+        loadingBar.setMessage(getString(R.string.toast_please_wait));
+        loadingBar.setCanceledOnTouchOutside(false);
+        loadingBar.show();
+
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, confirmCode);
+        signInWithPhoneAuthCredential(credential);
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -143,6 +150,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, R.string.toast_ok, Toast.LENGTH_SHORT).show();
                             Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(mainIntent);
+                            finish();
                         } else {
                             Toast.makeText(LoginActivity.this, toast_mistake, Toast.LENGTH_SHORT).show();
                         }
