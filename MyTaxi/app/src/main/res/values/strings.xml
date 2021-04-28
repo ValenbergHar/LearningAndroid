@@ -4,11 +4,19 @@
     <string name="btn_driver">Я - кіроўца</string>
     <string name="brn_customer">Я - кліент</string>
     <string name="driver_txt_entrance">Уваход для кіроўцаў</string>
+    <string name="customer_txt_entrance">Уваход для кліентаў</string>
     <string name="driver_hint_email">pazniak_zianon@gmail.com</string>
     <string name="hint_password">пароль</string>
     <string name="driver_btn_login">Уваход</string>
     <string name="driver_btn_register">Рэгістрацыя</string>
     <string name="driver_sign_up">Шчэ няма акаўнту:(</string>
     <string name="driver_txt_registration">Рэгістрацыя для кіроўцаў</string>
+    <string name="set_text_customer">Рэгістрацыя для кліентаў</string>
+    <string name="set_text_driver">Рэгістрацыя для кіроўцаў</string>
+    <string name="toast_ok">Усё чоценька</string>
+    <string name="toast_error">Памылка</string>
+    <string name="bar_register_driver">Ідзе рэгістрацыя кіроўцы</string>
+    <string name="bar_register_customer">Ідзе рэгістрацыя кліента</string>
+    <string name="bar_wait">Калт ласачка, пачакайце</string>
 
 </resources>

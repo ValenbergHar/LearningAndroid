@@ -19,7 +19,7 @@
         android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/driver_email"
+        android:id="@+id/driver_email_l"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,16 +30,17 @@
         android:hint="@string/driver_hint_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/driver_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="50dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/driver_password"
+        android:id="@+id/driver_password_l"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/driver_email"
+        android:layout_below="@+id/driver_email_l"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -47,6 +48,7 @@
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/driver_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,7 +57,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/driver_btn_login"
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_below="@+id/driver_password"
+        android:layout_below="@+id/driver_password_l"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
