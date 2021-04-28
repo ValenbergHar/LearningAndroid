@@ -2,6 +2,7 @@ package com.example.whatsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class WelcomeActivity extends AppCompatActivity {
     private Button agreeBtn;
     private TextView policy;
-
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
 
     @Override
@@ -22,7 +24,9 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        policy=findViewById(R.id.policy);
+        policy = findViewById(R.id.policy);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
         agreeBtn = findViewById(R.id.agreeBtn);
         agreeBtn.setOnClickListener(new View.OnClickListener() {
@@ -42,4 +46,13 @@ public class WelcomeActivity extends AppCompatActivity {
         });
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (currentUser != null) {
+            Intent mainIntent = new Intent(WelcomeActivity.this, MainActivity.class);
+            startActivity(mainIntent);
+        }
+    }
 }

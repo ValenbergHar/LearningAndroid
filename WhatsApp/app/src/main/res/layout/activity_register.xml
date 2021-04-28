@@ -1,17 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="register screen"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="59dp" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/whats_app" />
+
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="@string/hint_mail"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="@string/hint_password_mail"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColorHint="@color/black" />
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_phone_input"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:layout_marginTop="50dp"
+            android:maxLines="1"
+            android:text="@string/register_btn"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_phone_input"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:layout_marginTop="50dp"
+            android:maxLines="1"
+            android:text="@string/login_btn"
+            android:textSize="16sp"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/changeTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_exist"
+        android:textAlignment="center"
+        android:textSize="25dp" />
+
 </RelativeLayout>

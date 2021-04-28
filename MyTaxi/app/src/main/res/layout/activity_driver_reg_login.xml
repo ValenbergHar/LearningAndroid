@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome"
+    tools:context=".DriverRegLoginActivity">
+
+    <TextView
+        android:id="@+id/driver_status"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="@string/driver_txt_entrance"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/driver_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/driver_status"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/driver_hint_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/driver_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/driver_email"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/hint_password"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/driver_btn_login"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_below="@+id/driver_password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/driver_btn_login"
+        android:textColor="#4493C8"
+        android:textSize="22sp"
+        app:cardCornerRadius="8dp"
+        app:cornerRadius="5dp"
+        app:iconTint="#00FFFFFF"
+        app:strokeColor="#4493C8"
+        app:strokeWidth="3dp" />
+
+    <TextView
+        android:id="@+id/driver_sign_up"
+        android:layout_below="@+id/driver_btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/driver_sign_up"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/driver_btn_register"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_below="@+id/driver_btn_login"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/driver_btn_register"
+        android:textColor="#4493C8"
+        android:textSize="22sp"
+        app:cardCornerRadius="8dp"
+        app:cornerRadius="5dp"
+        app:iconTint="#00FFFFFF"
+        app:strokeColor="#4493C8"
+        app:strokeWidth="3dp"/>
+
+
+
+
+
+
+</RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.whatsapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ import static com.example.whatsapp.R.string.toast_number;
 import static com.example.whatsapp.R.string.toast_where_is_code;
 
 public class LoginActivity extends AppCompatActivity {
-    private Button next_btn, confirm_btn;
+    private Button next_btn, confirm_btn, register_email_btn;
     private EditText login_phone_input, login_verification_input;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private String mVerificationId;
@@ -50,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         next_btn = findViewById(R.id.next_btn);
         confirm_btn = findViewById(R.id.confirm_btn);
+        register_email_btn = findViewById(R.id.register_email_btn);
         login_phone_input = findViewById(R.id.login_phone_input);
         login_verification_input = findViewById(R.id.login_verification_input);
         mAuth = FirebaseAuth.getInstance();
@@ -79,6 +81,15 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        register_email_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
+            }
+        });
+
 
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override

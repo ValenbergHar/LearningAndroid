@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome"
+    tools:context=".WelcomeActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/driver_btn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:text="@string/btn_driver"
+        android:textColor="#4493C8"
+        android:textSize="22sp"
+        app:cardCornerRadius="8dp"
+        app:cornerRadius="5dp"
+        app:iconTint="#00FFFFFF"
+        app:strokeColor="#4493C8"
+        app:strokeWidth="3dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/customer_btn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/brn_customer"
+        android:layout_below="@+id/driver_btn"
+        android:textColor="#4493C8"
+        android:textSize="22sp"
+        app:cardCornerRadius="8dp"
+        app:cornerRadius="5dp"
+        app:iconTint="#00FFFFFF"
+        app:strokeColor="#4493C8"
+        app:strokeWidth="3dp" />
+</RelativeLayout>

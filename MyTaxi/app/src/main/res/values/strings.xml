@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyTaxi</string>
+    <string name="text_curtain">Тутака павінна быць застаўка</string>
+    <string name="btn_driver">Я - кіроўца</string>
+    <string name="brn_customer">Я - кліент</string>
+    <string name="driver_txt_entrance">Уваход для кіроўцаў</string>
+    <string name="driver_hint_email">pazniak_zianon@gmail.com</string>
+    <string name="hint_password">пароль</string>
+    <string name="driver_btn_login">Уваход</string>
+    <string name="driver_btn_register">Рэгістрацыя</string>
+    <string name="driver_sign_up">Шчэ няма акаўнту:(</string>
+    <string name="driver_txt_registration">Рэгістрацыя для кіроўцаў</string>
+
+</resources>

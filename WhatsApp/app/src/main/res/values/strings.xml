@@ -15,6 +15,7 @@
     <string name="numar_pat">Увядзіце нумар патэльні</string>
     <string name="edit_number">нумар патэльні</string>
     <string name="next">Далей</string>
+    <string name="registr_email">Рэгістрацыя з мыла</string>
     <string name="cade_message">Увядзіце код паведамлення</string>
     <string name="confirm">Падцвердзіць</string>
     <string name="whatsapp_sms">WhatsApp адправіць SMS-паведамленне</string>
@@ -26,8 +27,22 @@
     <string name="sent_code">Код адпраўлены</string>
     <string name="toast_where_is_code">Дзе код?</string>
     <string name="toast_checking_number">Праверка нумару</string>
+    <string name="toast_creating_account">Стварэнне акаўнту</string>
     <string name="toast_please_wait">Калі ласачка, пачакайце</string>
     <string name="toast_code_cheking">Праверка коду</string>
+    <string name="hint_password_mail">Пароль</string>
     <string name="toast_ok">Усё чоценька!</string>
     <string name="toast_mistake">Памылка праверкі нумара</string>
+    <string name="hint_mail">Увядзіце мыла</string>
+    <string name="register_btn">Рэгістрацыя</string>
+    <string name="login_btn">Увайсьці</string>
+    <string name="text_exist">Ужо ё акаўнт, увайсьці</string>
+    <string name="toast_email">Запоўніце поле мыла</string>
+    <string name="toast_password">Запоўніце поле пароля</string>
+    <string name="toast_ok_login">паспяховы ўваход</string>
+    <string name="toast_entrance">Уваход у прыкладанне</string>
+    <string name="menu_search">Пошук</string>
+    <string name="menu_create_group">Стварыць суполку</string>
+    <string name="menu_settings">Налады</string>
+    <string name="menu_logout">Выхад</string>
 </resources>
