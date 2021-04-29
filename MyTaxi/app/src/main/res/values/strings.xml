@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyTaxi</string>
+    <string name="app_name">Таксоўка</string>
     <string name="text_curtain">Тутака павінна быць застаўка</string>
     <string name="btn_driver">Я - кіроўца</string>
     <string name="brn_customer">Я - кліент</string>
@@ -16,7 +16,10 @@
     <string name="toast_ok">Усё чоценька</string>
     <string name="toast_error">Памылка</string>
     <string name="bar_register_driver">Ідзе рэгістрацыя кіроўцы</string>
+    <string name="bar_signin_driver">Уваход кіроўцы</string>
     <string name="bar_register_customer">Ідзе рэгістрацыя кліента</string>
-    <string name="bar_wait">Калт ласачка, пачакайце</string>
+    <string name="bar_signin_customer">Уваход кліента</string>
+    <string name="bar_wait">Калі ласачка, пачакайце</string>
+    <string name="title_activity_driver_map">Map</string>
 
 </resources>

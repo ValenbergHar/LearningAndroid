@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,15 @@ public class DriverRegLoginActivity extends AppCompatActivity {
         driver_btn_register.setVisibility(View.INVISIBLE);
         driver_btn_register.setEnabled(false);
 
+        driver_btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String mail = driver_email.getText().toString();
+                String password = driver_password.getText().toString();
+                signInDriver(mail, password);
+            }
+        });
+
         driver_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +75,29 @@ public class DriverRegLoginActivity extends AppCompatActivity {
 
     }
 
+    private void signInDriver(String mail, String password) {
+        loadingBar.setTitle(getString(R.string.bar_signin_driver));
+        loadingBar.setMessage(getString(R.string.bar_wait));
+        loadingBar.show();
+        mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(DriverRegLoginActivity.this,
+                            R.string.toast_ok,
+                            Toast.LENGTH_SHORT).show();
+                    loadingBar.dismiss();
+                    startActivity(new Intent(DriverRegLoginActivity.this, DriverMapActivity.class));
+                } else {
+                    Toast.makeText(DriverRegLoginActivity.this,
+                            toast_error,
+                            Toast.LENGTH_SHORT).show();
+                    loadingBar.dismiss();
+                }
+            }
+        });
+    }
+
     private void registerDriver(String mail, String password) {
         loadingBar.setTitle(getString(R.string.bar_register_driver));
         loadingBar.setMessage(getString(R.string.bar_wait));
@@ -77,6 +110,7 @@ public class DriverRegLoginActivity extends AppCompatActivity {
                             R.string.toast_ok,
                             Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
+                    startActivity(new Intent(DriverRegLoginActivity.this, DriverMapActivity.class));
                 } else {
                     Toast.makeText(DriverRegLoginActivity.this,
                             toast_error,

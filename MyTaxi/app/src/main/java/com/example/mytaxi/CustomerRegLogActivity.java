@@ -44,6 +44,14 @@ public class CustomerRegLogActivity extends AppCompatActivity {
         customer_btn_register.setEnabled(false);
 
 
+        customer_btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String mail = customer_email.getText().toString();
+                String password = customer_password.getText().toString();
+                signInCustomer(mail, password);
+            }
+        });
         customer_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +68,28 @@ public class CustomerRegLogActivity extends AppCompatActivity {
                 String mail = customer_email.getText().toString();
                 String password = customer_password.getText().toString();
                 registerCustomer(mail, password);
+            }
+        });
+    }
+
+    private void signInCustomer(String mail, String password) {
+        loadingBar.setTitle(getString(R.string.bar_signin_customer));
+        loadingBar.setMessage(getString(R.string.bar_wait));
+        loadingBar.show();
+        mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(CustomerRegLogActivity.this,
+                            R.string.toast_ok,
+                            Toast.LENGTH_SHORT).show();
+                    loadingBar.dismiss();
+                } else {
+                    Toast.makeText(CustomerRegLogActivity.this,
+                            toast_error,
+                            Toast.LENGTH_SHORT).show();
+                    loadingBar.dismiss();
+                }
             }
         });
     }
