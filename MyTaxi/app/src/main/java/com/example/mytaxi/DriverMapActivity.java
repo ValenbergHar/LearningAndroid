@@ -10,6 +10,8 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 
+import com.firebase.geofire.GeoFire;
+import com.firebase.geofire.GeoLocation;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -22,6 +24,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class DriverMapActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -87,6 +92,13 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
         LatLng latLng = new LatLng(location.getAltitude(), location.getLatitude());
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(5));
+
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference driverAvailabilityRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
+
+        GeoFire geoFire = new GeoFire(driverAvailabilityRef);
+        geoFire.setLocation(userID, new GeoLocation(location.getLatitude(), location.getLongitude()));
+
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -96,5 +108,15 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
                 .addApi(LocationServices.API)
                 .build();
         googleApiClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference driverAvailabilityRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
+
+        GeoFire geoFire = new GeoFire(driverAvailabilityRef);
+        geoFire.removeLocation(userID);
     }
 }
