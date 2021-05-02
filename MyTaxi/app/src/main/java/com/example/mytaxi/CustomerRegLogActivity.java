@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,12 +34,12 @@ public class CustomerRegLogActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
 
-        customer_status=findViewById(R.id.customer_status);
-        customer_sign_up=findViewById(R.id.customer_sign_up);
-        customer_btn_login=findViewById(R.id.customer_btn_login);
-        customer_btn_register=findViewById(R.id.customer_btn_register);
-        customer_email=findViewById(R.id.customer_email);
-        customer_password=findViewById(R.id.customer_password);
+        customer_status = findViewById(R.id.customer_status);
+        customer_sign_up = findViewById(R.id.customer_sign_up);
+        customer_btn_login = findViewById(R.id.customer_btn_login);
+        customer_btn_register = findViewById(R.id.customer_btn_register);
+        customer_email = findViewById(R.id.customer_email);
+        customer_password = findViewById(R.id.customer_password);
 
         customer_btn_register.setVisibility(View.INVISIBLE);
         customer_btn_register.setEnabled(false);
@@ -84,6 +85,7 @@ public class CustomerRegLogActivity extends AppCompatActivity {
                             R.string.toast_ok,
                             Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
+                    startActivity(new Intent(CustomerRegLogActivity.this, CustomerMapActivity.class));
                 } else {
                     Toast.makeText(CustomerRegLogActivity.this,
                             toast_error,
@@ -106,6 +108,7 @@ public class CustomerRegLogActivity extends AppCompatActivity {
                             R.string.toast_ok,
                             Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
+                    startActivity(new Intent(CustomerRegLogActivity.this, CustomerMapActivity.class));
                 } else {
                     Toast.makeText(CustomerRegLogActivity.this,
                             toast_error,

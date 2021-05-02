@@ -21,5 +21,10 @@
     <string name="bar_signin_customer">Уваход кліента</string>
     <string name="bar_wait">Калі ласачка, пачакайце</string>
     <string name="title_activity_driver_map">Map</string>
+    <string name="text_settings">Налады</string>
+    <string name="text_logout_btn">Выйсьці</string>
+    <string name="title_activity_customer_map">Map</string>
+    <string name="text_order_taxi">выклікаць таксоўку</string>
+    <string name="text_i_am_here">Я тутака</string>
 
 </resources>
