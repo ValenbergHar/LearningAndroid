@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.mytaxi.R.string.toast_error;
 
@@ -25,6 +27,8 @@ public class CustomerRegLogActivity extends AppCompatActivity {
     private TextInputEditText customer_email, customer_password;
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
+    private DatabaseReference customerDatabaseRef;
+    private String onlineCustomerID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class CustomerRegLogActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
+
 
         customer_status = findViewById(R.id.customer_status);
         customer_sign_up = findViewById(R.id.customer_sign_up);
@@ -104,11 +109,15 @@ public class CustomerRegLogActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    onlineCustomerID = mAuth.getUid();
+                    customerDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(onlineCustomerID);
+                    customerDatabaseRef.setValue(true);
+                    startActivity(new Intent(CustomerRegLogActivity.this, CustomerMapActivity.class));
+
                     Toast.makeText(CustomerRegLogActivity.this,
                             R.string.toast_ok,
                             Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
-                    startActivity(new Intent(CustomerRegLogActivity.this, CustomerMapActivity.class));
                 } else {
                     Toast.makeText(CustomerRegLogActivity.this,
                             toast_error,

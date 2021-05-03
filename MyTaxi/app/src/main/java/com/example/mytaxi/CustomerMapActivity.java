@@ -15,6 +15,8 @@ import android.widget.Button;
 
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
+import com.firebase.geofire.GeoQuery;
+import com.firebase.geofire.GeoQueryEventListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -27,6 +29,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -46,6 +49,10 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
     private LocationRequest locationRequest;
     private String customerID;
     private DatabaseReference customerDatabaseRef;
+    private DatabaseReference driversLocationRef;
+    private int radius = 4;
+    private boolean driverIsFound;
+    private String driverFoundID;
 
 
     @Override
@@ -64,6 +71,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         currentUser = mAuth.getCurrentUser();
         customerID = currentUser.getUid();
         customerDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Customer Requests");
+        driversLocationRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
 
 
         customer_logout_btn.setOnClickListener(new View.OnClickListener() {
@@ -79,11 +87,54 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
             public void onClick(View v) {
                 GeoFire geoFire = new GeoFire(customerDatabaseRef);
                 geoFire.setLocation(customerID, new GeoLocation(lastLocation.getLatitude(), lastLocation.getLongitude()));
-                customerPosition=new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
+                customerPosition = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
                 mMap.addMarker(new MarkerOptions().position(customerPosition).title(getString(R.string.text_i_am_here)));
+
+                customer_order_btn.setText(R.string.driver_is_searching);
+                getNearByDrivers();
+
             }
         });
 
+    }
+
+    private void getNearByDrivers() {
+        GeoFire geoFire = new GeoFire(driversLocationRef);
+        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(customerPosition.latitude, customerPosition.longitude), radius);
+        geoQuery.removeAllListeners();
+
+        geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
+            @Override
+            public void onKeyEntered(String key, GeoLocation location) {
+                if (!driverIsFound) {
+                    driverIsFound = true;
+                    driverFoundID = key;
+                }
+            }
+
+            @Override
+            public void onKeyExited(String key) {
+
+            }
+
+            @Override
+            public void onKeyMoved(String key, GeoLocation location) {
+
+            }
+
+            @Override
+            public void onGeoQueryReady() {
+                if (!driverIsFound) {
+                    radius = radius++;
+                    getNearByDrivers();
+                }
+            }
+
+            @Override
+            public void onGeoQueryError(DatabaseError error) {
+
+            }
+        });
     }
 
     private void logOutCustomer() {

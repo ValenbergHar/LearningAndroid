@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.mytaxi.R.string.toast_error;
 
@@ -25,6 +27,8 @@ public class DriverRegLoginActivity extends AppCompatActivity {
     private TextInputEditText driver_email, driver_password;
     private FirebaseAuth mAuth;
     private ProgressDialog loadingBar;
+    private DatabaseReference driverDatabaseRef;
+    private String onlineDriverID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +87,9 @@ public class DriverRegLoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
+
+
                     Toast.makeText(DriverRegLoginActivity.this,
                             R.string.toast_ok,
                             Toast.LENGTH_SHORT).show();
@@ -106,11 +113,16 @@ public class DriverRegLoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    onlineDriverID = mAuth.getUid();
+                    driverDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(onlineDriverID);
+                    driverDatabaseRef.setValue(true);
+
+                    startActivity(new Intent(DriverRegLoginActivity.this, DriverMapActivity.class));
+
                     Toast.makeText(DriverRegLoginActivity.this,
                             R.string.toast_ok,
                             Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
-                    startActivity(new Intent(DriverRegLoginActivity.this, DriverMapActivity.class));
                 } else {
                     Toast.makeText(DriverRegLoginActivity.this,
                             toast_error,

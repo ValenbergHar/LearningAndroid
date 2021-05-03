@@ -26,5 +26,6 @@
     <string name="title_activity_customer_map">Map</string>
     <string name="text_order_taxi">выклікаць таксоўку</string>
     <string name="text_i_am_here">Я тутака</string>
+    <string name="driver_is_searching">Пошук кіроўцы</string>
 
 </resources>
