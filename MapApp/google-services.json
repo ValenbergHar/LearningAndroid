@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "923059145011",
+    "project_id": "mapapp-f9850",
+    "storage_bucket": "mapapp-f9850.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923059145011:android:4eb73e2d5af9a36440d646",
+        "android_client_info": {
+          "package_name": "com.example.mapapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923059145011-n2kp8iq54331dmsokbtc2iuj1ssibtei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mapapp",
+            "certificate_hash": "88dab1effb88999558bb3b01941265bbf3e38a0a"
+          }
+        },
+        {
+          "client_id": "923059145011-896c4mpi33ce5r551caqs96fse57bqcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoh9ooW077XaXTPIxX8kvM_IVZd8JZmyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923059145011-896c4mpi33ce5r551caqs96fse57bqcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
