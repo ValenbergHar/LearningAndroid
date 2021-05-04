@@ -26,12 +26,18 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.List;
 
 public class CustomerMapActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -43,16 +49,19 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private LatLng customerPosition;
+    private Marker driverMarker;
 
     private GoogleApiClient googleApiClient;
     private Location lastLocation;
     private LocationRequest locationRequest;
     private String customerID;
     private DatabaseReference customerDatabaseRef;
-    private DatabaseReference driversLocationRef;
+    private DatabaseReference driversAvailableRef;
     private int radius = 4;
     private boolean driverIsFound;
     private String driverFoundID;
+    private DatabaseReference driverRef;
+    private DatabaseReference driversLocationRef;
 
 
     @Override
@@ -71,7 +80,8 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         currentUser = mAuth.getCurrentUser();
         customerID = currentUser.getUid();
         customerDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Customer Requests");
-        driversLocationRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
+        driversAvailableRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
+        driversLocationRef = FirebaseDatabase.getInstance().getReference().child("Driver Working");
 
 
         customer_logout_btn.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +109,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
     }
 
     private void getNearByDrivers() {
-        GeoFire geoFire = new GeoFire(driversLocationRef);
+        GeoFire geoFire = new GeoFire(driversAvailableRef);
         GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(customerPosition.latitude, customerPosition.longitude), radius);
         geoQuery.removeAllListeners();
 
@@ -109,6 +119,14 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
                 if (!driverIsFound) {
                     driverIsFound = true;
                     driverFoundID = key;
+
+                    driverRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(driverFoundID);
+                    HashMap driverMap = new HashMap();
+                    driverMap.put("customerRideID", customerID);
+                    driverRef.updateChildren(driverMap);
+
+                    getDriverLocation();
+
                 }
             }
 
@@ -137,13 +155,13 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         });
     }
 
+
     private void logOutCustomer() {
         Intent welcomeIntent = new Intent(CustomerMapActivity.this, WelcomeActivity.class);
 //        welcomeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(welcomeIntent);
         finish();
     }
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -204,4 +222,51 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         super.onStop();
 
     }
+
+    private void getDriverLocation() {
+        driversLocationRef.child(driverFoundID).child("l")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            List<Object> driverLocationMap = (List<Object>) dataSnapshot.getValue();
+                            double LocationLat = 0.0;
+                            double LocationLng = 0.0;
+                            customer_order_btn.setText("Кіроўца знойдзены");
+
+                            if (driverLocationMap.get(0) != null) {
+                                LocationLat = Double.parseDouble(driverLocationMap.get(0).toString());
+                            }
+
+                            if (driverLocationMap.get(1) != null) {
+                                LocationLng = Double.parseDouble(driverLocationMap.get(1).toString());
+                            }
+                            LatLng driverPosition = new LatLng(LocationLat, LocationLng);
+
+                            if (driverMarker != null) {
+                                driverMarker.remove();
+                            }
+
+                            Location location1 = new Location("");
+                            location1.setLatitude(customerPosition.latitude);
+                            location1.setLongitude(customerPosition.longitude);
+
+                            Location location2 = new Location("");
+                            location2.setLatitude(driverPosition.latitude);
+                            location2.setLongitude(driverPosition.longitude);
+
+                            float distance = location1.distanceTo(location2);
+                            customer_order_btn.setText("Адлегласць " + String.valueOf(distance));
+
+                            driverMarker = mMap.addMarker(new MarkerOptions().position(driverPosition).title("Таксоўка тутака"));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
 }

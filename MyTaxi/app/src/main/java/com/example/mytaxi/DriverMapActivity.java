@@ -29,8 +29,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 public class DriverMapActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -46,6 +51,8 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
     private FirebaseUser currentUser;
     private boolean currentLogOutDriverStatus;
     private String userID;
+    private DatabaseReference assignedDriverRef, assignedCustomerPositionRef;
+    private String driverId, customerID = "";
 
 
     @Override
@@ -61,19 +68,22 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
+        driverId = mAuth.getCurrentUser().getUid();
 
 
         driver_logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               currentLogOutDriverStatus = true;
+                currentLogOutDriverStatus = true;
                 mAuth.signOut();
                 logOutDriver();
                 disconnectDriver();
             }
         });
+
+        getAssignedCustomerRequest();
     }
+
 
     private void logOutDriver() {
 
@@ -123,16 +133,31 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
     @Override
     public void onLocationChanged(Location location) {
-        lastLocation = location;
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+        if (getApplicationContext() != null) {
+            lastLocation = location;
+            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
 
-        DatabaseReference driverAvailabilityRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
+            DatabaseReference driverAvailabilityRef = FirebaseDatabase.getInstance().getReference().child("Driver Available");
+            GeoFire geoFireAvailable = new GeoFire(driverAvailabilityRef);
+            geoFireAvailable.setLocation(userID, new GeoLocation(location.getLatitude(), location.getLongitude()));
 
-        GeoFire geoFire = new GeoFire(driverAvailabilityRef);
-        geoFire.setLocation(userID, new GeoLocation(location.getLatitude(), location.getLongitude()));
+            DatabaseReference driverWorkingRef = FirebaseDatabase.getInstance().getReference().child("Driver Working");
+            GeoFire geoFireWorking = new GeoFire(driverWorkingRef);
+            geoFireWorking.setLocation(userID, new GeoLocation(location.getLatitude(), location.getLongitude()));
+
+            switch (customerID) {
+                case "":
+                    geoFireWorking.removeLocation(userID);
+                    geoFireAvailable.setLocation(userID, new GeoLocation(location.getLatitude(), location.getLongitude()));
+                    break;
+                default:
+                    geoFireAvailable.removeLocation(userID);
+                    geoFireWorking.setLocation(userID, new GeoLocation(location.getLatitude(), location.getLongitude()));
+            }
+        }
 
     }
 
@@ -159,5 +184,56 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
         GeoFire geoFire = new GeoFire(driverAvailabilityRef);
         geoFire.removeLocation(userID);
+    }
+
+    private void getAssignedCustomerRequest() {
+        assignedDriverRef = FirebaseDatabase.getInstance().getReference().child("Users")
+                .child("Drivers").child(driverId).child("customerRideID");
+
+        assignedDriverRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    customerID = dataSnapshot.getValue().toString();
+                    getAssignedCustomerPosition();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getAssignedCustomerPosition() {
+        assignedCustomerPositionRef = FirebaseDatabase.getInstance().getReference().child("Customer Requests")
+                .child(customerID).child("l");
+        assignedCustomerPositionRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    List<Object> customerPosition = (List<Object>) dataSnapshot.getValue();
+                    double LocationLat = 0.0;
+                    double LocationLng = 0.0;
+
+                    if (customerPosition.get(0) != null) {
+                        LocationLat = Double.parseDouble(customerPosition.get(0).toString());
+                    }
+
+                    if (customerPosition.get(1) != null) {
+                        LocationLng = Double.parseDouble(customerPosition.get(1).toString());
+                    }
+                    LatLng driverPosition = new LatLng(LocationLat, LocationLng);
+
+                    mMap.addMarker(new MarkerOptions().position(driverPosition).title("Забраць адсюль"));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
