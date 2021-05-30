@@ -1,10 +1,12 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
 
     defaultConfig {
         applicationId "com.example.noteapp"
@@ -12,7 +14,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true //трэ дадаць
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -48,8 +50,6 @@ dependencies {
     // FirebaseUI for Firebase Auth
     implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
 
-    implementation 'com.google.firebase:firebase-storage:28.0.1'
 
 }
-// Add the following line:
-apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+

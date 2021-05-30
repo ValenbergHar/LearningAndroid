@@ -24,11 +24,8 @@ public class ProfileActivity extends AppCompatActivity {
         displayNameEditText = findViewById(R.id.displayNameEditText);
         updateProfileButton = findViewById(R.id.updateProfileButton);
         progressBar = findViewById(R.id.progressBar);
-
-
     }
 
     public void updateProfile(View view) {
-
     }
 }
