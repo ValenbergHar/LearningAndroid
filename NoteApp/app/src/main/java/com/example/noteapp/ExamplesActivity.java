@@ -42,33 +42,14 @@ public class ExamplesActivity extends AppCompatActivity {
     public void createDocument(View view) {
         Toast.makeText(this, "createDocument", Toast.LENGTH_SHORT).show();
 
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", "Pazniak");
-        map.put("age", 75);
-        map.put("isAvailable", true);
-        map.put("created", new Timestamp(new Date()));
-
-        firestore.collection("zzzz")
-                .add(map)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "onSuccess: task was succesfull");
-                        Log.d(TAG, "onSuccess: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG, "onSuccess: task was NOT succesfull");
-                    }
-                });
-
-//        Product product = new Product("iPhone 11", 699, true);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("name", "Pazniak");
+//        map.put("age", 75);
+//        map.put("isAvailable", true);
+//        map.put("created", new Timestamp(new Date()));
 //
-//        firestore.collection("products")
-////                .add(map)
-//                .add(product)
+//        firestore.collection("zzzz")
+//                .add(map)
 //                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
 //                    @Override
 //                    public void onSuccess(DocumentReference documentReference) {
@@ -82,6 +63,25 @@ public class ExamplesActivity extends AppCompatActivity {
 //                        Log.d(TAG, "onSuccess: task was NOT succesfull");
 //                    }
 //                });
+
+        Product product = new Product("iPhone 11", 699, true);
+
+        firestore.collection("products")
+//                .add(map)
+                .add(product)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "onSuccess: task was succesfull");
+                        Log.d(TAG, "onSuccess: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "onSuccess: task was NOT succesfull");
+                    }
+                });
 
 
 //        Map<String, Object> map = new HashMap<>();
@@ -133,53 +133,53 @@ public class ExamplesActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Reading a doc...", Toast.LENGTH_SHORT).show();
 
-        FirebaseFirestore.getInstance()
-                .collection("zzzz")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        Log.d(TAG, "onSuccess: ");
-                        List<DocumentSnapshot> snapshotList = queryDocumentSnapshots.getDocuments();
-                        for (DocumentSnapshot snapshot : snapshotList) {
-                            Log.d(TAG, "onSuccess: " + snapshot.getData().toString());
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG, "onFailure: ");
-                    }
-                });
 //        FirebaseFirestore.getInstance()
-//                .collection("products")
-//                .document("NH74yiFpjYwxakCKXjJj")
+//                .collection("zzzz")
 //                .get()
-//                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
 //                    @Override
-//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            Product product = task.getResult().toObject(Product.class);
-//                            Log.d(TAG, "onComplete: " + product);
-//                        } else {
-//                            Log.e(TAG, "onComplete: ", task.getException());
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        Log.d(TAG, "onSuccess: ");
+//                        List<DocumentSnapshot> snapshotList = queryDocumentSnapshots.getDocuments();
+//                        for (DocumentSnapshot snapshot : snapshotList) {
+//                            Log.d(TAG, "onSuccess: " + snapshot.getData().toString());
 //                        }
-//                    }
-//                });
-//                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                    @Override
-//                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                        Product product = documentSnapshot.toObject(Product.class);
-//                        Log.d(TAG, "onSuccess: " + product);
 //                    }
 //                })
 //                .addOnFailureListener(new OnFailureListener() {
 //                    @Override
 //                    public void onFailure(@NonNull Exception e) {
-//                        Log.e(TAG, "onFailure: ", e);
+//                        Log.d(TAG, "onFailure: ");
 //                    }
 //                });
+        FirebaseFirestore.getInstance()
+                .collection("products")
+                .document("dEjSwjWCmy7gkSOSaDjm")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            Product product = task.getResult().toObject(Product.class);
+                            Log.d(TAG, "onComplete: " + product);
+                        } else {
+                            Log.e(TAG, "onComplete: ", task.getException());
+                        }
+                    }
+                })
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Product product = documentSnapshot.toObject(Product.class);
+                        Log.d(TAG, "onSuccess: " + product);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG, "onFailure: ", e);
+                    }
+                });
 
 
 //        FirebaseFirestore.getInstance()
